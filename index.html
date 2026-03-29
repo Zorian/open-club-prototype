@@ -538,85 +538,97 @@ const screens = [
       </div>
       <!-- Player List -->
       <div style="padding:0 18px;">
-        <!-- Player 1 - Jason M -->
+        <!-- Player 1 - Jason M (active, seen today) -->
         <div class="player-row" style="padding:14px 0;border-bottom:1px solid var(--border);">
           <div class="player-av" style="background:none;padding:0;width:52px;height:52px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;border:2px solid var(--border);" /><div class="online-dot"></div></div>
           <div class="player-info" style="flex:1;margin-left:12px;">
             <div class="player-name" style="font-size:14px;font-weight:700;color:var(--white);font-family:'Syne',sans-serif;">Jason M.</div>
-            <div style="display:flex;align-items:center;gap:6px;margin-top:4px;">
+            <div style="display:flex;align-items:center;gap:6px;margin-top:3px;">
               <span class="stars" style="color:#e8a85b;">★★★★</span><span style="color:#555;">★</span>
               <span style="color:#555;font-size:9px;">·</span>
               <span style="font-size:10px;color:#888;">London</span>
             </div>
+            <div style="font-size:9px;color:var(--green);margin-top:3px;">● Active now</div>
           </div>
           <div class="player-right" style="text-align:right;">
             <div class="player-dist" style="font-size:10px;color:#888;margin-bottom:6px;">1.1km</div>
             <div style="font-size:9px;color:#888;">›</div>
           </div>
         </div>
-        <!-- Player 2 - Sarah K (highlighted) -->
+        <!-- Player 2 - Sarah K (highlighted, seen today) -->
         <div class="player-row" style="padding:14px;margin:0 -14px;background:rgba(184,242,106,0.06);border-left:2px solid var(--green);border-bottom:1px solid var(--border);">
           <div class="player-av" style="background:none;padding:0;width:52px;height:52px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;border:2px solid var(--green);" /><div class="online-dot"></div></div>
           <div class="player-info" style="flex:1;margin-left:12px;">
             <div class="player-name" style="font-size:14px;font-weight:700;color:var(--white);font-family:'Syne',sans-serif;">Sarah K.</div>
-            <div style="display:flex;align-items:center;gap:6px;margin-top:4px;">
+            <div style="display:flex;align-items:center;gap:6px;margin-top:3px;">
               <span class="stars" style="color:#e8a85b;">★★★★★</span>
               <span style="color:#555;font-size:9px;">·</span>
               <span style="font-size:10px;color:#888;">London</span>
             </div>
+            <div style="font-size:9px;color:var(--green);margin-top:3px;">● Active now</div>
           </div>
           <div class="player-right" style="text-align:right;">
             <div class="player-dist" style="font-size:10px;color:#888;margin-bottom:6px;">850m</div>
             <button class="btn-outline" style="font-size:8px;padding:5px 10px;">+ INVITE</button>
           </div>
         </div>
-        <!-- Player 3 - Mark D (inactive) -->
-        <div class="player-row" style="padding:14px 0;border-bottom:1px solid var(--border);">
-          <div class="player-av" style="background:none;padding:0;width:52px;height:52px;overflow:hidden;flex-shrink:0;position:relative;opacity:0.7;"><img src="https://randomuser.me/api/portraits/men/67.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;border:2px solid var(--border);" /></div>
-          <div class="player-info" style="flex:1;margin-left:12px;">
-            <div class="player-name" style="font-size:14px;font-weight:700;color:var(--white);font-family:'Syne',sans-serif;opacity:0.7;">Mark D.</div>
-            <div style="display:flex;align-items:center;gap:6px;margin-top:4px;">
-              <span class="stars" style="color:#e8a85b;">★★★</span><span style="color:#555;">★★</span>
-              <span style="color:#555;font-size:9px;">·</span>
-              <span style="font-size:10px;color:#888;">Morning</span>
-            </div>
-          </div>
-          <div class="player-right" style="text-align:right;">
-            <div class="player-dist" style="font-size:10px;color:#888;margin-bottom:6px;">850m</div>
-            <div class="tag amber" style="font-size:8px;padding:4px 8px;">INACTIVE</div>
-          </div>
-        </div>
-        <!-- Player 4 - Alex H -->
+        <!-- Player 3 - Alex H (seen 2 hours ago) -->
         <div class="player-row" style="padding:14px 0;border-bottom:1px solid var(--border);">
           <div class="player-av" style="background:none;padding:0;width:52px;height:52px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/men/22.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;border:2px solid var(--border);" /><div class="online-dot"></div></div>
           <div class="player-info" style="flex:1;margin-left:12px;">
             <div class="player-name" style="font-size:14px;font-weight:700;color:var(--white);font-family:'Syne',sans-serif;">Alex H.</div>
-            <div style="display:flex;align-items:center;gap:6px;margin-top:4px;">
+            <div style="display:flex;align-items:center;gap:6px;margin-top:3px;">
               <span class="stars" style="color:#e8a85b;">★★★★★</span>
               <span style="color:#555;font-size:9px;">·</span>
               <span style="font-size:10px;color:#888;">Evening</span>
             </div>
+            <div style="font-size:9px;color:#888;margin-top:3px;">Last seen 2 hours ago</div>
           </div>
           <div class="player-right" style="text-align:right;">
             <div class="player-dist" style="font-size:10px;color:#888;margin-bottom:6px;">1.1km</div>
             <button class="btn-outline" style="font-size:8px;padding:5px 10px;">+ INVITE</button>
           </div>
         </div>
-        <!-- Player 5 - Tom W -->
+        <!-- Player 4 - Tom W (seen yesterday) -->
         <div class="player-row" style="padding:14px 0;border-bottom:1px solid var(--border);">
           <div class="player-av" style="background:none;padding:0;width:52px;height:52px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/men/55.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;border:2px solid var(--border);" /></div>
           <div class="player-info" style="flex:1;margin-left:12px;">
             <div class="player-name" style="font-size:14px;font-weight:700;color:var(--white);font-family:'Syne',sans-serif;">Tom W.</div>
-            <div style="display:flex;align-items:center;gap:6px;margin-top:4px;">
+            <div style="display:flex;align-items:center;gap:6px;margin-top:3px;">
               <span class="stars" style="color:#e8a85b;">★★★</span><span style="color:#555;">★★</span>
               <span style="color:#555;font-size:9px;">·</span>
               <span style="font-size:10px;color:#888;">Morning</span>
             </div>
+            <div style="font-size:9px;color:#888;margin-top:3px;">Last seen yesterday</div>
           </div>
           <div class="player-right" style="text-align:right;">
             <div class="player-dist" style="font-size:10px;color:#888;margin-bottom:6px;">1.2km</div>
             <button class="btn-outline" style="font-size:8px;padding:5px 10px;background:transparent;border-color:#555;color:#888;">INVITE</button>
           </div>
+        </div>
+        <!-- Player 5 - Mark D (inactive, seen 3 weeks ago — sorted to bottom) -->
+        <div class="player-row" style="padding:14px 0;border-bottom:1px solid var(--border);">
+          <div class="player-av" style="background:none;padding:0;width:52px;height:52px;overflow:hidden;flex-shrink:0;position:relative;opacity:0.55;"><img src="https://randomuser.me/api/portraits/men/67.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;border:2px solid var(--border);" /></div>
+          <div class="player-info" style="flex:1;margin-left:12px;opacity:0.65;">
+            <div class="player-name" style="font-size:14px;font-weight:700;color:var(--white);font-family:'Syne',sans-serif;">Mark D.</div>
+            <div style="display:flex;align-items:center;gap:6px;margin-top:3px;">
+              <span class="stars" style="color:#e8a85b;">★★★</span><span style="color:#555;">★★</span>
+              <span style="color:#555;font-size:9px;">·</span>
+              <span style="font-size:10px;color:#888;">Morning</span>
+            </div>
+            <div style="font-size:9px;color:#666;margin-top:3px;">Last seen 3 weeks ago</div>
+          </div>
+          <div class="player-right" style="text-align:right;">
+            <div class="player-dist" style="font-size:10px;color:#666;margin-bottom:6px;">850m</div>
+            <div class="tag amber" style="font-size:8px;padding:4px 8px;">INACTIVE</div>
+          </div>
+        </div>
+      </div>
+      <!-- NOTES SECTION -->
+      <div style="margin:16px 18px 8px;">
+        <div style="font-size:8px;letter-spacing:0.25em;text-transform:uppercase;color:var(--mid);margin-bottom:8px;">&#128203; Notes</div>
+        <div style="background:#141414;border:1px dashed rgba(255,255,255,0.1);border-radius:8px;padding:14px 16px;min-height:52px;display:flex;align-items:center;justify-content:center;">
+          <span style="font-size:10px;color:#444;font-style:italic;">No notes yet — client to add here</span>
         </div>
       </div>
       <div class="bnav">
@@ -734,6 +746,7 @@ const screens = [
             <span class="profile-hc">1.08</span>
             <span style="color:#e8a85b;font-size:16px;">★★★★</span><span style="color:#555;font-size:16px;">★</span>
             <span style="font-size:11px;color:#888;">4.2 · 18 reviews</span>
+          <div style="display:flex;align-items:center;gap:5px;margin-top:8px;font-size:9px;color:rgba(240,237,230,0.4);letter-spacing:0.03em;">&#128197; Joined January 2026</div>
           </div>
         </div>
       </div>
@@ -1511,6 +1524,7 @@ const screens = [
             <span class="profile-hc">1.08</span>
             <span style="color:#e8a85b;font-size:16px;">★★★★</span><span style="color:#555;font-size:16px;">★</span>
             <span style="font-size:11px;color:#888;">4.2 · 18 reviews</span>
+          <div style="display:flex;align-items:center;gap:5px;margin-top:8px;font-size:9px;color:rgba(240,237,230,0.4);letter-spacing:0.03em;">&#128197; Joined January 2026</div>
           </div>
         </div>
       </div>
