@@ -872,7 +872,11 @@ const screens = [
       <div class="form-field"><div class="field-icon">✉</div><div class="field-text">Email address</div></div>
       <div class="form-field focused"><div class="field-icon">🔒</div><div class="field-text">Password</div></div>
       <div class="form-field"><div class="field-icon">🔒</div><div class="field-text">Confirm password</div></div>
-      <div style="padding:16px 18px 12px;"><button class="btn-green" style="width:100%;padding:14px;font-size:12px;letter-spacing:0.15em;border-radius:8px;">CONTINUE</button></div>
+      <div style="margin:4px 18px 12px;">
+        <div style="font-size:9px;color:var(--mid);margin-bottom:6px;letter-spacing:0.05em;">Were you referred by a friend?</div>
+        <div class="form-field" style="margin:0;background:#141414;border-color:rgba(184,242,106,0.2);"><div class="field-icon" style="font-size:12px;">🎟</div><div class="field-text" style="font-size:11px;">Enter referral code (optional)</div></div>
+      </div>
+      <div style="padding:8px 18px 12px;"><button class="btn-green" style="width:100%;padding:14px;font-size:12px;letter-spacing:0.15em;border-radius:8px;">CONTINUE</button></div>
       <div style="padding:0 18px;display:flex;align-items:center;gap:12px;"><div style="flex:1;height:1px;background:var(--border);"></div><div style="font-size:10px;color:var(--mid);">or</div><div style="flex:1;height:1px;background:var(--border);"></div></div>
       <div style="padding:12px 18px;"><button class="btn-outline" style="width:100%;padding:12px;font-size:11px;border-radius:8px;margin-bottom:8px;">🍎 Continue with Apple</button></div>
       <div style="padding:0 18px;"><button class="btn-outline" style="width:100%;padding:12px;font-size:11px;border-radius:8px;">G Continue with Google</button></div>
@@ -963,6 +967,15 @@ const screens = [
         <div style="width:44px;height:24px;background:var(--green);border-radius:12px;position:relative;flex-shrink:0;">
           <div style="position:absolute;right:3px;top:3px;width:18px;height:18px;background:#000;border-radius:50%;"></div>
         </div>
+      </div>
+      <!-- Referral code box -->
+      <div style="margin:0 18px 16px;background:#141414;border:1px solid rgba(184,242,106,0.15);border-radius:10px;padding:14px 16px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+          <span style="font-size:14px;">🎟</span>
+          <div style="font-size:11px;font-weight:600;color:var(--white);">Were you referred?</div>
+        </div>
+        <div style="font-size:9px;color:#888;margin-bottom:10px;line-height:1.5;">If a friend invited you to Open Club, enter their code below — they'll earn 2 reward points.</div>
+        <div class="form-field" style="margin:0;background:#1a1a1a;"><div class="field-icon" style="font-size:11px;">✦</div><div class="field-text" style="font-size:11px;">Type referral code here...</div></div>
       </div>
       <div style="padding:0 18px 20px;"><button class="btn-green" style="width:100%;padding:14px;font-size:12px;letter-spacing:0.15em;border-radius:8px;">LET'S GO ⛳</button></div>
     </div>`
@@ -1296,6 +1309,23 @@ const screens = [
             <div style="font-size:10px;color:#888;line-height:1.7;">"Decent round. Eric knows his game but was running a bit late to the tee. Still enjoyable overall."</div>
             <div style="display:flex;gap:6px;margin-top:8px;"><div class="tag" style="font-size:7px;">Good pace</div></div>
           </div>
+        </div>
+
+        <!-- Referral Code Section -->
+        <div style="margin:0 18px 20px;background:#141414;border:1px solid rgba(184,242,106,0.15);border-radius:10px;padding:16px;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+            <span style="font-size:16px;">🎟</span>
+            <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--white);">Your Referral Code</div>
+          </div>
+          <div style="font-size:9px;color:#888;line-height:1.6;margin-bottom:12px;">Share your code with friends. When they sign up using it, you earn <span style="color:var(--green);font-weight:600;">+2 reward points</span> on the Rewards Board.</div>
+          <div style="background:#1a1a1a;border:1px solid rgba(184,242,106,0.25);border-radius:8px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;">
+            <div>
+              <div style="font-size:8px;color:var(--mid);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px;">Your code</div>
+              <div style="font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:var(--green);letter-spacing:0.1em;">ERIC-7X4K</div>
+            </div>
+            <button style="background:var(--green);color:#000;font-size:8px;font-weight:700;padding:8px 14px;border-radius:6px;border:none;font-family:'IBM Plex Mono',monospace;letter-spacing:0.1em;cursor:pointer;">COPY & SHARE</button>
+          </div>
+          <div style="font-size:8px;color:#555;margin-top:8px;">3 friends joined using your code · 6 pts earned</div>
         </div>
       </div>
       <div class="bnav"><div class="bnav-tab"><div class="bnav-icon">⌂</div><div class="bnav-label">Find Rounds</div></div><div class="bnav-tab"><div class="bnav-icon">◎</div><div class="bnav-label">Discover</div></div><div class="bnav-tab"><div class="bnav-icon">✉</div><div class="bnav-label">Messages</div></div><div class="bnav-tab"><div class="bnav-icon active">👤</div><div class="bnav-label active">Profile</div></div></div>
