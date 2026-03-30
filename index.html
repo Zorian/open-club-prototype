@@ -712,9 +712,9 @@ const screens = [
       <div style="margin:0 18px 12px;background:#141414;border:1px solid var(--border);border-radius:8px;padding:10px 14px;">
         <div style="font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);margin-bottom:8px;">How to earn points</div>
         <div style="display:flex;flex-direction:column;gap:5px;">
-          <div style="display:flex;align-items:center;gap:8px;"><span style="font-family:'Syne',sans-serif;font-size:13px;font-weight:800;color:var(--green);width:20px;">3</span><span style="font-size:9px;color:#888;">pts · Complete a confirmed round</span></div>
-          <div style="display:flex;align-items:center;gap:8px;"><span style="font-family:'Syne',sans-serif;font-size:13px;font-weight:800;color:var(--green);width:20px;">2</span><span style="font-size:9px;color:#888;">pts · Invite a player who joins the app</span></div>
-          <div style="display:flex;align-items:center;gap:8px;"><span style="font-family:'Syne',sans-serif;font-size:13px;font-weight:800;color:var(--green);width:20px;">1</span><span style="font-size:9px;color:#888;">pt · Leave a review on a player</span></div>
+          <div style="display:flex;align-items:center;gap:8px;"><span style="font-family:'Syne',sans-serif;font-size:13px;font-weight:800;color:var(--green);width:20px;">3</span><span style="font-size:9px;color:#888;">pts · Complete a confirmed match</span></div>
+          <div style="display:flex;align-items:center;gap:8px;"><span style="font-family:'Syne',sans-serif;font-size:13px;font-weight:800;color:var(--green);width:20px;">5</span><span style="font-size:9px;color:#888;">pts · Invite a player who joins the app</span></div>
+          <div style="display:flex;align-items:center;gap:8px;"><span style="font-family:'Syne',sans-serif;font-size:13px;font-weight:800;color:var(--green);width:20px;">5</span><span style="font-size:9px;color:#888;">pts · Leave a review on a player</span></div>
         </div>
       </div>
       <div class="podium">
@@ -763,9 +763,9 @@ const screens = [
         </div>
       </div>
       <div class="stats-strip">
-        <div class="stat-cell"><div class="stat-val">1.2km</div><div class="stat-label">Distance</div></div>
-        <div class="stat-cell"><div class="stat-val">42</div><div class="stat-label">Rounds</div></div>
-        <div class="stat-cell"><div class="stat-val">1.1k</div><div class="stat-label">Connections</div></div>
+        <div class="stat-cell"><div class="stat-val" style="font-size:11px;">2 days ago</div><div class="stat-label">Last Seen</div></div>
+        <div class="stat-cell"><div class="stat-val">1.08</div><div class="stat-label">Handicap</div></div>
+        <div class="stat-cell"><div class="stat-val">42</div><div class="stat-label">Matches Played</div></div>
       </div>
       <div style="padding:14px 18px 8px;font-size:11px;color:#888;line-height:1.7;">Avid golfer, plays several times a week. Always looking for competitive rounds around South London.</div>
       <div style="padding:0 18px 12px;display:flex;flex-wrap:wrap;gap:6px;">
@@ -1440,12 +1440,21 @@ const screens = [
         <div style="padding:12px 14px;display:flex;align-items:center;gap:12px;">
           <div style="width:40px;height:40px;border-radius:50%;background:rgba(184,242,106,0.1);border:1px solid rgba(184,242,106,0.3);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">🏆</div>
           <div style="flex:1;">
-            <div style="font-size:11px;color:var(--green);font-weight:600;">Round complete — confirm to earn point</div>
+            <div style="font-size:11px;color:var(--green);font-weight:600;">Round complete — confirm to earn 3 pts</div>
             <div style="font-size:9px;color:#888;margin-top:3px;">Pinehill Golf Club · Sat 29 March · with Jason M.</div>
             <div style="font-size:9px;color:var(--mid);margin-top:2px;">3 hours ago</div>
           </div>
         </div>
-        <div style="border-top:1px solid rgba(184,242,106,0.15);padding:10px 14px;text-align:center;font-size:10px;color:var(--green);font-weight:600;letter-spacing:0.1em;">CONFIRM COMPLETION +1 PT</div>
+        <div style="border-top:1px solid rgba(184,242,106,0.15);padding:10px 14px;text-align:center;font-size:10px;color:var(--green);font-weight:600;letter-spacing:0.1em;">CONFIRM COMPLETION +3 PTS</div>
+      </div>
+      <!-- Invite nudge -->
+      <div style="margin:0 18px 10px;background:#141414;border:1px solid var(--border);border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:12px;">
+        <div style="font-size:20px;flex-shrink:0;">🎟</div>
+        <div style="flex:1;">
+          <div style="font-size:10px;color:var(--white);font-weight:600;">Invite a friend, earn 5 pts</div>
+          <div style="font-size:9px;color:#888;margin-top:2px;line-height:1.5;">Share your referral code and earn 5 points every time someone joins Open Club through you.</div>
+        </div>
+        <div style="font-size:9px;color:var(--green);font-weight:700;white-space:nowrap;">SHARE CODE ›</div>
       </div>
 
       <div class="bnav"><div class="bnav-tab"><div class="bnav-icon">⌂</div><div class="bnav-label">Find Rounds</div></div><div class="bnav-tab"><div class="bnav-icon">◎</div><div class="bnav-label">Discover</div></div><div class="bnav-tab"><div class="bnav-icon active">✉</div><div class="bnav-label active">Messages</div></div><div class="bnav-tab"><div class="bnav-icon">👤</div><div class="bnav-label">Profile</div></div></div>
@@ -1596,9 +1605,9 @@ const screens = [
         </div>
       </div>
       <div class="stats-strip">
-        <div class="stat-cell"><div class="stat-val">1.2km</div><div class="stat-label">Distance</div></div>
-        <div class="stat-cell"><div class="stat-val">42</div><div class="stat-label">Rounds</div></div>
-        <div class="stat-cell"><div class="stat-val">1.1k</div><div class="stat-label">Connections</div></div>
+        <div class="stat-cell"><div class="stat-val" style="font-size:11px;">2 days ago</div><div class="stat-label">Last Seen</div></div>
+        <div class="stat-cell"><div class="stat-val">1.08</div><div class="stat-label">Handicap</div></div>
+        <div class="stat-cell"><div class="stat-val">42</div><div class="stat-label">Matches Played</div></div>
       </div>
       <div style="padding:14px 18px 8px;font-size:11px;color:#888;line-height:1.7;">Avid golfer, plays several times a week. Always looking for competitive rounds around South London.</div>
       <div style="padding:0 18px 12px;display:flex;flex-wrap:wrap;gap:6px;">
@@ -1682,7 +1691,7 @@ const screenInfo = [
   { journey: [["Tap centre nav button", "Opens full-screen map"], ["See ⛳ pins = golf clubs", "Number = active members"], ["Tap any pin", "→ Club Page (Screen 04)"]], shows: ["Map / Find Players toggle at top", "Full-screen dark map of London", "Golf club pins with member counts", "City area labels + road badges", "Golf Clubs Near You header"], tip: "This is the MAIN feature — the centre button in the nav. Lawrence specifically wants this to be the hero of the app. Toggle lets users switch to Find Players view." },
   { journey: [["Discover tab", "→ Tap Find Players toggle"], ["Player list loads", "Filterable by sport, location, handicap"]], shows: ["Map / Find Players toggle (Find Players active)", "Filter pills: Golf, Location, Handicap range", "Player list with avatar, name, rating, availability", "Distance from user", "INVITE and INACTIVE status buttons"], tip: "Alternative to map view — users can browse all players without going through club pins. Same discover tab, different view.", note: "Sort order = activity first, then distance. A player who hasn't opened the app in 6 months should NOT appear above an active player just because they're closer. Ranking: (1) Active now, (2) Seen today, (3) Seen this week, (4) Seen this month, (5) Inactive — distance only acts as a tiebreaker within each activity tier." },
   { journey: [["Discover Map", "→ Tap a club pin"], ["Club Page loads", "Members shown"]], shows: ["Club name + location", "Member count badge", "Every Open Club user tagged to this club", "Name, handicap, star rating, distance", "REQUEST TO JOIN / INVITE / REQUESTED buttons"], tip: "Members appear here because they selected this club during sign up. This is the data segmentation that powers the map." },
-  { journey: [["Find Rounds home", "→ Tap leaderboard strip"], ["Rewards Board loads", "All players ranked"]], shows: ["🏆 Monthly Reward banner — prize from Open Club", "Points: 3pts confirmed round · 2pts invite who joins · 1pt review left", "Top 3 podium display", "Full ranked list with points tally", "HI + star rating per player"], tip: "Top player each month wins a reward from Open Club (free round, guest pass etc). Points reset monthly. Drives engagement and repeat play." },
+  { journey: [["Find Rounds home", "→ Tap leaderboard strip"], ["Rewards Board loads", "All players ranked"]], shows: ["🏆 Monthly Reward banner — prize from Open Club", "Points: 3pts confirmed match · 5pts invite who joins · 5pts review left", "Top 3 podium display", "Full ranked list with points tally", "HI + star rating per player"], tip: "Top player each month wins a reward from Open Club (free round, guest pass etc). Points reset monthly. Drives engagement and repeat play." },
   { journey: [["Club Page member row", "→ Tap name"], ["Find Players list", "→ Tap row"], ["Leaderboard", "→ Tap player"]], shows: ["Hero golf background with name overlay", "Handicap index + star rating + review count", "Stats: Distance · Rounds · Connections", "Show Up Score — % with community rating count", "Bio + club membership tags", "Community Reviews with tags and counts", "MESSAGE · INVITE TO PLAY · CONNECT buttons"], tip: "MESSAGE and INVITE trigger the Sign Up Gate if user is browsing without an account." },
   { journey: [["Browse mode", "User taps MESSAGE, JOIN or INVITE"], ["Bottom sheet slides up", "Doesn't block the screen"]], shows: ["Blurred background stays visible", "CREATE FREE ACCOUNT and LOG IN buttons", "Continue browsing option at bottom"], tip: "This is NOT a full-screen block. User can dismiss it and keep browsing — reduces abandonment." },
   { journey: [["Sign Up Gate", "→ Tap Create Account"]], shows: ["Email + password fields", "Sign in with Apple / Google options", "Link to Log In for existing users"], tip: null },
