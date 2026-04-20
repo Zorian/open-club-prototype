@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Open Club — Prototype</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg: #111;
@@ -20,12 +20,12 @@
   --phone-bg: #141414;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-body{background:var(--bg);color:var(--white);font-family:'IBM Plex Mono',monospace;height:100vh;display:flex;overflow:hidden;}
+body{background:var(--bg);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;height:100vh;display:flex;overflow:hidden;}
 
 /* ---- SIDEBAR ---- */
 .sidebar{width:240px;background:var(--sidebar);border-right:1px solid var(--border);display:flex;flex-direction:column;flex-shrink:0;overflow:hidden;}
 .sidebar-top{padding:16px;border-bottom:1px solid var(--border);}
-.app-name{font-family:'Syne',sans-serif;font-weight:800;font-size:15px;letter-spacing:-0.02em;}
+.app-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:15px;letter-spacing:-0.02em;}
 .app-name span{color:var(--green);}
 .app-sub{font-size:9px;color:var(--mid);letter-spacing:0.2em;margin-top:3px;}
 .sidebar-scroll{flex:1;overflow-y:auto;padding:12px 0;}
@@ -73,10 +73,10 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Mono',monospa
 .info-tip-label{font-size:7px;letter-spacing:0.25em;text-transform:uppercase;color:var(--green);margin-bottom:6px;}
 .info-tip-text{font-size:10px;color:#888;line-height:1.6;}
 .topbar{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;border-bottom:1px solid var(--border);flex-shrink:0;}
-.screen-title{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:var(--white);}
+.screen-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;color:var(--white);}
 .screen-desc{font-size:10px;color:var(--mid);margin-top:2px;}
 .nav-btns{display:flex;gap:8px;}
-.nav-btn{background:var(--card);border:1px solid var(--border);color:#888;font-size:11px;padding:6px 14px;cursor:pointer;font-family:'IBM Plex Mono',monospace;transition:all 0.15s;}
+.nav-btn{background:var(--card);border:1px solid var(--border);color:#888;font-size:11px;padding:6px 14px;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;transition:all 0.15s;}
 .nav-btn:hover{border-color:var(--green);color:var(--green);}
 
 
@@ -94,7 +94,7 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Mono',monospa
 .status-icons{display:flex;gap:5px;align-items:center;font-size:10px;}
 
 /* ---- GLOBAL APP STYLES ---- */
-.app{background:#0d0d0d;min-height:100%;color:var(--white);font-family:'IBM Plex Mono',monospace;}
+.app{background:#0d0d0d;min-height:100%;color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;}
 
 /* bottom nav */
 .bnav{display:flex;background:#111;border-top:1px solid var(--border);padding:8px 0 16px;position:sticky;bottom:0;z-index:50;}
@@ -108,7 +108,7 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Mono',monospa
 /* page header */
 .page-header{display:flex;align-items:center;justify-content:space-between;padding:8px 18px 12px;flex-shrink:0;}
 .ph-back{font-size:18px;opacity:0.7;cursor:pointer;}
-.ph-title{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;}
+.ph-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:700;}
 .ph-action{font-size:18px;opacity:0.7;}
 
 /* filter pills */
@@ -122,7 +122,7 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Mono',monospa
 .round-card{margin:0 18px 12px;background:#1a1a1a;border-radius:12px;overflow:hidden;border:1px solid var(--border);}
 .round-img{width:100%;height:130px;object-fit:cover;background:linear-gradient(135deg,#1e2d12,#2d4a1e);display:flex;align-items:center;justify-content:center;font-size:32px;}
 .round-body{padding:12px 14px;}
-.round-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:8px;}
+.round-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;margin-bottom:8px;}
 .round-meta{display:flex;gap:12px;margin-bottom:10px;}
 .round-meta-item{display:flex;align-items:center;gap:5px;font-size:9px;color:#888;}
 .round-footer{display:flex;align-items:center;justify-content:space-between;}
@@ -130,13 +130,13 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Mono',monospa
 .av{width:22px;height:22px;border-radius:50%;background:#2a4a1a;border:1px solid #0d0d0d;margin-left:-5px;display:flex;align-items:center;justify-content:center;font-size:8px;color:var(--green);}
 .av:first-child{margin-left:0;}
 .round-dist{font-size:9px;color:var(--mid);}
-.btn-green{background:var(--green);color:#000;font-size:9px;font-weight:700;padding:6px 14px;border-radius:4px;border:none;font-family:'IBM Plex Mono',monospace;letter-spacing:0.1em;cursor:pointer;}
-.btn-outline{background:transparent;color:var(--green);font-size:9px;font-weight:700;padding:6px 14px;border-radius:4px;border:1px solid var(--green);font-family:'IBM Plex Mono',monospace;letter-spacing:0.1em;cursor:pointer;}
+.btn-green{background:var(--green);color:#000;font-size:9px;font-weight:700;padding:6px 14px;border-radius:4px;border:none;font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:0.1em;cursor:pointer;}
+.btn-outline{background:transparent;color:var(--green);font-size:9px;font-weight:700;padding:6px 14px;border-radius:4px;border:1px solid var(--green);font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:0.1em;cursor:pointer;}
 
 /* map explore banner */
 .map-banner{margin:0 18px 14px;background:#141f0a;border:1px solid rgba(184,242,106,0.2);border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:12px;}
 .map-banner-icon{font-size:20px;flex-shrink:0;}
-.map-banner-text .title{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;color:var(--green);}
+.map-banner-text .title{font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:700;color:var(--green);}
 .map-banner-text .sub{font-size:9px;color:#888;margin-top:2px;}
 .map-banner-arrow{margin-left:auto;font-size:14px;color:var(--green);}
 
@@ -145,7 +145,7 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Mono',monospa
 .player-av{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#1e3d0a,#2d5a14);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;position:relative;}
 .online-dot{position:absolute;bottom:1px;right:1px;width:10px;height:10px;border-radius:50%;background:var(--green);border:1.5px solid #0d0d0d;}
 .player-info{flex:1;}
-.player-name{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;}
+.player-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;}
 .player-sub{font-size:9px;color:#888;margin-top:2px;}
 .stars{color:#e8a85b;font-size:10px;letter-spacing:1px;}
 .player-right{text-align:right;}
@@ -158,7 +158,7 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Mono',monospa
 
 /* leaderboard row */
 .lb-row{display:flex;align-items:center;gap:10px;padding:10px 18px;border-bottom:1px solid var(--border);}
-.lb-rank{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;width:28px;flex-shrink:0;}
+.lb-rank{font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:800;width:28px;flex-shrink:0;}
 .lb-rank.gold{color:#FFD700;}
 .lb-rank.silver{color:#C0C0C0;}
 .lb-rank.bronze{color:#CD7F32;}
@@ -168,20 +168,20 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Mono',monospa
 .profile-hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#0a1f04,#142e06,#0d1a04);opacity:0.9;}
 .profile-hero-emoji{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:80px;opacity:0.15;}
 .profile-hero-content{position:relative;z-index:1;}
-.profile-name{font-family:'Syne',sans-serif;font-size:24px;font-weight:800;}
+.profile-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:24px;font-weight:800;}
 .profile-hc{font-size:22px;font-weight:700;color:var(--green);display:inline-block;margin-right:8px;}
 
 /* stats strip */
 .stats-strip{display:flex;border-bottom:1px solid var(--border);}
 .stat-cell{flex:1;padding:14px 0;text-align:center;border-right:1px solid var(--border);}
 .stat-cell:last-child{border-right:none;}
-.stat-val{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;}
+.stat-val{font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:700;}
 .stat-label{font-size:8px;color:var(--mid);margin-top:3px;letter-spacing:0.1em;}
 
 /* splash */
 .splash{background:#0a0a0a;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 28px;text-align:center;}
 .splash-logo-wrap{width:100px;height:100px;border-radius:50%;background:radial-gradient(#1a3a08,#0a1404);border:2px solid rgba(184,242,106,0.3);display:flex;align-items:center;justify-content:center;font-size:48px;margin-bottom:20px;}
-.splash-title{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;letter-spacing:-0.02em;margin-bottom:6px;}
+.splash-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:28px;font-weight:800;letter-spacing:-0.02em;margin-bottom:6px;}
 .splash-tagline{font-size:11px;color:#888;letter-spacing:0.15em;margin-bottom:40px;}
 .splash-tagline span{color:var(--green);}
 
@@ -193,7 +193,7 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Mono',monospa
 .branch-card.coming{background:rgba(255,255,255,0.02);border:1.5px solid rgba(184,242,106,0.2);box-shadow:0 0 16px rgba(184,242,106,0.06),0 0 32px rgba(184,242,106,0.02);}
 .branch-card.active:hover{background:rgba(184,242,106,0.1);border-color:rgba(184,242,106,0.55);box-shadow:0 0 30px rgba(184,242,106,0.18),0 0 60px rgba(184,242,106,0.06);}
 .branch-icon{font-size:36px;margin-bottom:4px;line-height:1;}
-.branch-name{font-family:'Syne',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.06em;line-height:1.2;}
+.branch-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.06em;line-height:1.2;}
 .branch-card.active .branch-name{color:var(--white);}
 .branch-card.active .branch-name span{color:var(--green);}
 .branch-card.coming .branch-name{color:#aaa;}
@@ -223,7 +223,7 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Mono',monospa
 .map-pin-inner{transform:rotate(45deg);font-size:10px;font-weight:700;color:#000;}
 .map-header{position:absolute;top:0;left:0;right:0;background:rgba(13,13,13,0.95);padding:8px 16px;z-index:10;}
 .map-header-content{display:flex;align-items:center;justify-content:space-between;}
-.map-title{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;}
+.map-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;}
 .map-count{font-size:10px;color:var(--green);}
 
 /* club page members */
@@ -239,7 +239,7 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Mono',monospa
 .gate{position:absolute;inset:0;background:rgba(0,0,0,0.85);display:flex;align-items:flex-end;z-index:200;backdrop-filter:blur(4px);}
 .gate-sheet{background:#1a1a1a;border-radius:20px 20px 0 0;padding:28px 24px 40px;width:100%;border-top:1px solid var(--border);}
 .gate-handle{width:36px;height:3px;background:var(--muted);border-radius:2px;margin:0 auto 20px;}
-.gate-title{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;margin-bottom:6px;}
+.gate-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:800;margin-bottom:6px;}
 .gate-sub{font-size:11px;color:#888;line-height:1.6;margin-bottom:24px;}
 
 /* onboarding progress */
@@ -263,7 +263,7 @@ body{background:var(--bg);color:var(--white);font-family:'IBM Plex Mono',monospa
 .podium-block.first{background:rgba(255,215,0,0.1);height:70px;}
 .podium-block.second{background:rgba(192,192,192,0.08);height:50px;}
 .podium-block.third{background:rgba(205,127,50,0.08);height:36px;}
-.podium-score{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;}
+.podium-score{font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:700;}
 
 </style>
 </head>
@@ -349,7 +349,7 @@ const screens = [
       <div class="splash-tagline" style="margin-bottom:0;">Play More. <span>Connect More.</span></div>
 
       <div class="branch-section">
-        <div style="font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--green);text-align:center;margin-bottom:14px;opacity:0.7;">Choose your arena</div>
+        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--green);text-align:center;margin-bottom:14px;opacity:0.7;">Choose your arena</div>
         <div class="branch-grid">
 
           <div class="branch-card active" onclick="show(1)">
@@ -391,7 +391,7 @@ const screens = [
 
       <!-- Header -->
       <div style="padding:10px 18px 0;display:flex;align-items:center;justify-content:space-between;">
-        <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;letter-spacing:-0.02em;">Find Rounds</div>
+        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:800;letter-spacing:-0.02em;">Find Rounds</div>
         <div style="font-size:16px;opacity:0.4;cursor:pointer;">🔍</div>
       </div>
 
@@ -405,7 +405,7 @@ const screens = [
 
       <!-- ═══ SECTION: Upcoming Rounds ═══ -->
       <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 18px 10px;">
-        <div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:700;">Upcoming rounds</div>
+        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;">Upcoming rounds</div>
         <div style="font-size:10px;color:var(--green);cursor:pointer;letter-spacing:0.03em;">View All ›</div>
       </div>
 
@@ -416,7 +416,7 @@ const screens = [
         <div style="min-width:250px;max-width:250px;background:#161616;border:1px solid var(--border);border-radius:14px;overflow:hidden;scroll-snap-align:start;flex-shrink:0;">
           <div style="padding:12px 12px 10px;">
             <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
-              <div style="font-family:'Syne',sans-serif;font-size:11px;font-weight:700;line-height:1.3;">Sat 5 Apr · 08:30</div>
+              <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;line-height:1.3;">Sat 5 Apr · 08:30</div>
               <div style="font-size:8px;background:rgba(255,255,255,0.06);color:#888;padding:3px 8px;border-radius:10px;border:1px solid var(--border);">4-Ball</div>
             </div>
             <div style="font-size:9px;color:#666;margin-bottom:10px;">HI 0–15</div>
@@ -455,7 +455,7 @@ const screens = [
         <div style="min-width:250px;max-width:250px;background:#161616;border:1px solid var(--border);border-radius:14px;overflow:hidden;scroll-snap-align:start;flex-shrink:0;">
           <div style="padding:12px 12px 10px;">
             <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
-              <div style="font-family:'Syne',sans-serif;font-size:11px;font-weight:700;line-height:1.3;">Sat 5 Apr · 10:00</div>
+              <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;line-height:1.3;">Sat 5 Apr · 10:00</div>
               <div style="font-size:8px;background:rgba(255,255,255,0.06);color:#888;padding:3px 8px;border-radius:10px;border:1px solid var(--border);">2-Ball</div>
             </div>
             <div style="font-size:9px;color:#666;margin-bottom:10px;">HI 0–28</div>
@@ -485,7 +485,7 @@ const screens = [
         <div style="min-width:250px;max-width:250px;background:#161616;border:1px solid var(--border);border-radius:14px;overflow:hidden;scroll-snap-align:start;flex-shrink:0;">
           <div style="padding:12px 12px 10px;">
             <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
-              <div style="font-family:'Syne',sans-serif;font-size:11px;font-weight:700;line-height:1.3;">Sun 6 Apr · 09:15</div>
+              <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;line-height:1.3;">Sun 6 Apr · 09:15</div>
               <div style="font-size:8px;background:rgba(255,255,255,0.06);color:#888;padding:3px 8px;border-radius:10px;border:1px solid var(--border);">3-Ball</div>
             </div>
             <div style="font-size:9px;color:#666;margin-bottom:10px;">HI 5–20</div>
@@ -524,7 +524,7 @@ const screens = [
 
       <!-- ═══ SECTION: Weekly Leaderboard (Trending style) ═══ -->
       <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 18px 10px;">
-        <div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:700;">Weekly Leaderboard</div>
+        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;">Weekly Leaderboard</div>
         <div style="font-size:10px;color:var(--green);cursor:pointer;letter-spacing:0.03em;">View All ›</div>
       </div>
 
@@ -627,22 +627,22 @@ const screens = [
           <div style="position:absolute;top:38%;left:28%;width:40px;height:30px;background:rgba(30,60,15,0.5);border-radius:50%;"></div>
           <div style="position:absolute;top:60%;left:55%;width:30px;height:25px;background:rgba(30,60,15,0.4);border-radius:50%;"></div>
           <!-- London area labels -->
-          <div style="position:absolute;top:12%;left:35%;font-family:'IBM Plex Mono',monospace;font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:0.08em;">Hampstead</div>
-          <div style="position:absolute;top:28%;left:8%;font-family:'IBM Plex Mono',monospace;font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:0.08em;">Ealing</div>
-          <div style="position:absolute;top:42%;left:38%;font-family:'IBM Plex Mono',monospace;font-size:9px;color:rgba(255,255,255,0.4);font-weight:600;letter-spacing:0.05em;">Central London</div>
-          <div style="position:absolute;top:58%;left:10%;font-family:'IBM Plex Mono',monospace;font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:0.08em;">Richmond</div>
-          <div style="position:absolute;top:65%;left:55%;font-family:'IBM Plex Mono',monospace;font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:0.08em;">Greenwich</div>
-          <div style="position:absolute;top:78%;left:35%;font-family:'IBM Plex Mono',monospace;font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:0.08em;">Croydon</div>
+          <div style="position:absolute;top:12%;left:35%;font-family:'Plus Jakarta Sans',sans-serif;font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:0.08em;">Hampstead</div>
+          <div style="position:absolute;top:28%;left:8%;font-family:'Plus Jakarta Sans',sans-serif;font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:0.08em;">Ealing</div>
+          <div style="position:absolute;top:42%;left:38%;font-family:'Plus Jakarta Sans',sans-serif;font-size:9px;color:rgba(255,255,255,0.4);font-weight:600;letter-spacing:0.05em;">Central London</div>
+          <div style="position:absolute;top:58%;left:10%;font-family:'Plus Jakarta Sans',sans-serif;font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:0.08em;">Richmond</div>
+          <div style="position:absolute;top:65%;left:55%;font-family:'Plus Jakarta Sans',sans-serif;font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:0.08em;">Greenwich</div>
+          <div style="position:absolute;top:78%;left:35%;font-family:'Plus Jakarta Sans',sans-serif;font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:0.08em;">Croydon</div>
           <!-- Road badge -->
           <div style="position:absolute;top:50%;left:48%;background:#1a2510;border:1px solid #263318;font-size:7px;color:#4a6030;padding:1px 5px;border-radius:2px;font-weight:700;">A40</div>
           <div style="position:absolute;top:35%;left:72%;background:#1a2510;border:1px solid #263318;font-size:7px;color:#4a6030;padding:1px 5px;border-radius:2px;font-weight:700;">M25</div>
         </div>
         <div class="map-header">
-          <div class="status-bar" style="padding:4px 0 8px;"><span style="font-size:11px;color:#888;">‹</span><span style="margin-left:8px;font-size:13px;">📍</span><span style="margin-left:6px;font-family:'Syne',sans-serif;font-size:13px;font-weight:700;">Golf Clubs Near You</span><span style="margin-left:auto;font-size:10px;color:var(--green);">12 clubs</span></div>
+          <div class="status-bar" style="padding:4px 0 8px;"><span style="font-size:11px;color:#888;">‹</span><span style="margin-left:8px;font-size:13px;">📍</span><span style="margin-left:6px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;">Golf Clubs Near You</span><span style="margin-left:auto;font-size:10px;color:var(--green);">12 clubs</span></div>
           <!-- Map / Find Players Toggle -->
           <div style="display:flex;margin:0 18px 12px;background:#1a1a1a;border-radius:8px;overflow:hidden;border:1px solid var(--border);">
-            <div style="flex:1;padding:10px 0;text-align:center;background:var(--green);color:#000;font-size:11px;font-weight:700;font-family:'IBM Plex Mono',monospace;">🗺 Map</div>
-            <div style="flex:1;padding:10px 0;text-align:center;color:#888;font-size:11px;font-family:'IBM Plex Mono',monospace;">👥 Find Players</div>
+            <div style="flex:1;padding:10px 0;text-align:center;background:var(--green);color:#000;font-size:11px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;">🗺 Map</div>
+            <div style="flex:1;padding:10px 0;text-align:center;color:#888;font-size:11px;font-family:'Plus Jakarta Sans',sans-serif;">👥 Find Players</div>
           </div>
         </div><div style="position:absolute;top:16%;left:42%;display:flex;flex-direction:column;align-items:center;cursor:pointer;z-index:10;">
           <div style="width:26px;height:26px;background:var(--green);border-radius:50% 50% 50% 0;transform:rotate(-45deg);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(184,242,106,0.5);opacity:1.0;">
@@ -711,7 +711,7 @@ const screens = [
         <div class="player-row" style="padding:14px 0;border-bottom:1px solid var(--border);">
           <div class="player-av" style="background:none;padding:0;width:52px;height:52px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;border:2px solid var(--border);" /><div class="online-dot"></div></div>
           <div class="player-info" style="flex:1;margin-left:12px;">
-            <div class="player-name" style="font-size:14px;font-weight:700;color:var(--white);font-family:'Syne',sans-serif;">Jason M.</div>
+            <div class="player-name" style="font-size:14px;font-weight:700;color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;">Jason M.</div>
             <div style="display:flex;align-items:center;gap:6px;margin-top:3px;">
               <span class="stars" style="color:#e8a85b;">★★★★</span><span style="color:#555;">★</span>
               <span style="color:#555;font-size:9px;">·</span>
@@ -728,7 +728,7 @@ const screens = [
         <div class="player-row" style="padding:14px;margin:0 -14px;background:rgba(184,242,106,0.06);border-left:2px solid var(--green);border-bottom:1px solid var(--border);">
           <div class="player-av" style="background:none;padding:0;width:52px;height:52px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;border:2px solid var(--green);" /><div class="online-dot"></div></div>
           <div class="player-info" style="flex:1;margin-left:12px;">
-            <div class="player-name" style="font-size:14px;font-weight:700;color:var(--white);font-family:'Syne',sans-serif;">Sarah K.</div>
+            <div class="player-name" style="font-size:14px;font-weight:700;color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;">Sarah K.</div>
             <div style="display:flex;align-items:center;gap:6px;margin-top:3px;">
               <span class="stars" style="color:#e8a85b;">★★★★★</span>
               <span style="color:#555;font-size:9px;">·</span>
@@ -745,7 +745,7 @@ const screens = [
         <div class="player-row" style="padding:14px 0;border-bottom:1px solid var(--border);">
           <div class="player-av" style="background:none;padding:0;width:52px;height:52px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/men/22.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;border:2px solid var(--border);" /><div class="online-dot"></div></div>
           <div class="player-info" style="flex:1;margin-left:12px;">
-            <div class="player-name" style="font-size:14px;font-weight:700;color:var(--white);font-family:'Syne',sans-serif;">Alex H.</div>
+            <div class="player-name" style="font-size:14px;font-weight:700;color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;">Alex H.</div>
             <div style="display:flex;align-items:center;gap:6px;margin-top:3px;">
               <span class="stars" style="color:#e8a85b;">★★★★★</span>
               <span style="color:#555;font-size:9px;">·</span>
@@ -762,7 +762,7 @@ const screens = [
         <div class="player-row" style="padding:14px 0;border-bottom:1px solid var(--border);">
           <div class="player-av" style="background:none;padding:0;width:52px;height:52px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/men/55.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;border:2px solid var(--border);" /></div>
           <div class="player-info" style="flex:1;margin-left:12px;">
-            <div class="player-name" style="font-size:14px;font-weight:700;color:var(--white);font-family:'Syne',sans-serif;">Tom W.</div>
+            <div class="player-name" style="font-size:14px;font-weight:700;color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;">Tom W.</div>
             <div style="display:flex;align-items:center;gap:6px;margin-top:3px;">
               <span class="stars" style="color:#e8a85b;">★★★</span><span style="color:#555;">★★</span>
               <span style="color:#555;font-size:9px;">·</span>
@@ -779,7 +779,7 @@ const screens = [
         <div class="player-row" style="padding:14px 0;border-bottom:1px solid var(--border);">
           <div class="player-av" style="background:none;padding:0;width:52px;height:52px;overflow:hidden;flex-shrink:0;position:relative;opacity:0.55;"><img src="https://randomuser.me/api/portraits/men/67.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;border:2px solid var(--border);" /></div>
           <div class="player-info" style="flex:1;margin-left:12px;opacity:0.65;">
-            <div class="player-name" style="font-size:14px;font-weight:700;color:var(--white);font-family:'Syne',sans-serif;">Mark D.</div>
+            <div class="player-name" style="font-size:14px;font-weight:700;color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;">Mark D.</div>
             <div style="display:flex;align-items:center;gap:6px;margin-top:3px;">
               <span class="stars" style="color:#e8a85b;">★★★</span><span style="color:#555;">★★</span>
               <span style="color:#555;font-size:9px;">·</span>
@@ -835,7 +835,7 @@ const screens = [
       <div class="player-row">
         <div class="player-av" style="background:none;padding:0;width:44px;height:44px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /><div class="online-dot"></div></div>
         <div class="player-info"><div class="player-name">Sarah K.</div><div class="player-sub"><span class="stars">★★★★</span>☆ · HI 8.4</div></div>
-        <div class="player-right"><div class="player-dist">850m</div><button style="font-size:7.5px;padding:4px 8px;margin-top:4px;background:#1a2a10;border:1px solid #4a7a20;color:#aad060;border-radius:4px;font-family:'IBM Plex Mono',monospace;white-space:nowrap;cursor:default;">REQUESTED ✓</button></div>
+        <div class="player-right"><div class="player-dist">850m</div><button style="font-size:7.5px;padding:4px 8px;margin-top:4px;background:#1a2a10;border:1px solid #4a7a20;color:#aad060;border-radius:4px;font-family:'Plus Jakarta Sans',sans-serif;white-space:nowrap;cursor:default;">REQUESTED ✓</button></div>
       </div>
       <div class="player-row">
         <div class="player-av" style="background:none;padding:0;width:44px;height:44px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/men/67.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div>
@@ -871,7 +871,7 @@ const screens = [
       <div style="margin:0 18px 10px;background:linear-gradient(135deg,#1a2f0a,#0f1f06);border:1px solid rgba(184,242,106,0.25);border-radius:10px;padding:12px 14px;">
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
           <div style="font-size:16px;">🏆</div>
-          <div style="font-size:11px;color:var(--green);font-weight:700;font-family:'Syne',sans-serif;">April Monthly Reward</div>
+          <div style="font-size:11px;color:var(--green);font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;">April Monthly Reward</div>
           <div style="margin-left:auto;font-size:8px;color:#888;background:rgba(255,255,255,0.06);padding:2px 8px;border-radius:10px;">15 days left</div>
         </div>
         <div style="font-size:10px;color:#ccc;line-height:1.5;margin-bottom:6px;">🎁 <strong style="color:var(--white);">Free round + guest pass</strong> at Pinehill Golf Club — courtesy of Open Club</div>
@@ -881,9 +881,9 @@ const screens = [
       <div style="margin:0 18px 12px;background:#141414;border:1px solid var(--border);border-radius:8px;padding:10px 14px;">
         <div style="font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);margin-bottom:8px;">How to earn points</div>
         <div style="display:flex;flex-direction:column;gap:5px;">
-          <div style="display:flex;align-items:center;gap:8px;"><span style="font-family:'Syne',sans-serif;font-size:13px;font-weight:800;color:var(--green);width:20px;">3</span><span style="font-size:9px;color:#888;">pts · Complete a confirmed match</span></div>
-          <div style="display:flex;align-items:center;gap:8px;"><span style="font-family:'Syne',sans-serif;font-size:13px;font-weight:800;color:var(--green);width:20px;">5</span><span style="font-size:9px;color:#888;">pts · Invite a player who joins the app</span></div>
-          <div style="display:flex;align-items:center;gap:8px;"><span style="font-family:'Syne',sans-serif;font-size:13px;font-weight:800;color:var(--green);width:20px;">5</span><span style="font-size:9px;color:#888;">pts · Leave a review on a player</span></div>
+          <div style="display:flex;align-items:center;gap:8px;"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:800;color:var(--green);width:20px;">3</span><span style="font-size:9px;color:#888;">pts · Complete a confirmed match</span></div>
+          <div style="display:flex;align-items:center;gap:8px;"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:800;color:var(--green);width:20px;">5</span><span style="font-size:9px;color:#888;">pts · Invite a player who joins the app</span></div>
+          <div style="display:flex;align-items:center;gap:8px;"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:800;color:var(--green);width:20px;">5</span><span style="font-size:9px;color:#888;">pts · Leave a review on a player</span></div>
         </div>
       </div>
       <div class="podium">
@@ -904,11 +904,11 @@ const screens = [
         </div>
       </div>
       <div class="section-title">Full Rankings</div>
-      <div class="lb-row"><div class="lb-rank gold">1</div><div class="player-av" style="background:none;padding:0;width:36px;height:36px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div><div class="player-info"><div class="player-name">Jason M.</div><div class="player-sub">HI 1.08 · <span class="stars">★★★★</span>☆</div></div><div style="font-size:12px;color:var(--green);font-family:'Syne',sans-serif;font-weight:700;">98pts</div></div>
-      <div class="lb-row"><div class="lb-rank silver">2</div><div class="player-av" style="background:none;padding:0;width:36px;height:36px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div><div class="player-info"><div class="player-name">Sarah K.</div><div class="player-sub">HI 8.4 · <span class="stars">★★★★</span>☆</div></div><div style="font-size:12px;color:#888;font-family:'Syne',sans-serif;font-weight:700;">91pts</div></div>
-      <div class="lb-row"><div class="lb-rank bronze">3</div><div class="player-av" style="background:none;padding:0;width:36px;height:36px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/men/22.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div><div class="player-info"><div class="player-name">Alex H.</div><div class="player-sub">HI 5.2 · <span class="stars">★★★★</span>☆</div></div><div style="font-size:12px;color:#888;font-family:'Syne',sans-serif;font-weight:700;">87pts</div></div>
-      <div class="lb-row"><div class="lb-rank" style="color:#888;">4</div><div class="player-av" style="background:none;padding:0;width:36px;height:36px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/men/67.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div><div class="player-info"><div class="player-name">Mark D.</div><div class="player-sub">HI 12.1 · <span class="stars">★★★</span>☆☆</div></div><div style="font-size:12px;color:#888;font-family:'Syne',sans-serif;font-weight:700;">74pts</div></div>
-      <div class="lb-row"><div class="lb-rank" style="color:#888;">5</div><div class="player-av" style="background:none;padding:0;width:36px;height:36px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/men/55.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div><div class="player-info"><div class="player-name">Tom W.</div><div class="player-sub">HI 15.6 · <span class="stars">★★★</span>☆☆</div></div><div style="font-size:12px;color:#888;font-family:'Syne',sans-serif;font-weight:700;">68pts</div></div>
+      <div class="lb-row"><div class="lb-rank gold">1</div><div class="player-av" style="background:none;padding:0;width:36px;height:36px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div><div class="player-info"><div class="player-name">Jason M.</div><div class="player-sub">HI 1.08 · <span class="stars">★★★★</span>☆</div></div><div style="font-size:12px;color:var(--green);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;">98pts</div></div>
+      <div class="lb-row"><div class="lb-rank silver">2</div><div class="player-av" style="background:none;padding:0;width:36px;height:36px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div><div class="player-info"><div class="player-name">Sarah K.</div><div class="player-sub">HI 8.4 · <span class="stars">★★★★</span>☆</div></div><div style="font-size:12px;color:#888;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;">91pts</div></div>
+      <div class="lb-row"><div class="lb-rank bronze">3</div><div class="player-av" style="background:none;padding:0;width:36px;height:36px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/men/22.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div><div class="player-info"><div class="player-name">Alex H.</div><div class="player-sub">HI 5.2 · <span class="stars">★★★★</span>☆</div></div><div style="font-size:12px;color:#888;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;">87pts</div></div>
+      <div class="lb-row"><div class="lb-rank" style="color:#888;">4</div><div class="player-av" style="background:none;padding:0;width:36px;height:36px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/men/67.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div><div class="player-info"><div class="player-name">Mark D.</div><div class="player-sub">HI 12.1 · <span class="stars">★★★</span>☆☆</div></div><div style="font-size:12px;color:#888;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;">74pts</div></div>
+      <div class="lb-row"><div class="lb-rank" style="color:#888;">5</div><div class="player-av" style="background:none;padding:0;width:36px;height:36px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/men/55.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div><div class="player-info"><div class="player-name">Tom W.</div><div class="player-sub">HI 15.6 · <span class="stars">★★★</span>☆☆</div></div><div style="font-size:12px;color:#888;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;">68pts</div></div>
     </div>`
   },
   // 5: PLAYER PROFILE
@@ -922,7 +922,7 @@ const screens = [
         <div class="status-bar" style="position:absolute;top:0;left:0;right:0;padding:14px 18px 0;"><span class="status-time" style="color:#fff;">9:41</span><div class="status-icons" style="color:#fff;">▌▌▌ ▾ ▮</div></div>
         <div style="position:absolute;top:14px;left:14px;"><span style="font-size:20px;background:rgba(0,0,0,0.3);border-radius:50%;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;">‹</span></div>
         <div class="profile-hero-content">
-          <div class="profile-name">Jason M. <span style="background:#e8a85b;color:#000;font-size:9px;padding:2px 8px;border-radius:3px;font-family:'IBM Plex Mono';vertical-align:middle;">ACTIVE</span></div>
+          <div class="profile-name">Jason M. <span style="background:#e8a85b;color:#000;font-size:9px;padding:2px 8px;border-radius:3px;font-family:'Plus Jakarta Sans';vertical-align:middle;">ACTIVE</span></div>
           <div style="display:flex;align-items:center;gap:8px;margin-top:4px;">
             <span class="profile-hc">1.08</span>
             <span style="color:#e8a85b;font-size:16px;">★★★★</span><span style="color:#555;font-size:16px;">★</span>
@@ -1154,7 +1154,7 @@ const screens = [
         html: `<div class="app" style="background:#0d0d0d;">
       <div class="status-bar"><span class="status-time">9:41</span><div class="status-icons">▌▌▌ ▾ ▮</div></div>
       <div style="padding:10px 18px 0;display:flex;align-items:center;justify-content:space-between;">
-        <div style="font-family:'Syne',sans-serif;font-size:20px;font-weight:800;">Find Rounds</div>
+        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:800;">Find Rounds</div>
         <div style="display:flex;gap:10px;align-items:center;"><div style="font-size:18px;background:#1a1a1a;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;">🔔</div></div>
       </div>
       <div style="display:flex;gap:8px;padding:10px 18px;overflow-x:auto;">
@@ -1169,7 +1169,7 @@ const screens = [
       <div style="margin:0 18px 10px;background:#161616;border:1px solid var(--border);border-radius:12px;overflow:hidden;">
         <div style="padding:14px 14px 0;">
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
-            <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;">Saturday 5 April · 08:30 AM</div>
+            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;">Saturday 5 April · 08:30 AM</div>
             <div style="font-size:8px;background:rgba(255,255,255,0.06);color:#888;padding:3px 8px;border-radius:10px;border:1px solid var(--border);">4-Ball</div>
           </div>
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;"><span style="font-size:10px;color:#888;">HI 0–15</span></div>
@@ -1188,7 +1188,7 @@ const screens = [
       </div>
       <div style="margin:0 18px 10px;background:#161616;border:1px solid rgba(184,242,106,0.15);border-radius:12px;overflow:hidden;">
         <div style="padding:14px 14px 0;">
-          <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;margin-bottom:6px;">Sunday 6 April · 09:00 AM</div>
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;margin-bottom:6px;">Sunday 6 April · 09:00 AM</div>
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;"><span style="font-size:10px;color:#888;">HI 0–28</span></div>
           <div style="display:flex;align-items:center;gap:0;margin-bottom:14px;">
             <div style="display:flex;flex-direction:column;align-items:center;gap:4px;margin-right:14px;"><img src="https://randomuser.me/api/portraits/men/55.jpg" style="width:38px;height:38px;border-radius:50%;object-fit:cover;" /><div style="font-size:9px;color:#888;">Tom</div><div style="background:#e8a85b;color:#000;font-size:8px;font-weight:700;padding:1px 6px;border-radius:10px;">15.6</div></div>
@@ -1209,25 +1209,25 @@ const screens = [
             <!-- Leaderboard strip -->
       <div style="margin:4px 18px 10px;background:#161616;border:1px solid var(--border);border-radius:12px;overflow:hidden;">
         <div style="padding:10px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);">
-          <div style="font-family:'Syne',sans-serif;font-size:12px;font-weight:700;">Weekly Leaderboard</div>
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:700;">Weekly Leaderboard</div>
           <div style="font-size:9px;color:var(--green);white-space:nowrap;">View All ›</div>
         </div>
         <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--border);">
-          <div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:800;color:#FFD700;width:20px;">1</div>
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:800;color:#FFD700;width:20px;">1</div>
           <img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:28px;height:28px;border-radius:50%;object-fit:cover;" />
           <div style="flex:1;font-size:11px;">Jason M.</div>
           <div style="font-size:9px;color:#888;">HI 1.08</div>
           <div style="font-size:11px;color:var(--green);font-weight:700;">98pts</div>
         </div>
         <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--border);">
-          <div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:800;color:#C0C0C0;width:20px;">2</div>
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:800;color:#C0C0C0;width:20px;">2</div>
           <img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:28px;height:28px;border-radius:50%;object-fit:cover;" />
           <div style="flex:1;font-size:11px;">Sarah K.</div>
           <div style="font-size:9px;color:#888;">HI 8.4</div>
           <div style="font-size:11px;color:#888;font-weight:700;">91pts</div>
         </div>
         <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;">
-          <div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:800;color:#CD7F32;width:20px;">3</div>
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:800;color:#CD7F32;width:20px;">3</div>
           <img src="https://randomuser.me/api/portraits/men/22.jpg" style="width:28px;height:28px;border-radius:50%;object-fit:cover;" />
           <div style="flex:1;font-size:11px;">Alex H.</div>
           <div style="font-size:9px;color:#888;">HI 5.2</div>
@@ -1255,7 +1255,7 @@ const screens = [
 
         <!-- Match format -->
         <div style="padding:12px 14px;background:#1a1a1a;border:1px solid var(--border);border-radius:8px;margin-bottom:10px;">
-          <div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:4px;">Stableford</div>
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:700;margin-bottom:4px;">Stableford</div>
           <div style="font-size:10px;color:#888;">HI 0–15 · South London</div>
         </div>
 
@@ -1271,7 +1271,7 @@ const screens = [
 
         <!-- Players grid -->
         <div style="padding:14px;background:#1a1a1a;border:1px solid var(--border);border-radius:8px;margin-bottom:10px;">
-          <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;margin-bottom:14px;">Players</div>
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;margin-bottom:14px;">Players</div>
           <div style="display:flex;align-items:flex-start;gap:0;margin-bottom:16px;">
             <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;">
               <img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:44px;height:44px;border-radius:50%;object-fit:cover;" />
@@ -1300,7 +1300,7 @@ const screens = [
         </div>
 
         <!-- Chat button -->
-        <button style="width:100%;padding:12px;background:transparent;border:1px solid var(--border);border-radius:20px;color:var(--white);font-size:11px;font-family:'IBM Plex Mono',monospace;cursor:pointer;margin-bottom:10px;display:flex;align-items:center;justify-content:center;gap:8px;">💬 Chat with players</button>
+        <button style="width:100%;padding:12px;background:transparent;border:1px solid var(--border);border-radius:20px;color:var(--white);font-size:11px;font-family:'Plus Jakarta Sans',sans-serif;cursor:pointer;margin-bottom:10px;display:flex;align-items:center;justify-content:center;gap:8px;">💬 Chat with players</button>
 
         <!-- Club info -->
         <div style="padding:12px 14px;background:#1a1a1a;border:1px solid var(--border);border-radius:8px;margin-bottom:14px;display:flex;align-items:center;gap:12px;">
@@ -1325,7 +1325,7 @@ const screens = [
       <div class="page-header" style="border-bottom:none;padding-bottom:0;">
         <span class="ph-back">‹</span>
         <div style="text-align:center;flex:1;">
-          <div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:700;">Match Chat</div>
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;">Match Chat</div>
           <div style="font-size:9px;color:#888;margin-top:2px;">Pinehill Golf Club · Sat 5 Apr</div>
         </div>
         <span style="font-size:16px;color:#888;">⋯</span>
@@ -1423,7 +1423,7 @@ const screens = [
             <div style="font-size:10px;color:var(--green);font-weight:600;margin-bottom:2px;">Show Up Score</div>
             <div style="font-size:9px;color:#888;">Based on 24 completed rounds</div>
           </div>
-          <div style="font-family:'Syne',sans-serif;font-size:24px;font-weight:800;color:var(--green);">96%</div>
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:24px;font-weight:800;color:var(--green);">96%</div>
         </div>
         <div style="padding:10px 18px 8px;font-size:11px;color:#888;line-height:1.7;">Weekend golfer based in South London. Love a competitive Stableford round.</div>
         <div style="padding:0 18px 12px;display:flex;flex-wrap:wrap;gap:6px;">
@@ -1482,15 +1482,15 @@ const screens = [
         <div style="margin:0 18px 20px;background:#141414;border:1px solid rgba(184,242,106,0.15);border-radius:10px;padding:16px;">
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
             <span style="font-size:16px;">🎟</span>
-            <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--white);">Your Referral Code</div>
+            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;color:var(--white);">Your Referral Code</div>
           </div>
           <div style="font-size:9px;color:#888;line-height:1.6;margin-bottom:12px;">Share your code with friends. When they sign up using it, you earn <span style="color:var(--green);font-weight:600;">+2 reward points</span> on the Rewards Board.</div>
           <div style="background:#1a1a1a;border:1px solid rgba(184,242,106,0.25);border-radius:8px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;">
             <div>
               <div style="font-size:8px;color:var(--mid);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px;">Your code</div>
-              <div style="font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:var(--green);letter-spacing:0.1em;">ERIC-7X4K</div>
+              <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:800;color:var(--green);letter-spacing:0.1em;">ERIC-7X4K</div>
             </div>
-            <button style="background:var(--green);color:#000;font-size:8px;font-weight:700;padding:8px 14px;border-radius:6px;border:none;font-family:'IBM Plex Mono',monospace;letter-spacing:0.1em;cursor:pointer;">COPY & SHARE</button>
+            <button style="background:var(--green);color:#000;font-size:8px;font-weight:700;padding:8px 14px;border-radius:6px;border:none;font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:0.1em;cursor:pointer;">COPY & SHARE</button>
           </div>
           <div style="font-size:8px;color:#555;margin-top:8px;">3 friends joined using your code · 6 pts earned</div>
         </div>
@@ -1638,7 +1638,7 @@ const screens = [
         <span class="ph-back">‹</span>
         <div style="display:flex;align-items:center;gap:10px;">
           <div class="player-av" style="background:none;padding:0;width:32px;height:32px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /><div class="online-dot"></div></div>
-          <div><div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;">Jason M.</div><div style="font-size:8px;color:var(--green);">● Online</div></div>
+          <div><div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;">Jason M.</div><div style="font-size:8px;color:var(--green);">● Online</div></div>
         </div>
         <span style="font-size:14px;">⋯</span>
       </div>
@@ -1654,7 +1654,7 @@ const screens = [
           <div style="background:#1a2a0a;border:1px solid rgba(184,242,106,0.25);border-radius:12px;overflow:hidden;">
             <div style="background:#0d1a04;padding:16px;text-align:center;">
               <div style="font-size:36px;margin-bottom:6px;">🏌️‍♂️🏓</div>
-              <div style="font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:var(--green);line-height:1.4;">WHEN SOMEONE SAYS<br>"JUST ONE MORE ROUND"</div>
+              <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;color:var(--green);line-height:1.4;">WHEN SOMEONE SAYS<br>"JUST ONE MORE ROUND"</div>
               <div style="font-size:9px;color:#888;margin-top:6px;line-height:1.5;">Me signing up for padel,<br>golf AND tennis this week</div>
             </div>
             <div style="display:flex;align-items:center;justify-content:space-between;padding:6px 10px;background:rgba(184,242,106,0.06);">
@@ -1666,7 +1666,7 @@ const screens = [
         <div class="msg-bubble msg-in">😂😂 That's literally me. See you out there 🔥</div>
         <div style="display:flex;align-items:center;gap:8px;margin-top:12px;">
           <div style="flex:1;height:1px;background:var(--border);"></div>
-          <button style="background:#141f0a;border:1px solid rgba(184,242,106,0.3);color:var(--green);font-size:9px;padding:6px 12px;border-radius:20px;cursor:pointer;font-family:'IBM Plex Mono';">+ Invite to Play</button>
+          <button style="background:#141f0a;border:1px solid rgba(184,242,106,0.3);color:var(--green);font-size:9px;padding:6px 12px;border-radius:20px;cursor:pointer;font-family:'Plus Jakarta Sans';">+ Invite to Play</button>
           <div style="flex:1;height:1px;background:var(--border);"></div>
         </div>
       </div>
@@ -1711,12 +1711,12 @@ const screens = [
       <div class="status-bar"><span class="status-time">9:41</span><div class="status-icons">▌▌▌ ▾ ▮</div></div>
       <div style="padding:20px 18px 0;text-align:center;">
         <div style="font-size:10px;color:var(--green);letter-spacing:0.25em;text-transform:uppercase;margin-bottom:8px;">Round Complete ⛳</div>
-        <div style="font-family:'Syne',sans-serif;font-size:20px;font-weight:800;margin-bottom:6px;">How was your round?</div>
+        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:800;margin-bottom:6px;">How was your round?</div>
         <div style="font-size:11px;color:#888;line-height:1.7;margin-bottom:20px;">You played with <strong style="color:var(--white);">Jason M.</strong> at Pinehill Golf Club on Tuesday. Rate your experience to help others in the community.</div>
       </div>
       <div style="display:flex;flex-direction:column;align-items:center;margin-bottom:24px;">
         <div style="width:64px;height:64px;border-radius:50%;overflow:hidden;margin-bottom:10px;flex-shrink:0;"><img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:100%;height:100%;object-fit:cover;" /></div>
-        <div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:700;">Jason M.</div>
+        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:700;">Jason M.</div>
         <div style="font-size:10px;color:#888;margin-top:3px;">HI 1.08 · Pinehill Golf Club</div>
       </div>
       <div style="padding:0 18px;margin-bottom:6px;">
@@ -1763,7 +1763,7 @@ const screens = [
           <div style="font-size:11px;color:var(--white);line-height:1.7;">Solid player and great company on the course. Keeps a good pace and was honest with his scoring. Would definitely play again.</div>
         </div>
         <button class="btn-green" style="width:100%;padding:14px;font-size:12px;letter-spacing:0.15em;border-radius:8px;margin-bottom:8px;">SUBMIT REVIEW</button>
-        <button style="width:100%;padding:10px;font-size:10px;background:transparent;border:none;color:var(--mid);cursor:pointer;font-family:'IBM Plex Mono';">Skip for now</button>
+        <button style="width:100%;padding:10px;font-size:10px;background:transparent;border:none;color:var(--mid);cursor:pointer;font-family:'Plus Jakarta Sans';">Skip for now</button>
       </div>
     </div>`
   },
@@ -1778,7 +1778,7 @@ const screens = [
         <div class="status-bar" style="position:absolute;top:0;left:0;right:0;padding:14px 18px 0;"><span class="status-time" style="color:#fff;">9:41</span><div class="status-icons" style="color:#fff;">▌▌▌ ▾ ▮</div></div>
         <div style="position:absolute;top:14px;left:14px;"><span style="font-size:20px;background:rgba(0,0,0,0.3);border-radius:50%;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;">‹</span></div>
         <div class="profile-hero-content">
-          <div class="profile-name">Jason M. <span style="background:#e8a85b;color:#000;font-size:9px;padding:2px 8px;border-radius:3px;font-family:'IBM Plex Mono';vertical-align:middle;">ACTIVE</span></div>
+          <div class="profile-name">Jason M. <span style="background:#e8a85b;color:#000;font-size:9px;padding:2px 8px;border-radius:3px;font-family:'Plus Jakarta Sans';vertical-align:middle;">ACTIVE</span></div>
           <div style="display:flex;align-items:center;gap:8px;margin-top:4px;">
             <span class="profile-hc">1.08</span>
             <span style="color:#e8a85b;font-size:16px;">★★★★</span><span style="color:#555;font-size:16px;">★</span>
