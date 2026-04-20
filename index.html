@@ -280,7 +280,7 @@ body{background:var(--bg);color:var(--white);font-family:'Plus Jakarta Sans',san
     <div class="group-label">Browse Mode (no signup)</div>
     <button class="screen-btn active" onclick="show(0)"><span class="sb-num">01</span><span class="sb-name">Home — Sport Branches</span><span class="sb-dot dot-green"></span></button>
     <button class="screen-btn" onclick="show(1)"><span class="sb-num">02</span><span class="sb-name">Home — Find Rounds</span><span class="sb-dot dot-green"></span></button>
-    <button class="screen-btn" onclick="show(2)"><span class="sb-num">03</span><span class="sb-name">Discover — Map</span><span class="sb-dot dot-green"></span></button>
+    <button class="screen-btn" onclick="show(2)"><span class="sb-num">03</span><span class="sb-name">Map — Find Players</span><span class="sb-dot dot-green"></span></button>
     <button class="screen-btn" onclick="show(3)"><span class="sb-num">03b</span><span class="sb-name">Find Players (map toggle)</span><span class="sb-dot dot-green"></span></button>
     <button class="screen-btn" onclick="show(4)"><span class="sb-num">04</span><span class="sb-name">Club Page (members)</span><span class="sb-dot dot-green"></span></button>
     <button class="screen-btn" onclick="show(5)"><span class="sb-num">05</span><span class="sb-name">Rewards Board</span><span class="sb-dot dot-green"></span></button>
@@ -598,12 +598,12 @@ const screens = [
       </div>
 
       <!-- Bottom nav -->
-      <div class="bnav"><div class="bnav-tab"><div class="bnav-icon active">⌂</div><div class="bnav-label active">Find Rounds</div></div><div class="bnav-tab"><div class="bnav-icon">◎</div><div class="bnav-label">Discover</div></div><div class="bnav-tab"><div class="bnav-icon">✉</div><div class="bnav-label">Messages</div></div><div class="bnav-tab"><div class="bnav-icon">👤</div><div class="bnav-label">Profile</div></div></div>
+      <div class="bnav"><div class="bnav-tab"><div class="bnav-icon active">⌂</div><div class="bnav-label active">Find Rounds</div></div><div class="bnav-tab"><div class="bnav-icon">◎</div><div class="bnav-label">Map</div></div><div class="bnav-tab"><div class="bnav-icon">✉</div><div class="bnav-label">Messages</div></div><div class="bnav-tab"><div class="bnav-icon">👤</div><div class="bnav-label">Profile</div></div></div>
     </div>`
   },
   // 2: MAP
   {
-    title: "Discover — Map View",
+    title: "Map — Find Players",
     desc: "Centre nav tab · MAIN feature · golf club pins · tap pin = club members",
     html: `<div class="app" style="height:100%;">
       <div class="status-bar" style="position:relative;z-index:20;background:#0d0d0d;"><span class="status-time">9:41</span><div class="status-icons">▌▌▌ ▾ ▮</div></div>
@@ -638,11 +638,11 @@ const screens = [
           <div style="position:absolute;top:35%;left:72%;background:#1a2510;border:1px solid #263318;font-size:7px;color:#4a6030;padding:1px 5px;border-radius:2px;font-weight:700;">M25</div>
         </div>
         <div class="map-header">
-          <div class="status-bar" style="padding:4px 0 8px;"><span style="font-size:11px;color:#888;">‹</span><span style="margin-left:8px;font-size:13px;">📍</span><span style="margin-left:6px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;">Golf Clubs Near You</span><span style="margin-left:auto;font-size:10px;color:var(--green);">12 clubs</span></div>
+          <div class="status-bar" style="padding:4px 0 8px;"><span style="font-size:11px;color:#888;">‹</span><span style="margin-left:8px;font-size:13px;">👥</span><span style="margin-left:6px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;">Find Players</span><span style="margin-left:auto;font-size:10px;color:var(--green);">Near you</span></div>
           <!-- Map / Find Players Toggle -->
           <div style="display:flex;margin:0 18px 12px;background:#1a1a1a;border-radius:8px;overflow:hidden;border:1px solid var(--border);">
-            <div style="flex:1;padding:10px 0;text-align:center;background:var(--green);color:#000;font-size:11px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;">🗺 Map</div>
-            <div style="flex:1;padding:10px 0;text-align:center;color:#888;font-size:11px;font-family:'Plus Jakarta Sans',sans-serif;">👥 Find Players</div>
+            <div style="flex:1;padding:10px 0;text-align:center;background:var(--green);color:#000;font-size:11px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;">⛳ Social Play</div>
+            <div style="flex:1;padding:10px 0;text-align:center;color:#888;font-size:11px;font-family:'Plus Jakarta Sans',sans-serif;position:relative;">🏆 Competitive <span style="font-size:7px;background:rgba(184,242,106,0.15);color:var(--green);padding:2px 5px;border-radius:6px;font-weight:600;margin-left:2px;">Soon</span></div>
           </div>
         </div><div style="position:absolute;top:16%;left:42%;display:flex;flex-direction:column;align-items:center;cursor:pointer;z-index:10;">
           <div style="width:26px;height:26px;background:var(--green);border-radius:50% 50% 50% 0;transform:rotate(-45deg);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(184,242,106,0.5);opacity:1.0;">
@@ -683,7 +683,7 @@ const screens = [
       </div>
       <div class="bnav" style="position:absolute;bottom:0;left:0;right:0;">
         <div class="bnav-tab"><div class="bnav-icon">⌂</div><div class="bnav-label">Find Rounds</div></div>
-        <div class="bnav-tab"><div class="bnav-icon active">◎</div><div class="bnav-label active">Discover</div></div>
+        <div class="bnav-tab"><div class="bnav-icon active">◎</div><div class="bnav-label active">Map</div></div>
         <div class="bnav-tab"><div class="bnav-icon">👤</div><div class="bnav-label">Profile</div></div>
       </div>
     </div>`
@@ -802,7 +802,7 @@ const screens = [
       </div>
       <div class="bnav">
         <div class="bnav-tab"><div class="bnav-icon">⌂</div><div class="bnav-label">Find Rounds</div></div>
-        <div class="bnav-tab"><div class="bnav-icon active">◎</div><div class="bnav-label active">Discover</div></div>
+        <div class="bnav-tab"><div class="bnav-icon active">◎</div><div class="bnav-label active">Map</div></div>
         <div class="bnav-tab"><div class="bnav-icon">👤</div><div class="bnav-label">Profile</div></div>
       </div>
     </div>`
@@ -1235,7 +1235,7 @@ const screens = [
         </div>
       </div>
 
-      <div class="bnav"><div class="bnav-tab"><div class="bnav-icon active">⌂</div><div class="bnav-label active">Find Rounds</div></div><div class="bnav-tab"><div class="bnav-icon">◎</div><div class="bnav-label">Discover</div></div><div class="bnav-tab"><div class="bnav-icon">✉</div><div class="bnav-label">Messages</div></div><div class="bnav-tab"><div class="bnav-icon">👤</div><div class="bnav-label">Profile</div></div></div>
+      <div class="bnav"><div class="bnav-tab"><div class="bnav-icon active">⌂</div><div class="bnav-label active">Find Rounds</div></div><div class="bnav-tab"><div class="bnav-icon">◎</div><div class="bnav-label">Map</div></div><div class="bnav-tab"><div class="bnav-icon">✉</div><div class="bnav-label">Messages</div></div><div class="bnav-tab"><div class="bnav-icon">👤</div><div class="bnav-label">Profile</div></div></div>
     </div>`
   },
   // 12: ROUND DETAIL
@@ -1495,7 +1495,7 @@ const screens = [
           <div style="font-size:8px;color:#555;margin-top:8px;">3 friends joined using your code · 6 pts earned</div>
         </div>
       </div>
-      <div class="bnav"><div class="bnav-tab"><div class="bnav-icon">⌂</div><div class="bnav-label">Find Rounds</div></div><div class="bnav-tab"><div class="bnav-icon">◎</div><div class="bnav-label">Discover</div></div><div class="bnav-tab"><div class="bnav-icon">✉</div><div class="bnav-label">Messages</div></div><div class="bnav-tab"><div class="bnav-icon active">👤</div><div class="bnav-label active">Profile</div></div></div>
+      <div class="bnav"><div class="bnav-tab"><div class="bnav-icon">⌂</div><div class="bnav-label">Find Rounds</div></div><div class="bnav-tab"><div class="bnav-icon">◎</div><div class="bnav-label">Map</div></div><div class="bnav-tab"><div class="bnav-icon">✉</div><div class="bnav-label">Messages</div></div><div class="bnav-tab"><div class="bnav-icon active">👤</div><div class="bnav-label active">Profile</div></div></div>
     </div>`
   },
   // 15: INBOX
@@ -1624,7 +1624,7 @@ const screens = [
         <div style="font-size:9px;color:var(--green);font-weight:700;white-space:nowrap;">SHARE CODE ›</div>
       </div>
 
-      <div class="bnav"><div class="bnav-tab"><div class="bnav-icon">⌂</div><div class="bnav-label">Find Rounds</div></div><div class="bnav-tab"><div class="bnav-icon">◎</div><div class="bnav-label">Discover</div></div><div class="bnav-tab"><div class="bnav-icon active">✉</div><div class="bnav-label active">Messages</div></div><div class="bnav-tab"><div class="bnav-icon">👤</div><div class="bnav-label">Profile</div></div></div>
+      <div class="bnav"><div class="bnav-tab"><div class="bnav-icon">⌂</div><div class="bnav-label">Find Rounds</div></div><div class="bnav-tab"><div class="bnav-icon">◎</div><div class="bnav-label">Map</div></div><div class="bnav-tab"><div class="bnav-icon active">✉</div><div class="bnav-label active">Messages</div></div><div class="bnav-tab"><div class="bnav-icon">👤</div><div class="bnav-label">Profile</div></div></div>
     </div>`
   },
 
