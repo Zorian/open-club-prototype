@@ -385,99 +385,220 @@ const screens = [
   // 1: HOME BROWSE
   {
     title: "Home — Find Rounds (Browse Mode)",
-    desc: "Full access to browse · join/message triggers signup gate",
-        html: `<div class="app" style="background:#0d0d0d;">
+    desc: "Redesigned home · horizontal card swipe · trending leaderboard with arrows",
+    html: `<div class="app" style="background:#0d0d0d;">
       <div class="status-bar"><span class="status-time">9:41</span><div class="status-icons">▌▌▌ ▾ ▮</div></div>
+
+      <!-- Header -->
       <div style="padding:10px 18px 0;display:flex;align-items:center;justify-content:space-between;">
-        <div style="font-family:'Syne',sans-serif;font-size:20px;font-weight:800;">Find Rounds</div>
-        <div style="font-size:18px;opacity:0.5;">⚙</div>
-      </div>
-      <div style="display:flex;gap:8px;padding:10px 18px;overflow-x:auto;">
-        <div style="display:flex;align-items:center;gap:6px;background:#141f0a;border:1px solid rgba(184,242,106,0.4);padding:6px 12px;border-radius:20px;white-space:nowrap;font-size:10px;color:var(--green);font-weight:600;">⛳ Golf</div>
-        <div style="display:flex;align-items:center;gap:6px;background:#1a1a1a;border:1px solid var(--border);padding:6px 12px;border-radius:20px;white-space:nowrap;font-size:10px;color:#888;">🏓 Padel <span style="font-size:7px;background:rgba(184,242,106,0.15);color:var(--green);padding:2px 6px;border-radius:8px;margin-left:4px;font-weight:600;">Soon</span></div>
-        <div style="display:flex;align-items:center;gap:6px;background:#1a1a1a;border:1px solid var(--border);padding:6px 12px;border-radius:20px;white-space:nowrap;font-size:10px;color:#888;">🎾 Tennis <span style="font-size:7px;background:rgba(184,242,106,0.15);color:var(--green);padding:2px 6px;border-radius:8px;margin-left:4px;font-weight:600;">Soon</span></div>
-        <div style="display:flex;align-items:center;gap:6px;background:#1a1a1a;border:1px solid var(--border);padding:6px 12px;border-radius:20px;white-space:nowrap;font-size:10px;color:#888;">🏸 Pickleball <span style="font-size:7px;background:rgba(184,242,106,0.15);color:var(--green);padding:2px 6px;border-radius:8px;margin-left:4px;font-weight:600;">Soon</span></div>
-        <div style="display:flex;align-items:center;gap:6px;background:#1a1a1a;border:1px solid var(--border);padding:6px 12px;border-radius:20px;white-space:nowrap;font-size:10px;color:var(--white);">📍 All clubs <span style="color:#888;">▾</span></div>
-        <div style="display:flex;align-items:center;gap:6px;background:#141f0a;border:1px solid rgba(184,242,106,0.4);padding:6px 12px;border-radius:20px;white-space:nowrap;font-size:10px;color:var(--green);">Sat-Sun, 5-6 Apr ▾</div>
-      </div>
-      <div style="padding:4px 18px 8px;font-size:10px;color:#888;font-weight:500;">For your level <span style="color:#555;font-size:9px;font-weight:400;">· These rounds match your handicap</span></div>
-
-      <!-- Round Card 1 -->
-      <div style="margin:0 18px 10px;background:#161616;border:1px solid var(--border);border-radius:12px;overflow:hidden;">
-        <div style="padding:14px 14px 0;">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
-            <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;">Saturday 5 April · 08:30 AM</div>
-            <div style="font-size:8px;background:rgba(255,255,255,0.06);color:#888;padding:3px 8px;border-radius:10px;border:1px solid var(--border);">4-Ball</div>
-          </div>
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;"><span style="font-size:10px;color:#888;">HI 0–15</span></div>
-          <div style="display:flex;align-items:center;gap:0;margin-bottom:14px;">
-            <div style="display:flex;flex-direction:column;align-items:center;gap:4px;margin-right:14px;">
-              <img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:38px;height:38px;border-radius:50%;object-fit:cover;" />
-              <div style="font-size:9px;color:#888;">Jason</div>
-              <div style="background:#b8f26a;color:#000;font-size:8px;font-weight:700;padding:1px 6px;border-radius:10px;">1.08</div>
-            </div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:4px;margin-right:14px;">
-              <img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:38px;height:38px;border-radius:50%;object-fit:cover;" />
-              <div style="font-size:9px;color:#888;">Sarah</div>
-              <div style="background:#b8f26a;color:#000;font-size:8px;font-weight:700;padding:1px 6px;border-radius:10px;">8.4</div>
-            </div>
-            <div style="width:1px;height:50px;background:var(--border);margin-right:14px;"></div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:4px;margin-right:10px;">
-              <div style="width:38px;height:38px;border-radius:50%;border:1.5px dashed #444;display:flex;align-items:center;justify-content:center;font-size:18px;color:#555;">+</div>
-              <div style="font-size:9px;color:var(--green);">Available</div>
-            </div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
-              <div style="width:38px;height:38px;border-radius:50%;border:1.5px dashed #444;display:flex;align-items:center;justify-content:center;font-size:18px;color:#555;">+</div>
-              <div style="font-size:9px;color:var(--green);">Available</div>
-            </div>
-          </div>
-        </div>
-        <div style="border-top:1px solid var(--border);padding:10px 14px;display:flex;justify-content:space-between;align-items:center;">
-          <div>
-            <div style="font-size:11px;color:var(--white);font-weight:500;">Pinehill Golf Club</div>
-            <div style="font-size:9px;color:#888;margin-top:2px;">950m · South London</div>
-          </div>
-          <button class="btn-green" style="font-size:9px;padding:6px 14px;border-radius:6px;">REQUEST TO JOIN</button>
-        </div>
+        <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;letter-spacing:-0.02em;">Find Rounds</div>
+        <div style="font-size:16px;opacity:0.4;cursor:pointer;">🔍</div>
       </div>
 
-      <!-- Round Card 2 - 2 Ball -->
-      <div style="margin:0 18px 10px;background:#161616;border:1px solid var(--border);border-radius:12px;overflow:hidden;">
-        <div style="padding:14px 14px 0;">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
-            <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;">Saturday 5 April · 10:00 AM</div>
-            <div style="font-size:8px;background:rgba(255,255,255,0.06);color:#888;padding:3px 8px;border-radius:10px;border:1px solid var(--border);">2-Ball</div>
-          </div>
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;"><span style="font-size:10px;color:#888;">HI 0–28</span></div>
-          <div style="display:flex;align-items:center;gap:0;margin-bottom:14px;">
-            <div style="display:flex;flex-direction:column;align-items:center;gap:4px;margin-right:14px;">
-              <img src="https://randomuser.me/api/portraits/men/55.jpg" style="width:38px;height:38px;border-radius:50%;object-fit:cover;" />
-              <div style="font-size:9px;color:#888;">Tom</div>
-              <div style="background:#e8a85b;color:#000;font-size:8px;font-weight:700;padding:1px 6px;border-radius:10px;">15.6</div>
-            </div>
-            <div style="width:1px;height:50px;background:var(--border);margin-right:14px;"></div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
-              <div style="width:38px;height:38px;border-radius:50%;border:1.5px dashed #444;display:flex;align-items:center;justify-content:center;font-size:18px;color:#555;">+</div>
-              <div style="font-size:9px;color:var(--green);">Available</div>
-            </div>
-          </div>
-        </div>
-        <div style="border-top:1px solid var(--border);padding:10px 14px;display:flex;justify-content:space-between;align-items:center;">
-          <div>
-            <div style="font-size:11px;color:var(--white);font-weight:500;">Royal Blackheath GC</div>
-            <div style="font-size:9px;color:#888;margin-top:2px;">1.4km · Greenwich</div>
-          </div>
-          <button class="btn-outline" style="font-size:9px;padding:6px 14px;border-radius:6px;">REQUEST TO JOIN</button>
-        </div>
-      </div>
-      <!-- Start a round CTA -->
-      <div style="margin:4px 18px 10px;padding:14px;background:#141f0a;border:1px solid rgba(184,242,106,0.2);border-radius:12px;display:flex;align-items:center;justify-content:center;">
-        <button class="btn-green" style="font-size:11px;padding:10px 28px;border-radius:20px;font-weight:700;">+ Start a Round</button>
+      <!-- Sport pills — horizontal scroll -->
+      <div style="display:flex;gap:8px;padding:12px 18px 6px;overflow-x:auto;-webkit-overflow-scrolling:touch;">
+        <div style="display:flex;align-items:center;gap:5px;background:#141f0a;border:1px solid rgba(184,242,106,0.4);padding:7px 14px;border-radius:20px;white-space:nowrap;font-size:10px;color:var(--green);font-weight:600;">⛳ Golf</div>
+        <div style="display:flex;align-items:center;gap:5px;background:#1a1a1a;border:1px solid var(--border);padding:7px 14px;border-radius:20px;white-space:nowrap;font-size:10px;color:#666;">🏓 Padel <span style="font-size:7px;background:rgba(184,242,106,0.12);color:var(--green);padding:2px 6px;border-radius:8px;margin-left:3px;font-weight:600;">Soon</span></div>
+        <div style="display:flex;align-items:center;gap:5px;background:#1a1a1a;border:1px solid var(--border);padding:7px 14px;border-radius:20px;white-space:nowrap;font-size:10px;color:#666;">🎾 Tennis <span style="font-size:7px;background:rgba(184,242,106,0.12);color:var(--green);padding:2px 6px;border-radius:8px;margin-left:3px;font-weight:600;">Soon</span></div>
+        <div style="display:flex;align-items:center;gap:5px;background:#1a1a1a;border:1px solid var(--border);padding:7px 14px;border-radius:20px;white-space:nowrap;font-size:10px;color:#666;">🏸 Pickleball <span style="font-size:7px;background:rgba(184,242,106,0.12);color:var(--green);padding:2px 6px;border-radius:8px;margin-left:3px;font-weight:600;">Soon</span></div>
       </div>
 
-      
-      <div style=\"margin:4px 18px 10px;background:#161616;border:1px solid var(--border);border-radius:12px;overflow:hidden;\"><div style=\"padding:10px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);\"><div style=\"font-size:12px;font-weight:700;\">Weekly Leaderboard</div><div style=\"font-size:9px;color:var(--green);\">View All ›</div></div><div style=\"display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--border);\"><div style=\"font-size:14px;font-weight:800;color:#FFD700;width:16px;\">1</div><img src=\"https://randomuser.me/api/portraits/men/32.jpg\" style=\"width:28px;height:28px;border-radius:50%;object-fit:cover;\" /><div style=\"flex:1;font-size:11px;\">Jason M.</div><div style=\"font-size:9px;color:#888;\">HI 1.08</div><div style=\"font-size:11px;color:var(--green);font-weight:700;\">98pts</div></div><div style=\"display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--border);\"><div style=\"font-size:14px;font-weight:800;color:#C0C0C0;width:16px;\">2</div><img src=\"https://randomuser.me/api/portraits/women/44.jpg\" style=\"width:28px;height:28px;border-radius:50%;object-fit:cover;\" /><div style=\"flex:1;font-size:11px;\">Sarah K.</div><div style=\"font-size:9px;color:#888;\">HI 8.4</div><div style=\"font-size:11px;color:#888;font-weight:700;\">91pts</div></div><div style=\"display:flex;align-items:center;gap:10px;padding:10px 14px;\"><div style=\"font-size:14px;font-weight:800;color:#CD7F32;width:16px;\">3</div><img src=\"https://randomuser.me/api/portraits/men/22.jpg\" style=\"width:28px;height:28px;border-radius:50%;object-fit:cover;\" /><div style=\"flex:1;font-size:11px;\">Alex H.</div><div style=\"font-size:9px;color:#888;\">HI 5.2</div><div style=\"font-size:11px;color:#888;font-weight:700;\">87pts</div></div></div>
-      <div class=\"bnav\"><div class=\"bnav-tab\"><div class=\"bnav-icon active\">⌂</div><div class=\"bnav-label active\">Find Rounds</div></div><div class=\"bnav-tab\"><div class=\"bnav-icon\">◎</div><div class=\"bnav-label\">Discover</div></div><div class=\"bnav-tab\"><div class=\"bnav-icon\">✉</div><div class=\"bnav-label\">Messages</div></div><div class=\"bnav-tab\"><div class=\"bnav-icon\">👤</div><div class=\"bnav-label\">Profile</div></div></div>
+      <!-- ═══ SECTION: Upcoming Rounds ═══ -->
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 18px 10px;">
+        <div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:700;">Upcoming rounds</div>
+        <div style="font-size:10px;color:var(--green);cursor:pointer;letter-spacing:0.03em;">View All ›</div>
+      </div>
+
+      <!-- Horizontal scroll round cards -->
+      <div style="display:flex;gap:10px;padding:0 18px 6px;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;">
+
+        <!-- Round Card 1 — 4-Ball -->
+        <div style="min-width:250px;max-width:250px;background:#161616;border:1px solid var(--border);border-radius:14px;overflow:hidden;scroll-snap-align:start;flex-shrink:0;">
+          <div style="padding:12px 12px 10px;">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+              <div style="font-family:'Syne',sans-serif;font-size:11px;font-weight:700;line-height:1.3;">Sat 5 Apr · 08:30</div>
+              <div style="font-size:8px;background:rgba(255,255,255,0.06);color:#888;padding:3px 8px;border-radius:10px;border:1px solid var(--border);">4-Ball</div>
+            </div>
+            <div style="font-size:9px;color:#666;margin-bottom:10px;">HI 0–15</div>
+            <div style="display:flex;align-items:center;gap:0;">
+              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:8px;">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:32px;height:32px;border-radius:50%;object-fit:cover;" />
+                <div style="font-size:8px;color:#888;">Jason</div>
+                <div style="background:#b8f26a;color:#000;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;">1.08</div>
+              </div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:8px;">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:32px;height:32px;border-radius:50%;object-fit:cover;" />
+                <div style="font-size:8px;color:#888;">Sarah</div>
+                <div style="background:#b8f26a;color:#000;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;">8.4</div>
+              </div>
+              <div style="width:1px;height:40px;background:var(--border);margin:0 8px;"></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:6px;">
+                <div style="width:32px;height:32px;border-radius:50%;border:1.5px dashed #444;display:flex;align-items:center;justify-content:center;font-size:14px;color:#555;">+</div>
+                <div style="font-size:8px;color:var(--green);">Open</div>
+              </div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;">
+                <div style="width:32px;height:32px;border-radius:50%;border:1.5px dashed #444;display:flex;align-items:center;justify-content:center;font-size:14px;color:#555;">+</div>
+                <div style="font-size:8px;color:var(--green);">Open</div>
+              </div>
+            </div>
+          </div>
+          <div style="border-top:1px solid var(--border);padding:8px 12px;display:flex;justify-content:space-between;align-items:center;">
+            <div>
+              <div style="font-size:10px;color:var(--white);font-weight:500;">Pinehill Golf Club</div>
+              <div style="font-size:8px;color:#666;margin-top:1px;">950m · South London</div>
+            </div>
+            <button class="btn-green" style="font-size:8px;padding:5px 10px;border-radius:5px;">JOIN</button>
+          </div>
+        </div>
+
+        <!-- Round Card 2 — 2-Ball -->
+        <div style="min-width:250px;max-width:250px;background:#161616;border:1px solid var(--border);border-radius:14px;overflow:hidden;scroll-snap-align:start;flex-shrink:0;">
+          <div style="padding:12px 12px 10px;">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+              <div style="font-family:'Syne',sans-serif;font-size:11px;font-weight:700;line-height:1.3;">Sat 5 Apr · 10:00</div>
+              <div style="font-size:8px;background:rgba(255,255,255,0.06);color:#888;padding:3px 8px;border-radius:10px;border:1px solid var(--border);">2-Ball</div>
+            </div>
+            <div style="font-size:9px;color:#666;margin-bottom:10px;">HI 0–28</div>
+            <div style="display:flex;align-items:center;gap:0;">
+              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:8px;">
+                <img src="https://randomuser.me/api/portraits/men/55.jpg" style="width:32px;height:32px;border-radius:50%;object-fit:cover;" />
+                <div style="font-size:8px;color:#888;">Tom</div>
+                <div style="background:#e8a85b;color:#000;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;">15.6</div>
+              </div>
+              <div style="width:1px;height:40px;background:var(--border);margin:0 8px;"></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;">
+                <div style="width:32px;height:32px;border-radius:50%;border:1.5px dashed #444;display:flex;align-items:center;justify-content:center;font-size:14px;color:#555;">+</div>
+                <div style="font-size:8px;color:var(--green);">Open</div>
+              </div>
+            </div>
+          </div>
+          <div style="border-top:1px solid var(--border);padding:8px 12px;display:flex;justify-content:space-between;align-items:center;">
+            <div>
+              <div style="font-size:10px;color:var(--white);font-weight:500;">Royal Blackheath GC</div>
+              <div style="font-size:8px;color:#666;margin-top:1px;">1.4km · Greenwich</div>
+            </div>
+            <button class="btn-outline" style="font-size:8px;padding:5px 10px;border-radius:5px;">JOIN</button>
+          </div>
+        </div>
+
+        <!-- Round Card 3 — 3-Ball -->
+        <div style="min-width:250px;max-width:250px;background:#161616;border:1px solid var(--border);border-radius:14px;overflow:hidden;scroll-snap-align:start;flex-shrink:0;">
+          <div style="padding:12px 12px 10px;">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+              <div style="font-family:'Syne',sans-serif;font-size:11px;font-weight:700;line-height:1.3;">Sun 6 Apr · 09:15</div>
+              <div style="font-size:8px;background:rgba(255,255,255,0.06);color:#888;padding:3px 8px;border-radius:10px;border:1px solid var(--border);">3-Ball</div>
+            </div>
+            <div style="font-size:9px;color:#666;margin-bottom:10px;">HI 5–20</div>
+            <div style="display:flex;align-items:center;gap:0;">
+              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:8px;">
+                <img src="https://randomuser.me/api/portraits/men/22.jpg" style="width:32px;height:32px;border-radius:50%;object-fit:cover;" />
+                <div style="font-size:8px;color:#888;">Alex</div>
+                <div style="background:#b8f26a;color:#000;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;">5.2</div>
+              </div>
+              <div style="width:1px;height:40px;background:var(--border);margin:0 8px;"></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:6px;">
+                <div style="width:32px;height:32px;border-radius:50%;border:1.5px dashed #444;display:flex;align-items:center;justify-content:center;font-size:14px;color:#555;">+</div>
+                <div style="font-size:8px;color:var(--green);">Open</div>
+              </div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;">
+                <div style="width:32px;height:32px;border-radius:50%;border:1.5px dashed #444;display:flex;align-items:center;justify-content:center;font-size:14px;color:#555;">+</div>
+                <div style="font-size:8px;color:var(--green);">Open</div>
+              </div>
+            </div>
+          </div>
+          <div style="border-top:1px solid var(--border);padding:8px 12px;display:flex;justify-content:space-between;align-items:center;">
+            <div>
+              <div style="font-size:10px;color:var(--white);font-weight:500;">Dulwich & Sydenham</div>
+              <div style="font-size:8px;color:#666;margin-top:1px;">2.1km · Crystal Palace</div>
+            </div>
+            <button class="btn-outline" style="font-size:8px;padding:5px 10px;border-radius:5px;">JOIN</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ═══ + Start a Round CTA ═══ -->
+      <div style="margin:10px 18px 4px;">
+        <button class="btn-green" style="width:100%;font-size:12px;padding:12px 0;border-radius:12px;font-weight:700;letter-spacing:0.05em;">+ Start a Round</button>
+      </div>
+
+      <!-- ═══ SECTION: Weekly Leaderboard (Trending style) ═══ -->
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 18px 10px;">
+        <div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:700;">Weekly Leaderboard</div>
+        <div style="font-size:10px;color:var(--green);cursor:pointer;letter-spacing:0.03em;">View All ›</div>
+      </div>
+
+      <!-- Leaderboard rows -->
+      <div style="margin:0 18px 10px;">
+        <!-- Row 1 -->
+        <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);">
+          <div style="width:22px;text-align:center;">
+            <div style="font-size:13px;font-weight:800;color:#FFD700;">1</div>
+            <div style="font-size:8px;color:var(--green);font-weight:600;margin-top:1px;">↑ 3</div>
+          </div>
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid var(--border);" />
+          <div style="flex:1;">
+            <div style="font-size:11px;font-weight:600;color:var(--white);">Jason M.</div>
+            <div style="font-size:9px;color:#666;margin-top:1px;">HI 1.08</div>
+          </div>
+          <div style="font-size:12px;color:var(--green);font-weight:700;">98pts</div>
+        </div>
+        <!-- Row 2 -->
+        <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);">
+          <div style="width:22px;text-align:center;">
+            <div style="font-size:13px;font-weight:800;color:#C0C0C0;">2</div>
+            <div style="font-size:8px;color:var(--green);font-weight:600;margin-top:1px;">↑ 1</div>
+          </div>
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid var(--border);" />
+          <div style="flex:1;">
+            <div style="font-size:11px;font-weight:600;color:var(--white);">Sarah K.</div>
+            <div style="font-size:9px;color:#666;margin-top:1px;">HI 8.4</div>
+          </div>
+          <div style="font-size:12px;color:#888;font-weight:700;">91pts</div>
+        </div>
+        <!-- Row 3 -->
+        <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);">
+          <div style="width:22px;text-align:center;">
+            <div style="font-size:13px;font-weight:800;color:#CD7F32;">3</div>
+            <div style="font-size:8px;color:#e85b5b;font-weight:600;margin-top:1px;">↓ 2</div>
+          </div>
+          <img src="https://randomuser.me/api/portraits/men/22.jpg" style="width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid var(--border);" />
+          <div style="flex:1;">
+            <div style="font-size:11px;font-weight:600;color:var(--white);">Alex H.</div>
+            <div style="font-size:9px;color:#666;margin-top:1px;">HI 5.2</div>
+          </div>
+          <div style="font-size:12px;color:#888;font-weight:700;">87pts</div>
+        </div>
+        <!-- Row 4 -->
+        <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);">
+          <div style="width:22px;text-align:center;">
+            <div style="font-size:13px;font-weight:800;color:#666;">4</div>
+            <div style="font-size:8px;color:var(--green);font-weight:600;margin-top:1px;">↑ 5</div>
+          </div>
+          <img src="https://randomuser.me/api/portraits/men/55.jpg" style="width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid var(--border);" />
+          <div style="flex:1;">
+            <div style="font-size:11px;font-weight:600;color:var(--white);">Tom R.</div>
+            <div style="font-size:9px;color:#666;margin-top:1px;">HI 15.6</div>
+          </div>
+          <div style="font-size:12px;color:#888;font-weight:700;">82pts</div>
+        </div>
+        <!-- Row 5 -->
+        <div style="display:flex;align-items:center;gap:10px;padding:10px 0;">
+          <div style="width:22px;text-align:center;">
+            <div style="font-size:13px;font-weight:800;color:#666;">5</div>
+            <div style="font-size:8px;color:#e85b5b;font-weight:600;margin-top:1px;">↓ 1</div>
+          </div>
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" style="width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid var(--border);" />
+          <div style="flex:1;">
+            <div style="font-size:11px;font-weight:600;color:var(--white);">Emma W.</div>
+            <div style="font-size:9px;color:#666;margin-top:1px;">HI 12.3</div>
+          </div>
+          <div style="font-size:12px;color:#888;font-weight:700;">79pts</div>
+        </div>
+      </div>
+
+      <!-- Bottom nav -->
+      <div class="bnav"><div class="bnav-tab"><div class="bnav-icon active">⌂</div><div class="bnav-label active">Find Rounds</div></div><div class="bnav-tab"><div class="bnav-icon">◎</div><div class="bnav-label">Discover</div></div><div class="bnav-tab"><div class="bnav-icon">✉</div><div class="bnav-label">Messages</div></div><div class="bnav-tab"><div class="bnav-icon">👤</div><div class="bnav-label">Profile</div></div></div>
     </div>`
   },
   // 2: MAP
@@ -1747,7 +1868,7 @@ const screens = [
 
 const screenInfo = [
   { journey: [], shows: ["Open Club logo and tagline", "Sport branch selector — Golf, Padel, Tennis, Pickleball", "Only Open Golf is active — rest show 'Coming Soon'", "Positions Open Club as a multi-sport platform, not just a golf app", "'Choose your game' CTA at top of branches", "LOG IN button at bottom for returning users"], tip: "This is the PLATFORM play. User sees Open Club as a multi-sport ecosystem from the first screen. Only Golf is live — the other branches (Padel, Tennis, Pickleball) are greyed out with 'Coming Soon'. Creates anticipation and shows long-term vision to investors.", note: "Tapping Open Golf should navigate to the Home screen (Find Rounds). The Coming Soon branches should show a subtle toast or do nothing. This screen replaces the old Explore/Login split — browse-first UX is preserved via the Golf branch card." },
-  { journey: [["Open app", "Lands here automatically"], ["Tap any round card", "→ Round Detail"], ["Tap Explore the Map banner", "→ Discover tab"]], shows: ["Find Rounds title + filter pills", "Sport toggle: Golf · Padel Soon · Tennis Soon · Pickleball Soon", "4-Ball and 2-Ball round cards with player avatars + handicap badges", "Open spots shown as + circles", "Weekly Leaderboard strip", "+ Start a Round button"], tip: "Tab 1 — Find Rounds. The home base of the app." },
+  { journey: [["Open app", "Lands here automatically"], ["Swipe round cards horizontally", "→ Browse available rounds"], ["Tap any round card", "→ Round Detail"], ["Scroll down to leaderboard", "→ See rankings"]], shows: ["Find Rounds title + search icon", "Sport toggle pills (horizontal scroll)", "Upcoming Rounds — horizontal swipe carousel with round cards", "Open spots shown as + circles inside cards", "Full-width + Start a Round CTA button", "Weekly Leaderboard — Trending style with ↑↓ arrows showing rank movement", "5 leaderboard rows with position, avatar, name, HI, points"], tip: "REDESIGNED home feed. Horizontal card swipe for rounds (inspired by modern app patterns). Leaderboard now shows rank movement with green ↑ and red ↓ arrows — creates competitive tension and drives engagement. Users can see at a glance who's climbing and who's dropping." },
   { journey: [["Tap centre nav button", "Opens full-screen map"], ["See ⛳ pins = golf clubs", "Number = active members"], ["Tap any pin", "→ Club Page (Screen 04)"]], shows: ["Map / Find Players toggle at top", "Full-screen dark map of London", "Golf club pins with member counts", "City area labels + road badges", "Golf Clubs Near You header"], tip: "This is the MAIN feature — the centre button in the nav. Lawrence specifically wants this to be the hero of the app. Toggle lets users switch to Find Players view." },
   { journey: [["Discover tab", "→ Tap Find Players toggle"], ["Player list loads", "Filterable by sport, location, handicap"]], shows: ["Map / Find Players toggle (Find Players active)", "Filter pills: Golf, Location, Handicap range", "Player list with avatar, name, rating, availability", "Distance from user", "INVITE and INACTIVE status buttons"], tip: "Alternative to map view — users can browse all players without going through club pins. Same discover tab, different view.", note: "Sort order = activity first, then distance. A player who hasn't opened the app in 6 months should NOT appear above an active player just because they're closer. Ranking: (1) Active now, (2) Seen today, (3) Seen this week, (4) Seen this month, (5) Inactive — distance only acts as a tiebreaker within each activity tier." },
   { journey: [["Discover Map", "→ Tap a club pin"], ["Club Page loads", "Members shown"]], shows: ["Club name + location", "Member count badge", "Every Open Club user tagged to this club", "Name, handicap, star rating, distance", "REQUEST TO JOIN / INVITE / REQUESTED buttons"], tip: "Members appear here because they selected this club during sign up. This is the data segmentation that powers the map." },
