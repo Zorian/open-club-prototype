@@ -922,7 +922,7 @@ const screens = [
         <div class="status-bar" style="position:absolute;top:0;left:0;right:0;padding:14px 18px 0;"><span class="status-time" style="color:#fff;">9:41</span><div class="status-icons" style="color:#fff;">▌▌▌ ▾ ▮</div></div>
         <div style="position:absolute;top:14px;left:14px;"><span style="font-size:20px;background:rgba(0,0,0,0.3);border-radius:50%;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;">‹</span></div>
         <div class="profile-hero-content">
-          <div class="profile-name">Jason M. <span style="background:#e8a85b;color:#000;font-size:9px;padding:2px 8px;border-radius:3px;font-family:'Plus Jakarta Sans';vertical-align:middle;">ACTIVE</span></div>
+          <div class="profile-name">Jason M. <span style="background:var(--green);color:#000;font-size:10px;font-weight:800;padding:2px 6px;border-radius:4px;font-family:'Plus Jakarta Sans';vertical-align:middle;letter-spacing:0.02em;">M</span> <span style="background:#e8a85b;color:#000;font-size:9px;padding:2px 8px;border-radius:3px;font-family:'Plus Jakarta Sans';vertical-align:middle;">ACTIVE</span></div>
           <div style="display:flex;align-items:center;gap:8px;margin-top:4px;">
             <span class="profile-hc">1.08</span>
             <span style="color:#e8a85b;font-size:16px;">★★★★</span><span style="color:#555;font-size:16px;">★</span>
@@ -1088,7 +1088,7 @@ const screens = [
         <div style="flex:1;background:#141f0a;border:1px solid rgba(184,242,106,0.4);border-radius:8px;padding:10px;text-align:center;"><div style="font-size:18px;">⭐⭐⭐</div><div style="font-size:8px;color:var(--green);margin-top:4px;">Regular</div></div>
         <div style="flex:1;background:#1a1a1a;border:1px solid var(--border);border-radius:8px;padding:10px;text-align:center;"><div style="font-size:18px;">⭐⭐⭐⭐</div><div style="font-size:8px;color:#888;margin-top:4px;">Serious</div></div>
       </div>
-      <div class="section-title">Club Memberships <span style="color:var(--green);font-size:8px;">(select all that apply)</span></div>
+      <div class="section-title">Open Club Memberships <span style="color:var(--green);font-size:8px;">(select all that apply)</span></div>
       <div class="form-field" style="margin-bottom:8px;"><div class="field-icon">⛳</div><div class="field-value">Pinehill Golf Club</div><div style="margin-left:auto;font-size:14px;color:var(--green);">✓</div></div>
       <div class="form-field" style="margin-bottom:8px;background:#141f0a;border-color:rgba(184,242,106,0.3);"><div class="field-icon">⛳</div><div class="field-value">Royal Blackheath</div><div style="margin-left:auto;font-size:14px;color:var(--green);">✓</div></div>
       <div class="form-field" style="margin-bottom:8px;"><div class="field-icon">⛳</div><div class="field-text">Search UK golf clubs...</div><div style="margin-left:auto;font-size:12px;color:#888;">+ Add</div></div>
@@ -1097,6 +1097,13 @@ const screens = [
         <div><div style="font-size:10px;color:#e8c07a;">I\'m not a member of any club</div><div style="font-size:8px;color:#888;margin-top:2px;">You\'ll still appear on the map as a free agent — other players can invite you</div></div>
       </div>
       <div style="padding:0 18px 10px;font-size:9px;color:var(--mid);">Your clubs appear as pins on the map so other players can find you.</div>
+
+      <!-- Official Club Memberships -->
+      <div class="section-title" style="margin-top:4px;">Official Club Memberships <span style="color:#e8a85b;font-size:8px;">(paid members only)</span></div>
+      <div style="padding:0 18px 6px;font-size:9px;color:#888;margin-top:-6px;line-height:1.5;">Select clubs where you hold a paid membership. You\'ll receive a verified <span style="background:var(--green);color:#000;font-size:7px;font-weight:700;padding:1px 4px;border-radius:3px;margin:0 1px;">M</span> badge on your profile.</div>
+      <div class="form-field" style="margin-bottom:8px;background:#141f0a;border-color:rgba(184,242,106,0.3);"><div class="field-icon">⛳</div><div class="field-value">Pinehill Golf Club</div><div style="margin-left:auto;font-size:14px;color:var(--green);">✓</div></div>
+      <div class="form-field" style="margin-bottom:8px;"><div class="field-icon">⛳</div><div class="field-text">Search UK golf clubs...</div><div style="margin-left:auto;font-size:12px;color:#888;">+ Add</div></div>
+
       <div style="padding:8px 18px 16px;"><button class="btn-green" style="width:100%;padding:14px;font-size:12px;letter-spacing:0.15em;border-radius:8px;">NEXT →</button></div>
     </div>`
   },
@@ -1407,7 +1414,7 @@ const screens = [
           <span style="font-size:16px;background:rgba(0,0,0,0.3);border-radius:50%;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;">⚙</span>
         </div>
         <div class="profile-hero-content">
-          <div class="profile-name">Eric T.</div>
+          <div class="profile-name">Eric T. <span style="background:var(--green);color:#000;font-size:10px;font-weight:800;padding:2px 6px;border-radius:4px;font-family:'Plus Jakarta Sans';vertical-align:middle;letter-spacing:0.02em;">M</span></div>
           <div style="display:flex;align-items:center;gap:8px;margin-top:4px;"><span class="profile-hc">12.4</span><span class="stars" style="font-size:14px;">★★★</span><span style="color:#888;font-size:14px;">☆☆</span><span style="font-size:10px;color:#888;margin-left:4px;">(12 reviews)</span></div>
         </div>
       </div>
@@ -1778,7 +1785,7 @@ const screens = [
         <div class="status-bar" style="position:absolute;top:0;left:0;right:0;padding:14px 18px 0;"><span class="status-time" style="color:#fff;">9:41</span><div class="status-icons" style="color:#fff;">▌▌▌ ▾ ▮</div></div>
         <div style="position:absolute;top:14px;left:14px;"><span style="font-size:20px;background:rgba(0,0,0,0.3);border-radius:50%;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;">‹</span></div>
         <div class="profile-hero-content">
-          <div class="profile-name">Jason M. <span style="background:#e8a85b;color:#000;font-size:9px;padding:2px 8px;border-radius:3px;font-family:'Plus Jakarta Sans';vertical-align:middle;">ACTIVE</span></div>
+          <div class="profile-name">Jason M. <span style="background:var(--green);color:#000;font-size:10px;font-weight:800;padding:2px 6px;border-radius:4px;font-family:'Plus Jakarta Sans';vertical-align:middle;letter-spacing:0.02em;">M</span> <span style="background:#e8a85b;color:#000;font-size:9px;padding:2px 8px;border-radius:3px;font-family:'Plus Jakarta Sans';vertical-align:middle;">ACTIVE</span></div>
           <div style="display:flex;align-items:center;gap:8px;margin-top:4px;">
             <span class="profile-hc">1.08</span>
             <span style="color:#e8a85b;font-size:16px;">★★★★</span><span style="color:#555;font-size:16px;">★</span>
