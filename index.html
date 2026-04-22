@@ -531,72 +531,72 @@ const screens = [
         <div style="font-size:10px;color:var(--green);cursor:pointer;letter-spacing:0.03em;">View All ›</div>
       </div>
 
-      <!-- Leaderboard rows -->
-      <div style="margin:0 18px 10px;">
+      <!-- Leaderboard rows — Gradient Bars -->
+      <div style="margin:0 14px 10px;display:flex;flex-direction:column;gap:4px;">
         <!-- Row 1 -->
-        <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);">
-          <div style="width:28px;display:flex;align-items:center;gap:2px;">
-            <div style="font-size:13px;font-weight:800;color:#FFD700;">1</div>
-            <div style="font-size:10px;color:var(--green);font-weight:600;">↑</div>
+        <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;background:linear-gradient(90deg,rgba(255,215,0,0.18) 0%,rgba(184,242,106,0.05) 60%,transparent 100%);border-left:3px solid #FFD700;">
+          <div style="display:flex;align-items:center;gap:3px;width:30px;flex-shrink:0;">
+            <div style="font-size:16px;font-weight:800;color:#FFD700;">1</div>
+            <div style="font-size:11px;color:var(--green);font-weight:700;">↑</div>
           </div>
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid var(--border);" />
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:42px;height:42px;border-radius:50%;object-fit:cover;border:2.5px solid rgba(255,215,0,0.5);box-shadow:0 0 12px rgba(255,215,0,0.15);" />
           <div style="flex:1;">
-            <div style="font-size:11px;font-weight:600;color:var(--white);">Jason M.</div>
-            <div style="font-size:9px;color:#666;margin-top:1px;">HI 1.08</div>
+            <div style="font-size:13px;font-weight:600;color:var(--white);">Jason M.</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">HI 1.08</div>
           </div>
-          <div style="font-size:12px;color:var(--green);font-weight:700;">98pts</div>
+          <div style="font-size:14px;color:var(--green);font-weight:800;">98pts</div>
         </div>
         <!-- Row 2 -->
-        <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);">
-          <div style="width:28px;display:flex;align-items:center;gap:2px;">
-            <div style="font-size:13px;font-weight:800;color:#C0C0C0;">2</div>
-            <div style="font-size:10px;color:var(--green);font-weight:600;">↑</div>
+        <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;background:linear-gradient(90deg,rgba(192,192,192,0.1) 0%,transparent 60%);border-left:3px solid #C0C0C0;">
+          <div style="display:flex;align-items:center;gap:3px;width:30px;flex-shrink:0;">
+            <div style="font-size:16px;font-weight:800;color:#C0C0C0;">2</div>
+            <div style="font-size:11px;color:var(--green);font-weight:700;">↑</div>
           </div>
-          <img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid var(--border);" />
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:42px;height:42px;border-radius:50%;object-fit:cover;border:2.5px solid rgba(192,192,192,0.4);" />
           <div style="flex:1;">
-            <div style="font-size:11px;font-weight:600;color:var(--white);">Sarah K.</div>
-            <div style="font-size:9px;color:#666;margin-top:1px;">HI 8.4</div>
+            <div style="font-size:13px;font-weight:600;color:var(--white);">Sarah K.</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">HI 8.4</div>
           </div>
-          <div style="font-size:12px;color:#888;font-weight:700;">91pts</div>
+          <div style="font-size:14px;color:#999;font-weight:700;">91pts</div>
         </div>
         <!-- Row 3 -->
-        <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);">
-          <div style="width:28px;display:flex;align-items:center;gap:2px;">
-            <div style="font-size:13px;font-weight:800;color:#CD7F32;">3</div>
-            <div style="font-size:10px;color:#e85b5b;font-weight:600;">↓</div>
+        <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;background:linear-gradient(90deg,rgba(205,127,50,0.1) 0%,transparent 60%);border-left:3px solid #CD7F32;">
+          <div style="display:flex;align-items:center;gap:3px;width:30px;flex-shrink:0;">
+            <div style="font-size:16px;font-weight:800;color:#CD7F32;">3</div>
+            <div style="font-size:11px;color:#e85b5b;font-weight:700;">↓</div>
           </div>
-          <img src="https://randomuser.me/api/portraits/men/22.jpg" style="width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid var(--border);" />
+          <img src="https://randomuser.me/api/portraits/men/22.jpg" style="width:42px;height:42px;border-radius:50%;object-fit:cover;border:2.5px solid rgba(205,127,50,0.4);" />
           <div style="flex:1;">
-            <div style="font-size:11px;font-weight:600;color:var(--white);">Alex H.</div>
-            <div style="font-size:9px;color:#666;margin-top:1px;">HI 5.2</div>
+            <div style="font-size:13px;font-weight:600;color:var(--white);">Alex H.</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">HI 5.2</div>
           </div>
-          <div style="font-size:12px;color:#888;font-weight:700;">87pts</div>
+          <div style="font-size:14px;color:#999;font-weight:700;">87pts</div>
         </div>
         <!-- Row 4 -->
-        <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);">
-          <div style="width:28px;display:flex;align-items:center;gap:2px;">
-            <div style="font-size:13px;font-weight:800;color:#666;">4</div>
-            <div style="font-size:10px;color:var(--green);font-weight:600;">↑</div>
+        <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;background:linear-gradient(90deg,rgba(255,255,255,0.03) 0%,transparent 60%);border-left:3px solid #333;">
+          <div style="display:flex;align-items:center;gap:3px;width:30px;flex-shrink:0;">
+            <div style="font-size:16px;font-weight:800;color:#555;">4</div>
+            <div style="font-size:11px;color:var(--green);font-weight:700;">↑</div>
           </div>
-          <img src="https://randomuser.me/api/portraits/men/55.jpg" style="width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid var(--border);" />
+          <img src="https://randomuser.me/api/portraits/men/55.jpg" style="width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.1);" />
           <div style="flex:1;">
-            <div style="font-size:11px;font-weight:600;color:var(--white);">Tom R.</div>
-            <div style="font-size:9px;color:#666;margin-top:1px;">HI 15.6</div>
+            <div style="font-size:13px;font-weight:600;color:var(--white);">Tom R.</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">HI 15.6</div>
           </div>
-          <div style="font-size:12px;color:#888;font-weight:700;">82pts</div>
+          <div style="font-size:14px;color:#999;font-weight:700;">82pts</div>
         </div>
         <!-- Row 5 -->
-        <div style="display:flex;align-items:center;gap:10px;padding:10px 0;">
-          <div style="width:28px;display:flex;align-items:center;gap:2px;">
-            <div style="font-size:13px;font-weight:800;color:#666;">5</div>
-            <div style="font-size:10px;color:#e85b5b;font-weight:600;">↓</div>
+        <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;background:linear-gradient(90deg,rgba(255,255,255,0.03) 0%,transparent 60%);border-left:3px solid #333;">
+          <div style="display:flex;align-items:center;gap:3px;width:30px;flex-shrink:0;">
+            <div style="font-size:16px;font-weight:800;color:#555;">5</div>
+            <div style="font-size:11px;color:#e85b5b;font-weight:700;">↓</div>
           </div>
-          <img src="https://randomuser.me/api/portraits/women/68.jpg" style="width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid var(--border);" />
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" style="width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.1);" />
           <div style="flex:1;">
-            <div style="font-size:11px;font-weight:600;color:var(--white);">Emma W.</div>
-            <div style="font-size:9px;color:#666;margin-top:1px;">HI 12.3</div>
+            <div style="font-size:13px;font-weight:600;color:var(--white);">Emma W.</div>
+            <div style="font-size:10px;color:#888;margin-top:2px;">HI 12.3</div>
           </div>
-          <div style="font-size:12px;color:#888;font-weight:700;">79pts</div>
+          <div style="font-size:14px;color:#999;font-weight:700;">79pts</div>
         </div>
       </div>
 
