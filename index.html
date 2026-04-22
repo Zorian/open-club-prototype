@@ -864,54 +864,99 @@ const screens = [
     html: `<div class="app">
       <div class="status-bar"><span class="status-time">9:41</span><div class="status-icons">▌▌▌ ▾ ▮</div></div>
       <div class="page-header"><span class="ph-back">‹</span><span class="ph-title">Rewards Board</span><span></span></div>
-      <div class="pills">
-        <div class="pill active">This Week</div>
-        <div class="pill inactive">Month</div>
-        <div class="pill inactive">All Time</div>
-        <div class="pill inactive">My Club</div>
+
+      <!-- Time filter pills -->
+      <div style="display:flex;gap:6px;padding:0 16px 12px;">
+        <div style="padding:7px 14px;border-radius:18px;font-size:10px;font-weight:600;background:rgba(184,242,106,0.1);border:1px solid rgba(184,242,106,0.3);color:var(--green);">This Week</div>
+        <div style="padding:7px 14px;border-radius:18px;font-size:10px;color:#666;background:#1a1a1a;border:1px solid rgba(255,255,255,0.06);">Month</div>
+        <div style="padding:7px 14px;border-radius:18px;font-size:10px;color:#666;background:#1a1a1a;border:1px solid rgba(255,255,255,0.06);">All Time</div>
+        <div style="padding:7px 14px;border-radius:18px;font-size:10px;color:#666;background:#1a1a1a;border:1px solid rgba(255,255,255,0.06);">My Club</div>
       </div>
+
       <!-- Monthly Reward Banner -->
-      <div style="margin:0 18px 10px;background:linear-gradient(135deg,#1a2f0a,#0f1f06);border:1px solid rgba(184,242,106,0.25);border-radius:10px;padding:12px 14px;">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-          <div style="font-size:16px;">🏆</div>
-          <div style="font-size:11px;color:var(--green);font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;">April Monthly Reward</div>
-          <div style="margin-left:auto;font-size:8px;color:#888;background:rgba(255,255,255,0.06);padding:2px 8px;border-radius:10px;">15 days left</div>
+      <div style="margin:0 14px 10px;background:linear-gradient(135deg,#1a2f0a,#0f1f06);border:1px solid rgba(184,242,106,0.2);border-radius:12px;padding:12px 14px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+          <span style="font-size:14px;">🏆</span>
+          <span style="font-size:11px;color:var(--green);font-weight:700;">April Monthly Reward</span>
+          <span style="margin-left:auto;font-size:8px;color:#888;background:rgba(255,255,255,0.06);padding:2px 8px;border-radius:10px;">15 days left</span>
         </div>
-        <div style="font-size:10px;color:#ccc;line-height:1.5;margin-bottom:6px;">🎁 <strong style="color:var(--white);">Free round + guest pass</strong> at Pinehill Golf Club — courtesy of Open Club</div>
-        <div style="font-size:8px;color:#666;">Top player at month end wins · updated daily</div>
+        <div style="font-size:10px;color:#ccc;line-height:1.5;">🎁 <strong style="color:var(--white);">Free round + guest pass</strong> at Pinehill GC</div>
       </div>
+
       <!-- Points system -->
-      <div style="margin:0 18px 12px;background:#141414;border:1px solid var(--border);border-radius:8px;padding:10px 14px;">
-        <div style="font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);margin-bottom:8px;">How to earn points</div>
+      <div style="margin:0 14px 12px;background:#141414;border:1px solid var(--border);border-radius:10px;padding:10px 14px;">
+        <div style="font-size:8px;letter-spacing:0.15em;text-transform:uppercase;color:var(--mid);margin-bottom:8px;">How to earn points</div>
         <div style="display:flex;flex-direction:column;gap:5px;">
-          <div style="display:flex;align-items:center;gap:8px;"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:800;color:var(--green);width:20px;">3</span><span style="font-size:9px;color:#888;">pts · Complete a confirmed match</span></div>
-          <div style="display:flex;align-items:center;gap:8px;"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:800;color:var(--green);width:20px;">5</span><span style="font-size:9px;color:#888;">pts · Invite a player who joins the app</span></div>
-          <div style="display:flex;align-items:center;gap:8px;"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:800;color:var(--green);width:20px;">5</span><span style="font-size:9px;color:#888;">pts · Leave a review on a player</span></div>
+          <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:13px;font-weight:800;color:var(--green);width:20px;">3</span><span style="font-size:9px;color:#888;">pts · Complete a confirmed match</span></div>
+          <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:13px;font-weight:800;color:var(--green);width:20px;">5</span><span style="font-size:9px;color:#888;">pts · Invite a player who joins the app</span></div>
+          <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:13px;font-weight:800;color:var(--green);width:20px;">5</span><span style="font-size:9px;color:#888;">pts · Leave a review on a player</span></div>
         </div>
       </div>
-      <div class="podium">
-        <div class="podium-item">
-          <div class="podium-av" style="background:rgba(192,192,192,0.15);font-size:22px;">👤</div>
-          <div class="podium-name">Sarah K.</div>
-          <div class="podium-block second"><div class="podium-score" style="color:#C0C0C0;">2nd</div><div style="font-size:9px;color:#888;">8.4 HI</div></div>
+
+      <!-- Podium — gradient style -->
+      <div style="display:flex;align-items:flex-end;justify-content:center;gap:6px;padding:10px 16px 0;">
+        <div style="display:flex;flex-direction:column;align-items:center;width:80px;">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:44px;height:44px;border-radius:50%;object-fit:cover;border:2.5px solid rgba(192,192,192,0.5);margin-bottom:4px;" />
+          <div style="font-size:10px;font-weight:600;">Sarah K.</div>
+          <div style="width:100%;height:60px;background:linear-gradient(180deg,rgba(192,192,192,0.12) 0%,transparent 100%);border-radius:10px 10px 0 0;margin-top:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid rgba(192,192,192,0.15);border-bottom:none;">
+            <div style="font-size:14px;font-weight:800;color:#C0C0C0;">2nd</div>
+            <div style="font-size:8px;color:#888;">91pts</div>
+          </div>
         </div>
-        <div class="podium-item">
-          <div class="podium-av" style="overflow:hidden;padding:0;"><img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:44px;height:44px;object-fit:cover;border-radius:50%;" /></div>
-          <div class="podium-name">Jason M.</div>
-          <div class="podium-block first"><div class="podium-score" style="color:#FFD700;">1st</div><div style="font-size:9px;color:#888;">1.08 HI</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;width:90px;">
+          <div style="font-size:16px;margin-bottom:2px;">👑</div>
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,215,0,0.5);box-shadow:0 0 16px rgba(255,215,0,0.2);margin-bottom:4px;" />
+          <div style="font-size:11px;font-weight:700;">Jason M.</div>
+          <div style="width:100%;height:80px;background:linear-gradient(180deg,rgba(255,215,0,0.15) 0%,transparent 100%);border-radius:10px 10px 0 0;margin-top:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid rgba(255,215,0,0.2);border-bottom:none;">
+            <div style="font-size:16px;font-weight:800;color:#FFD700;">1st</div>
+            <div style="font-size:8px;color:#888;">98pts</div>
+          </div>
         </div>
-        <div class="podium-item">
-          <div class="podium-av" style="overflow:hidden;padding:0;"><img src="https://randomuser.me/api/portraits/men/22.jpg" style="width:44px;height:44px;object-fit:cover;border-radius:50%;" /></div>
-          <div class="podium-name">Alex H.</div>
-          <div class="podium-block third"><div class="podium-score" style="color:#CD7F32;">3rd</div><div style="font-size:9px;color:#888;">5.2 HI</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;width:80px;">
+          <img src="https://randomuser.me/api/portraits/men/22.jpg" style="width:44px;height:44px;border-radius:50%;object-fit:cover;border:2.5px solid rgba(205,127,50,0.5);margin-bottom:4px;" />
+          <div style="font-size:10px;font-weight:600;">Alex H.</div>
+          <div style="width:100%;height:48px;background:linear-gradient(180deg,rgba(205,127,50,0.12) 0%,transparent 100%);border-radius:10px 10px 0 0;margin-top:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid rgba(205,127,50,0.15);border-bottom:none;">
+            <div style="font-size:14px;font-weight:800;color:#CD7F32;">3rd</div>
+            <div style="font-size:8px;color:#888;">87pts</div>
+          </div>
         </div>
       </div>
-      <div class="section-title">Full Rankings</div>
-      <div class="lb-row"><div class="lb-rank gold">1</div><div class="player-av" style="background:none;padding:0;width:36px;height:36px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div><div class="player-info"><div class="player-name">Jason M.</div><div class="player-sub">HI 1.08 · <span class="stars">★★★★</span>☆</div></div><div style="font-size:12px;color:var(--green);font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;">98pts</div></div>
-      <div class="lb-row"><div class="lb-rank silver">2</div><div class="player-av" style="background:none;padding:0;width:36px;height:36px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div><div class="player-info"><div class="player-name">Sarah K.</div><div class="player-sub">HI 8.4 · <span class="stars">★★★★</span>☆</div></div><div style="font-size:12px;color:#888;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;">91pts</div></div>
-      <div class="lb-row"><div class="lb-rank bronze">3</div><div class="player-av" style="background:none;padding:0;width:36px;height:36px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/men/22.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div><div class="player-info"><div class="player-name">Alex H.</div><div class="player-sub">HI 5.2 · <span class="stars">★★★★</span>☆</div></div><div style="font-size:12px;color:#888;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;">87pts</div></div>
-      <div class="lb-row"><div class="lb-rank" style="color:#888;">4</div><div class="player-av" style="background:none;padding:0;width:36px;height:36px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/men/67.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div><div class="player-info"><div class="player-name">Mark D.</div><div class="player-sub">HI 12.1 · <span class="stars">★★★</span>☆☆</div></div><div style="font-size:12px;color:#888;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;">74pts</div></div>
-      <div class="lb-row"><div class="lb-rank" style="color:#888;">5</div><div class="player-av" style="background:none;padding:0;width:36px;height:36px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/men/55.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div><div class="player-info"><div class="player-name">Tom W.</div><div class="player-sub">HI 15.6 · <span class="stars">★★★</span>☆☆</div></div><div style="font-size:12px;color:#888;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;">68pts</div></div>
+      <div style="height:1px;background:rgba(255,255,255,0.06);margin:0 14px 12px;"></div>
+
+      <!-- Full Rankings — Gradient Bars -->
+      <div style="padding:0 14px 4px;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--mid);margin-bottom:8px;">Full Rankings</div>
+      <div style="margin:0 14px 10px;display:flex;flex-direction:column;gap:4px;">
+        <div style="display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:12px;background:linear-gradient(90deg,rgba(255,215,0,0.15) 0%,transparent 60%);border-left:3px solid #FFD700;">
+          <span style="font-size:15px;font-weight:800;color:#FFD700;width:18px;">1</span>
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,215,0,0.4);" />
+          <div style="flex:1;"><div style="font-size:12px;font-weight:600;">Jason M.</div><div style="font-size:9px;color:#888;">HI 1.08 · ★★★★☆</div></div>
+          <div style="font-size:13px;font-weight:800;color:var(--green);">98pts</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:12px;background:linear-gradient(90deg,rgba(192,192,192,0.08) 0%,transparent 60%);border-left:3px solid #C0C0C0;">
+          <span style="font-size:15px;font-weight:800;color:#C0C0C0;width:18px;">2</span>
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid rgba(192,192,192,0.3);" />
+          <div style="flex:1;"><div style="font-size:12px;font-weight:600;">Sarah K.</div><div style="font-size:9px;color:#888;">HI 8.4 · ★★★★☆</div></div>
+          <div style="font-size:13px;font-weight:700;color:#999;">91pts</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:12px;background:linear-gradient(90deg,rgba(205,127,50,0.08) 0%,transparent 60%);border-left:3px solid #CD7F32;">
+          <span style="font-size:15px;font-weight:800;color:#CD7F32;width:18px;">3</span>
+          <img src="https://randomuser.me/api/portraits/men/22.jpg" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid rgba(205,127,50,0.3);" />
+          <div style="flex:1;"><div style="font-size:12px;font-weight:600;">Alex H.</div><div style="font-size:9px;color:#888;">HI 5.2 · ★★★★☆</div></div>
+          <div style="font-size:13px;font-weight:700;color:#999;">87pts</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:12px;background:linear-gradient(90deg,rgba(255,255,255,0.03) 0%,transparent 60%);border-left:3px solid #333;">
+          <span style="font-size:15px;font-weight:800;color:#555;width:18px;">4</span>
+          <img src="https://randomuser.me/api/portraits/men/67.jpg" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.08);" />
+          <div style="flex:1;"><div style="font-size:12px;font-weight:600;">Mark D.</div><div style="font-size:9px;color:#888;">HI 12.1 · ★★★☆☆</div></div>
+          <div style="font-size:13px;font-weight:700;color:#999;">74pts</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:12px;background:linear-gradient(90deg,rgba(255,255,255,0.03) 0%,transparent 60%);border-left:3px solid #333;">
+          <span style="font-size:15px;font-weight:800;color:#555;width:18px;">5</span>
+          <img src="https://randomuser.me/api/portraits/men/55.jpg" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.08);" />
+          <div style="flex:1;"><div style="font-size:12px;font-weight:600;">Tom W.</div><div style="font-size:9px;color:#888;">HI 15.6 · ★★★☆☆</div></div>
+          <div style="font-size:13px;font-weight:700;color:#999;">68pts</div>
+        </div>
+      </div>
     </div>`
   },
   // 5: PLAYER PROFILE
