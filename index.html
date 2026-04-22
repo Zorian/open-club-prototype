@@ -1468,104 +1468,127 @@ const screens = [
   {
     title: "My Profile",
     desc: "Tab 3 · own stats, clubs, connections, reviews · scrollable",
-    html: `<div class="app" style="display:flex;flex-direction:column;height:100%;">
+    html: `<div class="app">
       <div class="profile-hero">
         <div class="profile-hero-bg"></div>
-        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:80px;height:80px;border-radius:50%;overflow:hidden;border:3px solid var(--green);box-shadow:0 4px 20px rgba(0,0,0,0.4);"><img src="https://randomuser.me/api/portraits/men/75.jpg" style="width:100%;height:100%;object-fit:cover;" /></div>
+        <div class="profile-hero-emoji">⛳</div>
         <div class="status-bar" style="position:absolute;top:0;left:0;right:0;padding:14px 18px 0;"><span class="status-time" style="color:#fff;">9:41</span><div class="status-icons" style="color:#fff;">▌▌▌ ▾ ▮</div></div>
         <div style="position:absolute;top:14px;right:14px;display:flex;gap:8px;">
           <span style="font-size:16px;background:rgba(0,0,0,0.3);border-radius:50%;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;">✉</span>
           <span style="font-size:16px;background:rgba(0,0,0,0.3);border-radius:50%;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;">⚙</span>
         </div>
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:80px;height:80px;border-radius:50%;overflow:hidden;border:3px solid var(--green);box-shadow:0 4px 20px rgba(0,0,0,0.4);"><img src="https://randomuser.me/api/portraits/men/75.jpg" style="width:100%;height:100%;object-fit:cover;" /></div>
         <div class="profile-hero-content">
           <div class="profile-name">Eric T. <span style="background:var(--green);color:#000;font-size:10px;font-weight:800;padding:2px 6px;border-radius:4px;font-family:'Plus Jakarta Sans';vertical-align:middle;letter-spacing:0.02em;">M</span></div>
-          <div style="display:flex;align-items:center;gap:8px;margin-top:4px;"><span class="profile-hc">12.4</span><span class="stars" style="font-size:14px;">★★★</span><span style="color:#888;font-size:14px;">☆☆</span><span style="font-size:10px;color:#888;margin-left:4px;">(12 reviews)</span></div>
+          <div style="display:flex;align-items:center;gap:8px;margin-top:4px;">
+            <span class="profile-hc">12.4</span>
+            <span style="color:#e8a85b;font-size:16px;">★★★</span><span style="color:#555;font-size:16px;">☆☆</span>
+            <span style="font-size:10px;color:#888;margin-left:4px;">(12 reviews)</span>
+          </div>
         </div>
       </div>
-      <div style="flex:1;overflow-y:auto;">
-        <div class="stats-strip">
-          <div class="stat-cell"><div class="stat-val">24</div><div class="stat-label">Rounds</div></div>
-          <div class="stat-cell"><div class="stat-val">38</div><div class="stat-label">Connections</div></div>
-          <div class="stat-cell"><div class="stat-val">3</div><div class="stat-label">Clubs</div></div>
+      <div class="stats-strip">
+        <div class="stat-cell"><div class="stat-val">24</div><div class="stat-label">Rounds</div></div>
+        <div class="stat-cell"><div class="stat-val">38</div><div class="stat-label">Connections</div></div>
+        <div class="stat-cell"><div class="stat-val">3</div><div class="stat-label">Clubs</div></div>
+      </div>
+      <!-- Show Up Score -->
+      <div style="margin:0 18px 12px;padding:12px 14px;background:#141f0a;border:1px solid rgba(184,242,106,0.2);border-radius:10px;display:flex;align-items:center;justify-content:space-between;">
+        <div>
+          <div style="font-size:10px;color:var(--green);font-weight:600;margin-bottom:2px;">Show Up Score</div>
+          <div style="font-size:9px;color:#888;">Based on 24 completed rounds</div>
         </div>
-        <!-- Show Up Score -->
-        <div style="margin:0 18px 12px;padding:12px 14px;background:#141f0a;border:1px solid rgba(184,242,106,0.2);border-radius:10px;display:flex;align-items:center;justify-content:space-between;">
-          <div>
-            <div style="font-size:10px;color:var(--green);font-weight:600;margin-bottom:2px;">Show Up Score</div>
-            <div style="font-size:9px;color:#888;">Based on 24 completed rounds</div>
-          </div>
-          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:24px;font-weight:800;color:var(--green);">96%</div>
-        </div>
-        <div style="padding:10px 18px 8px;font-size:11px;color:#888;line-height:1.7;">Weekend golfer based in South London. Love a competitive Stableford round.</div>
-        <div style="padding:0 18px 12px;display:flex;flex-wrap:wrap;gap:6px;">
-          <div class="tag">Pinehill GC</div>
-          <div class="tag">Royal Blackheath</div>
-          <div class="tag">Beckenham Place</div>
-        </div>
-        <div style="padding:0 18px;"><button class="btn-outline" style="width:100%;padding:12px;font-size:10px;border-radius:8px;margin-bottom:14px;">EDIT PROFILE</button></div>
-        
-        <!-- Recent Connections -->
-        <div class="section-title">Recent Connections</div>
-        <div class="player-row"><div class="player-av" style="background:none;padding:0;width:44px;height:44px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /><div class="online-dot"></div></div><div class="player-info"><div class="player-name">Jason M.</div><div class="player-sub">HI 1.08 · Pinehill GC</div></div><button class="btn-outline" style="font-size:8px;padding:4px 10px;">MESSAGE</button></div>
-        <div class="player-row"><div class="player-av" style="background:none;padding:0;width:44px;height:44px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /><div class="online-dot"></div></div><div class="player-info"><div class="player-name">Sarah K.</div><div class="player-sub">HI 8.4 · Royal Blackheath</div></div><button class="btn-outline" style="font-size:8px;padding:4px 10px;">MESSAGE</button></div>
-        
-        <!-- Community Reviews -->
-        <div class="section-title" style="margin-top:8px;">Community Reviews</div>
-        <div style="padding:0 18px 6px;display:flex;flex-wrap:wrap;gap:6px;">
-          <div class="tag" style="background:#141f0a;border-color:rgba(184,242,106,0.3);">Friendly <span style="color:var(--green);margin-left:4px;">×8</span></div>
-          <div class="tag" style="background:#141f0a;border-color:rgba(184,242,106,0.3);">Good pace <span style="color:var(--green);margin-left:4px;">×6</span></div>
-          <div class="tag" style="background:#141f0a;border-color:rgba(184,242,106,0.3);">Punctual <span style="color:var(--green);margin-left:4px;">×9</span></div>
-          <div class="tag">Great chat <span style="color:#888;margin-left:4px;">×4</span></div>
-        </div>
-        
-        <!-- Review Cards -->
-        <div style="padding:12px 18px;">
-          <div style="background:#1a1a1a;border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:10px;">
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
-              <div class="player-av" style="background:none;padding:0;width:30px;height:30px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div>
-              <div style="flex:1;"><div style="font-size:11px;font-weight:600;color:var(--white);">Jason M.</div><div style="font-size:8px;color:var(--mid);">Played together · 2 weeks ago</div></div>
-              <div style="color:#e8a85b;font-size:11px;">★★★★<span style="color:#555;">★</span></div>
-            </div>
-            <div style="font-size:10px;color:#888;line-height:1.7;">"Solid partner for a weekend round. Eric keeps a good pace and doesn't take himself too seriously. Would play again."</div>
-            <div style="display:flex;gap:6px;margin-top:8px;"><div class="tag" style="font-size:7px;">Friendly</div><div class="tag" style="font-size:7px;">Good pace</div></div>
-          </div>
-          <div style="background:#1a1a1a;border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:10px;">
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
-              <div class="player-av" style="background:none;padding:0;width:30px;height:30px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div>
-              <div style="flex:1;"><div style="font-size:11px;font-weight:600;color:var(--white);">Sarah K.</div><div style="font-size:8px;color:var(--mid);">Played together · 1 month ago</div></div>
-              <div style="color:#e8a85b;font-size:11px;">★★★★★</div>
-            </div>
-            <div style="font-size:10px;color:#888;line-height:1.7;">"Great round at Royal Blackheath. Eric was punctual, friendly and kept the energy up even when his drives weren't going his way. 5 stars."</div>
-            <div style="display:flex;gap:6px;margin-top:8px;"><div class="tag" style="font-size:7px;">Punctual</div><div class="tag" style="font-size:7px;">Friendly</div><div class="tag" style="font-size:7px;">Great chat</div></div>
-          </div>
-          <div style="background:#1a1a1a;border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:16px;">
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
-              <div class="player-av" style="background:none;padding:0;width:30px;height:30px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/men/22.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div>
-              <div style="flex:1;"><div style="font-size:11px;font-weight:600;color:var(--white);">Alex H.</div><div style="font-size:8px;color:var(--mid);">Played together · 6 weeks ago</div></div>
-              <div style="color:#e8a85b;font-size:11px;">★★★<span style="color:#555;">★★</span></div>
-            </div>
-            <div style="font-size:10px;color:#888;line-height:1.7;">"Decent round. Eric knows his game but was running a bit late to the tee. Still enjoyable overall."</div>
-            <div style="display:flex;gap:6px;margin-top:8px;"><div class="tag" style="font-size:7px;">Good pace</div></div>
-          </div>
-        </div>
+        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:24px;font-weight:800;color:var(--green);">96%</div>
+      </div>
+      <div style="padding:10px 18px 8px;font-size:11px;color:#888;line-height:1.7;">Weekend golfer based in South London. Love a competitive Stableford round.</div>
+      <div style="padding:0 18px 12px;display:flex;flex-wrap:wrap;gap:6px;">
+        <div class="tag">Pinehill GC</div>
+        <div class="tag">Royal Blackheath</div>
+        <div class="tag">Beckenham Place</div>
+      </div>
+      <div style="padding:0 18px;"><button class="btn-outline" style="width:100%;padding:12px;font-size:10px;border-radius:8px;margin-bottom:14px;">EDIT PROFILE</button></div>
 
-        <!-- Referral Code Section -->
-        <div style="margin:0 18px 20px;background:#141414;border:1px solid rgba(184,242,106,0.15);border-radius:10px;padding:16px;">
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
-            <span style="font-size:16px;">🎟</span>
-            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;color:var(--white);">Your Referral Code</div>
-          </div>
-          <div style="font-size:9px;color:#888;line-height:1.6;margin-bottom:12px;">Share your code with friends. When they sign up using it, you earn <span style="color:var(--green);font-weight:600;">+2 reward points</span> on the Rewards Board.</div>
-          <div style="background:#1a1a1a;border:1px solid rgba(184,242,106,0.25);border-radius:8px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;">
-            <div>
-              <div style="font-size:8px;color:var(--mid);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px;">Your code</div>
-              <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:800;color:var(--green);letter-spacing:0.1em;">ERIC-7X4K</div>
-            </div>
-            <button style="background:var(--green);color:#000;font-size:8px;font-weight:700;padding:8px 14px;border-radius:6px;border:none;font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:0.1em;cursor:pointer;">COPY & SHARE</button>
-          </div>
-          <div style="font-size:8px;color:#555;margin-top:8px;">3 friends joined using your code · 6 pts earned</div>
+      <!-- Quick Tags -->
+      <div style="margin:0 18px 12px;">
+        <div style="font-size:9px;color:var(--mid);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;">Quick Tags</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+          <div style="position:relative;padding:6px 14px;border-radius:20px;border:1px solid rgba(184,242,106,0.3);background:rgba(184,242,106,0.1);font-size:10px;color:var(--green);">Good pace<span style="position:absolute;top:-7px;right:-4px;background:var(--green);color:#000;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;">9</span></div>
+          <div style="position:relative;padding:6px 14px;border-radius:20px;border:1px solid rgba(184,242,106,0.3);background:rgba(184,242,106,0.1);font-size:10px;color:var(--green);">Friendly<span style="position:absolute;top:-7px;right:-4px;background:var(--green);color:#000;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;">8</span></div>
+          <div style="position:relative;padding:6px 14px;border-radius:20px;border:1px solid rgba(184,242,106,0.3);background:rgba(184,242,106,0.1);font-size:10px;color:var(--green);">Punctual<span style="position:absolute;top:-7px;right:-4px;background:var(--green);color:#000;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;">9</span></div>
+          <div style="position:relative;padding:6px 14px;border-radius:20px;border:1px solid var(--border);font-size:10px;color:#888;">Great chat<span style="position:absolute;top:-7px;right:-4px;background:#444;color:#ccc;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;">4</span></div>
+          <div style="position:relative;padding:6px 14px;border-radius:20px;border:1px solid var(--border);font-size:10px;color:#888;">Competitive<span style="position:absolute;top:-7px;right:-4px;background:#444;color:#ccc;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;">3</span></div>
         </div>
       </div>
+
+      <!-- Community Reviews - horizontal scroll -->
+      <div style="margin-bottom:16px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:0 18px;margin-bottom:10px;">
+          <div style="font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:var(--mid);">Community Reviews</div>
+          <div style="font-size:9px;color:var(--green);">12 reviews</div>
+        </div>
+        <div style="display:flex;gap:10px;overflow-x:auto;padding:0 18px 4px;scrollbar-width:none;-webkit-overflow-scrolling:touch;">
+          <div style="background:#1a1a1a;border:1px solid var(--border);border-radius:10px;padding:14px;min-width:230px;max-width:230px;flex-shrink:0;">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+              <div style="width:28px;height:28px;overflow:hidden;flex-shrink:0;"><img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div>
+              <div style="flex:1;min-width:0;"><div style="font-size:11px;font-weight:600;color:var(--white);">Jason M.</div><div style="font-size:8px;color:var(--mid);">2 weeks ago</div></div>
+              <div style="color:#e8a85b;font-size:10px;flex-shrink:0;">★★★★<span style="color:#555;">★</span></div>
+            </div>
+            <div style="font-size:10px;color:#888;line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;">"Solid partner for a weekend round. Eric keeps a good pace and doesn't take himself too seriously. Would play again."</div>
+            <div style="display:flex;gap:5px;margin-top:8px;">
+              <div style="position:relative;display:inline-block;padding:3px 9px;border-radius:20px;background:rgba(184,242,106,0.1);border:1px solid rgba(184,242,106,0.2);font-size:7px;color:var(--green);">Friendly<span style="position:absolute;top:-5px;right:-4px;background:var(--green);color:#000;font-size:7px;font-weight:700;padding:1px 4px;border-radius:10px;">8</span></div>
+              <div style="position:relative;display:inline-block;padding:3px 9px;border-radius:20px;background:rgba(184,242,106,0.1);border:1px solid rgba(184,242,106,0.2);font-size:7px;color:var(--green);">Good pace<span style="position:absolute;top:-5px;right:-4px;background:var(--green);color:#000;font-size:7px;font-weight:700;padding:1px 4px;border-radius:10px;">9</span></div>
+            </div>
+          </div>
+          <div style="background:#1a1a1a;border:1px solid var(--border);border-radius:10px;padding:14px;min-width:230px;max-width:230px;flex-shrink:0;">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+              <div style="width:28px;height:28px;overflow:hidden;flex-shrink:0;"><img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div>
+              <div style="flex:1;min-width:0;"><div style="font-size:11px;font-weight:600;color:var(--white);">Sarah K.</div><div style="font-size:8px;color:var(--mid);">1 month ago</div></div>
+              <div style="color:#e8a85b;font-size:10px;flex-shrink:0;">★★★★★</div>
+            </div>
+            <div style="font-size:10px;color:#888;line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;">"Great round at Royal Blackheath. Eric was punctual, friendly and kept the energy up even when his drives weren't going his way. 5 stars."</div>
+            <div style="display:flex;gap:5px;margin-top:8px;">
+              <div class="tag" style="font-size:7px;">Punctual</div>
+              <div class="tag" style="font-size:7px;">Great chat</div>
+            </div>
+          </div>
+          <div style="background:#1a1a1a;border:1px solid var(--border);border-radius:10px;padding:14px;min-width:230px;max-width:230px;flex-shrink:0;">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+              <div style="width:28px;height:28px;overflow:hidden;flex-shrink:0;"><img src="https://randomuser.me/api/portraits/men/22.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div>
+              <div style="flex:1;min-width:0;"><div style="font-size:11px;font-weight:600;color:var(--white);">Alex H.</div><div style="font-size:8px;color:var(--mid);">6 weeks ago</div></div>
+              <div style="color:#e8a85b;font-size:10px;flex-shrink:0;">★★★<span style="color:#555;">★★</span></div>
+            </div>
+            <div style="font-size:10px;color:#888;line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;">"Decent round. Eric knows his game but was running a bit late to the tee. Still enjoyable overall."</div>
+            <div style="display:flex;gap:5px;margin-top:8px;">
+              <div class="tag" style="font-size:7px;">Good pace</div>
+              <div class="tag" style="font-size:7px;">Competitive</div>
+            </div>
+          </div>
+          <div style="min-width:18px;flex-shrink:0;"></div>
+        </div>
+      </div>
+
+      <!-- Recent Connections -->
+      <div class="section-title">Recent Connections</div>
+      <div class="player-row"><div class="player-av" style="background:none;padding:0;width:44px;height:44px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /><div class="online-dot"></div></div><div class="player-info"><div class="player-name">Jason M.</div><div class="player-sub">HI 1.08 · Pinehill GC</div></div><button class="btn-outline" style="font-size:8px;padding:4px 10px;">MESSAGE</button></div>
+      <div class="player-row"><div class="player-av" style="background:none;padding:0;width:44px;height:44px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /><div class="online-dot"></div></div><div class="player-info"><div class="player-name">Sarah K.</div><div class="player-sub">HI 8.4 · Royal Blackheath</div></div><button class="btn-outline" style="font-size:8px;padding:4px 10px;">MESSAGE</button></div>
+
+      <!-- Referral Code -->
+      <div style="margin:14px 18px 20px;background:#141414;border:1px solid rgba(184,242,106,0.15);border-radius:10px;padding:16px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+          <span style="font-size:16px;">🎟</span>
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;color:var(--white);">Your Referral Code</div>
+        </div>
+        <div style="font-size:9px;color:#888;line-height:1.6;margin-bottom:12px;">Share your code with friends. When they sign up using it, you earn <span style="color:var(--green);font-weight:600;">+2 reward points</span> on the Rewards Board.</div>
+        <div style="background:#1a1a1a;border:1px solid rgba(184,242,106,0.25);border-radius:8px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;">
+          <div>
+            <div style="font-size:8px;color:var(--mid);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px;">Your code</div>
+            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:800;color:var(--green);letter-spacing:0.1em;">ERIC-7X4K</div>
+          </div>
+          <button style="background:var(--green);color:#000;font-size:8px;font-weight:700;padding:8px 14px;border-radius:6px;border:none;font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:0.1em;cursor:pointer;">COPY & SHARE</button>
+        </div>
+        <div style="font-size:8px;color:#555;margin-top:8px;">3 friends joined using your code · 6 pts earned</div>
+      </div>
+
       <div class="bnav"><div class="bnav-tab"><div class="bnav-icon">⌂</div><div class="bnav-label">Find Rounds</div></div><div class="bnav-tab"><div class="bnav-icon">◎</div><div class="bnav-label">Map</div></div><div class="bnav-tab"><div class="bnav-icon">✉</div><div class="bnav-label">Messages</div></div><div class="bnav-tab"><div class="bnav-icon active">👤</div><div class="bnav-label active">Profile</div></div></div>
     </div>`
   },
