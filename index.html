@@ -698,42 +698,105 @@ const screens = [
         </div>
         <div class="map-header">
           <div class="status-bar" style="padding:4px 0 8px;"><span style="font-size:11px;color:#888;">‹</span><span style="margin-left:8px;font-size:13px;">👥</span><span style="margin-left:6px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;">Find Players</span><span style="margin-left:auto;font-size:10px;color:var(--green);">Near you</span></div>
-        </div><div style="position:absolute;top:16%;left:42%;display:flex;flex-direction:column;align-items:center;cursor:pointer;z-index:10;">
-          <div style="width:26px;height:26px;background:var(--green);border-radius:50% 50% 50% 0;transform:rotate(-45deg);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(184,242,106,0.5);opacity:1.0;">
-            <span style="transform:rotate(45deg);font-size:8px;">⛳</span>
-          </div>
-          <div style="background:var(--green);color:#000;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;margin-top:2px;white-space:nowrap;">6 players</div>
-        </div><div style="position:absolute;top:30%;left:14%;display:flex;flex-direction:column;align-items:center;cursor:pointer;z-index:10;">
-          <div style="width:22px;height:22px;background:var(--green);border-radius:50% 50% 50% 0;transform:rotate(-45deg);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(184,242,106,0.5);opacity:0.85;">
-            <span style="transform:rotate(45deg);font-size:7px;">⛳</span>
-          </div>
-          <div style="background:rgba(184,242,106,0.85);color:#000;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;margin-top:2px;white-space:nowrap;">4 players</div>
-        </div><div style="position:absolute;top:44%;left:52%;display:flex;flex-direction:column;align-items:center;cursor:pointer;z-index:10;">
-          <div style="width:24px;height:24px;background:var(--green);border-radius:50% 50% 50% 0;transform:rotate(-45deg);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(184,242,106,0.5);opacity:1.0;">
-            <span style="transform:rotate(45deg);font-size:8px;">⛳</span>
-          </div>
-          <div style="background:var(--green);color:#000;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;margin-top:2px;white-space:nowrap;">4 players</div>
-        </div><div style="position:absolute;top:22%;left:68%;display:flex;flex-direction:column;align-items:center;cursor:pointer;z-index:10;">
-          <div style="width:24px;height:24px;background:var(--green);border-radius:50% 50% 50% 0;transform:rotate(-45deg);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(184,242,106,0.5);opacity:1.0;">
-            <span style="transform:rotate(45deg);font-size:8px;">⛳</span>
-          </div>
-          <div style="background:var(--green);color:#000;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;margin-top:2px;white-space:nowrap;">5 players</div>
-        </div><div style="position:absolute;top:58%;left:24%;display:flex;flex-direction:column;align-items:center;cursor:pointer;z-index:10;">
-          <div style="width:20px;height:20px;background:var(--green);border-radius:50% 50% 50% 0;transform:rotate(-45deg);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(184,242,106,0.5);opacity:0.75;">
-            <span style="transform:rotate(45deg);font-size:6px;">⛳</span>
-          </div>
-          <div style="background:rgba(184,242,106,0.75);color:#000;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;margin-top:2px;white-space:nowrap;">3 players</div>
-        </div><div style="position:absolute;top:68%;left:60%;display:flex;flex-direction:column;align-items:center;cursor:pointer;z-index:10;">
-          <div style="width:20px;height:20px;background:var(--green);border-radius:50% 50% 50% 0;transform:rotate(-45deg);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(184,242,106,0.5);opacity:0.7;">
-            <span style="transform:rotate(45deg);font-size:6px;">⛳</span>
-          </div>
-          <div style="background:rgba(184,242,106,0.7);color:#000;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;margin-top:2px;white-space:nowrap;">2 players</div>
-        </div><div style="position:absolute;top:80%;left:38%;display:flex;flex-direction:column;align-items:center;cursor:pointer;z-index:10;">
-          <div style="width:18px;height:18px;background:var(--green);border-radius:50% 50% 50% 0;transform:rotate(-45deg);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(184,242,106,0.5);opacity:0.5;">
-            <span style="transform:rotate(45deg);font-size:6px;">⛳</span>
-          </div>
-          <div style="background:rgba(184,242,106,0.5);color:#000;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;margin-top:2px;white-space:nowrap;">1 player</div>
-        </div>
+        </div><div style="position:absolute;top:16%;left:42%;display:flex;flex-direction:column;align-items:center;cursor:pointer;z-index:10;opacity:1.0;">
+        <svg width="30" height="38" viewBox="0 0 36 46" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 3px 5px rgba(0,0,0,0.55));display:block;">
+          <defs>
+            <linearGradient id="pg30_16_42" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#1e3208"/>
+              <stop offset="100%" stop-color="#0a1404"/>
+            </linearGradient>
+          </defs>
+          <path d="M18 2 C9 2 2 9 2 18 C2 28 18 44 18 44 C18 44 34 28 34 18 C34 9 27 2 18 2 Z" fill="url(#pg30_16_42)" stroke="#b8f26a" stroke-width="1.8"/>
+          <line x1="15" y1="11" x2="15" y2="27" stroke="#b8f26a" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M15 12 L25 15 L15 18 Z" fill="#b8f26a"/>
+          <circle cx="15" cy="28" r="1.4" fill="#b8f26a"/>
+        </svg>
+        <div style="background:var(--green);color:#000;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;margin-top:2px;white-space:nowrap;">6 players</div>
+      </div><div style="position:absolute;top:30%;left:14%;display:flex;flex-direction:column;align-items:center;cursor:pointer;z-index:10;opacity:0.85;">
+        <svg width="26" height="33" viewBox="0 0 36 46" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 3px 5px rgba(0,0,0,0.55));display:block;">
+          <defs>
+            <linearGradient id="pg26_30_14" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#1e3208"/>
+              <stop offset="100%" stop-color="#0a1404"/>
+            </linearGradient>
+          </defs>
+          <path d="M18 2 C9 2 2 9 2 18 C2 28 18 44 18 44 C18 44 34 28 34 18 C34 9 27 2 18 2 Z" fill="url(#pg26_30_14)" stroke="#b8f26a" stroke-width="1.8"/>
+          <line x1="15" y1="11" x2="15" y2="27" stroke="#b8f26a" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M15 12 L25 15 L15 18 Z" fill="#b8f26a"/>
+          <circle cx="15" cy="28" r="1.4" fill="#b8f26a"/>
+        </svg>
+        <div style="background:var(--green);color:#000;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;margin-top:2px;white-space:nowrap;">4 players</div>
+      </div><div style="position:absolute;top:44%;left:52%;display:flex;flex-direction:column;align-items:center;cursor:pointer;z-index:10;opacity:1.0;">
+        <svg width="28" height="35" viewBox="0 0 36 46" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 3px 5px rgba(0,0,0,0.55));display:block;">
+          <defs>
+            <linearGradient id="pg28_44_52" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#1e3208"/>
+              <stop offset="100%" stop-color="#0a1404"/>
+            </linearGradient>
+          </defs>
+          <path d="M18 2 C9 2 2 9 2 18 C2 28 18 44 18 44 C18 44 34 28 34 18 C34 9 27 2 18 2 Z" fill="url(#pg28_44_52)" stroke="#b8f26a" stroke-width="1.8"/>
+          <line x1="15" y1="11" x2="15" y2="27" stroke="#b8f26a" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M15 12 L25 15 L15 18 Z" fill="#b8f26a"/>
+          <circle cx="15" cy="28" r="1.4" fill="#b8f26a"/>
+        </svg>
+        <div style="background:var(--green);color:#000;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;margin-top:2px;white-space:nowrap;">4 players</div>
+      </div><div style="position:absolute;top:22%;left:68%;display:flex;flex-direction:column;align-items:center;cursor:pointer;z-index:10;opacity:1.0;">
+        <svg width="28" height="35" viewBox="0 0 36 46" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 3px 5px rgba(0,0,0,0.55));display:block;">
+          <defs>
+            <linearGradient id="pg28_22_68" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#1e3208"/>
+              <stop offset="100%" stop-color="#0a1404"/>
+            </linearGradient>
+          </defs>
+          <path d="M18 2 C9 2 2 9 2 18 C2 28 18 44 18 44 C18 44 34 28 34 18 C34 9 27 2 18 2 Z" fill="url(#pg28_22_68)" stroke="#b8f26a" stroke-width="1.8"/>
+          <line x1="15" y1="11" x2="15" y2="27" stroke="#b8f26a" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M15 12 L25 15 L15 18 Z" fill="#b8f26a"/>
+          <circle cx="15" cy="28" r="1.4" fill="#b8f26a"/>
+        </svg>
+        <div style="background:var(--green);color:#000;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;margin-top:2px;white-space:nowrap;">5 players</div>
+      </div><div style="position:absolute;top:58%;left:24%;display:flex;flex-direction:column;align-items:center;cursor:pointer;z-index:10;opacity:0.75;">
+        <svg width="24" height="30" viewBox="0 0 36 46" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 3px 5px rgba(0,0,0,0.55));display:block;">
+          <defs>
+            <linearGradient id="pg24_58_24" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#1e3208"/>
+              <stop offset="100%" stop-color="#0a1404"/>
+            </linearGradient>
+          </defs>
+          <path d="M18 2 C9 2 2 9 2 18 C2 28 18 44 18 44 C18 44 34 28 34 18 C34 9 27 2 18 2 Z" fill="url(#pg24_58_24)" stroke="#b8f26a" stroke-width="1.8"/>
+          <line x1="15" y1="11" x2="15" y2="27" stroke="#b8f26a" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M15 12 L25 15 L15 18 Z" fill="#b8f26a"/>
+          <circle cx="15" cy="28" r="1.4" fill="#b8f26a"/>
+        </svg>
+        <div style="background:rgba(184,242,106,0.75);color:#000;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;margin-top:2px;white-space:nowrap;">3 players</div>
+      </div><div style="position:absolute;top:68%;left:60%;display:flex;flex-direction:column;align-items:center;cursor:pointer;z-index:10;opacity:0.7;">
+        <svg width="22" height="28" viewBox="0 0 36 46" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 3px 5px rgba(0,0,0,0.55));display:block;">
+          <defs>
+            <linearGradient id="pg22_68_60" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#1e3208"/>
+              <stop offset="100%" stop-color="#0a1404"/>
+            </linearGradient>
+          </defs>
+          <path d="M18 2 C9 2 2 9 2 18 C2 28 18 44 18 44 C18 44 34 28 34 18 C34 9 27 2 18 2 Z" fill="url(#pg22_68_60)" stroke="#b8f26a" stroke-width="1.8"/>
+          <line x1="15" y1="11" x2="15" y2="27" stroke="#b8f26a" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M15 12 L25 15 L15 18 Z" fill="#b8f26a"/>
+          <circle cx="15" cy="28" r="1.4" fill="#b8f26a"/>
+        </svg>
+        <div style="background:rgba(184,242,106,0.7);color:#000;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;margin-top:2px;white-space:nowrap;">2 players</div>
+      </div><div style="position:absolute;top:80%;left:38%;display:flex;flex-direction:column;align-items:center;cursor:pointer;z-index:10;opacity:0.55;">
+        <svg width="22" height="28" viewBox="0 0 36 46" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 3px 5px rgba(0,0,0,0.55));display:block;">
+          <defs>
+            <linearGradient id="pg22_80_38" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#1e3208"/>
+              <stop offset="100%" stop-color="#0a1404"/>
+            </linearGradient>
+          </defs>
+          <path d="M18 2 C9 2 2 9 2 18 C2 28 18 44 18 44 C18 44 34 28 34 18 C34 9 27 2 18 2 Z" fill="url(#pg22_80_38)" stroke="#b8f26a" stroke-width="1.8"/>
+          <line x1="15" y1="11" x2="15" y2="27" stroke="#b8f26a" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M15 12 L25 15 L15 18 Z" fill="#b8f26a"/>
+          <circle cx="15" cy="28" r="1.4" fill="#b8f26a"/>
+        </svg>
+        <div style="background:rgba(184,242,106,0.55);color:#000;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;margin-top:2px;white-space:nowrap;">1 player</div>
+      </div>
       </div>
       <div class="bnav" style="position:absolute;bottom:0;left:0;right:0;">
         <div class="bnav-tab"><div class="bnav-icon">⌂</div><div class="bnav-label">Find Rounds</div></div>
