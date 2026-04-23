@@ -202,38 +202,39 @@ body{background:var(--bg);color:var(--white);font-family:'Plus Jakarta Sans',san
 .branch-card.active .branch-tag{background:var(--green);color:#000;font-weight:700;}
 .branch-card.coming .branch-tag{background:rgba(255,255,255,0.08);color:#777;border:1px solid rgba(255,255,255,0.1);}
 .branch-footer{font-size:7px;color:#444;letter-spacing:0.2em;margin-top:16px;text-transform:uppercase;text-align:center;}
-/* arena rows (new home) */
-.arena-stack{display:flex;flex-direction:column;gap:11px;width:100%;padding:0 2px;}
-.arena-row{display:flex;align-items:center;justify-content:space-between;padding:18px 16px;border-radius:14px;background:rgba(255,255,255,0.015);position:relative;overflow:hidden;transition:all 0.25s ease;cursor:pointer;border:1.5px solid transparent;}
-.arena-row::after{content:'';position:absolute;right:-30px;top:-10px;width:180px;height:140%;border-radius:50%;opacity:0.18;pointer-events:none;filter:blur(22px);}
-.arena-label{font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:800;letter-spacing:0.06em;color:#fff;z-index:1;}
+/* arena rows — Option 5: Split-Color Bar */
+.arena-stack{display:flex;flex-direction:column;gap:10px;width:100%;padding:0 2px;}
+.arena-row{display:flex;align-items:stretch;border-radius:12px;overflow:hidden;background:#0f0f0f;border:1px solid #222;position:relative;cursor:pointer;transition:all 0.25s ease;}
+.arena-row:hover{transform:translateY(-1px);}
+.arena-accent{width:5px;flex-shrink:0;}
+.arena-body{flex:1;display:flex;align-items:center;justify-content:space-between;padding:14px 16px;}
+.arena-label{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:800;letter-spacing:0.06em;color:#fff;}
 .arena-label span{font-weight:800;}
-.arena-cta{font-family:'Plus Jakarta Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.18em;padding:11px 18px;border-radius:22px;border:none;cursor:pointer;display:flex;align-items:center;gap:8px;z-index:1;background:transparent;}
-.arena-cta .arrow{font-size:13px;line-height:1;}
+.arena-cta{font-family:'Plus Jakarta Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.16em;padding:8px 14px;border-radius:4px;border:none;cursor:pointer;display:flex;align-items:center;gap:6px;background:transparent;}
+.arena-cta .arrow{font-size:11px;line-height:1;}
 /* golf — active */
-.arena-golf{border-color:rgba(184,242,106,0.55);box-shadow:0 0 24px rgba(184,242,106,0.14),inset 0 0 30px rgba(184,242,106,0.04);}
-.arena-golf::after{background:radial-gradient(circle,var(--green) 0%,transparent 60%);}
-.arena-golf:hover{border-color:rgba(184,242,106,0.8);box-shadow:0 0 36px rgba(184,242,106,0.22),inset 0 0 40px rgba(184,242,106,0.06);}
+.arena-golf{box-shadow:inset 200px 0 60px -180px rgba(184,242,106,0.18);}
+.arena-golf .arena-accent{background:var(--green);box-shadow:0 0 12px rgba(184,242,106,0.6);}
+.arena-golf:hover{box-shadow:inset 200px 0 60px -180px rgba(184,242,106,0.28),0 0 20px rgba(184,242,106,0.1);}
 .arena-golf .arena-label span{color:var(--green);}
-.cta-play{background:var(--green);color:#000;border:1.5px solid var(--green);}
+.cta-play{background:var(--green);color:#000;}
 /* padel — blue */
-.arena-padel{border-color:rgba(91,156,232,0.55);box-shadow:0 0 20px rgba(91,156,232,0.1),inset 0 0 25px rgba(91,156,232,0.03);}
-.arena-padel::after{background:radial-gradient(circle,#5b9ce8 0%,transparent 60%);}
+.arena-padel{box-shadow:inset 200px 0 60px -180px rgba(91,156,232,0.12);}
+.arena-padel .arena-accent{background:#5b9ce8;}
 .arena-padel .arena-label span{color:#5b9ce8;}
+.arena-padel .cta-soon{border:1px solid rgba(91,156,232,0.5);color:#5b9ce8;}
 /* tennis — yellow */
-.arena-tennis{border-color:rgba(232,212,77,0.55);box-shadow:0 0 20px rgba(232,212,77,0.1),inset 0 0 25px rgba(232,212,77,0.03);}
-.arena-tennis::after{background:radial-gradient(circle,#e8d44d 0%,transparent 60%);}
+.arena-tennis{box-shadow:inset 200px 0 60px -180px rgba(232,212,77,0.12);}
+.arena-tennis .arena-accent{background:#e8d44d;}
 .arena-tennis .arena-label span{color:#e8d44d;}
+.arena-tennis .cta-soon{border:1px solid rgba(232,212,77,0.5);color:#e8d44d;}
 /* pickleball — purple */
-.arena-pickleball{border-color:rgba(168,124,232,0.55);box-shadow:0 0 20px rgba(168,124,232,0.1),inset 0 0 25px rgba(168,124,232,0.03);}
-.arena-pickleball::after{background:radial-gradient(circle,#a87ce8 0%,transparent 60%);}
+.arena-pickleball{box-shadow:inset 200px 0 60px -180px rgba(168,124,232,0.12);}
+.arena-pickleball .arena-accent{background:#a87ce8;}
 .arena-pickleball .arena-label span{color:#a87ce8;}
-/* coming soon buttons — match border color per row */
-.arena-padel .cta-soon{border:1.5px solid rgba(91,156,232,0.6);color:#5b9ce8;}
-.arena-tennis .cta-soon{border:1.5px solid rgba(232,212,77,0.6);color:#e8d44d;}
-.arena-pickleball .cta-soon{border:1.5px solid rgba(168,124,232,0.6);color:#a87ce8;}
+.arena-pickleball .cta-soon{border:1px solid rgba(168,124,232,0.5);color:#a87ce8;}
 /* log in */
-.login-btn{width:100%;background:transparent;border:1.5px solid var(--green);color:var(--green);padding:15px;border-radius:12px;font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.28em;cursor:pointer;transition:all 0.25s ease;}
+.login-btn{width:100%;background:transparent;border:1.5px solid var(--green);color:var(--green);padding:14px;border-radius:10px;font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.3em;cursor:pointer;transition:all 0.25s ease;}
 .login-btn:hover{background:rgba(184,242,106,0.08);box-shadow:0 0 20px rgba(184,242,106,0.15);}
 
 /* form */
@@ -393,27 +394,39 @@ const screens = [
       <!-- Choose Your Arena label -->
       <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.4em;color:var(--green);text-align:center;margin:22px 0 16px;">CHOOSE YOUR ARENA</div>
 
-      <!-- Arena stack -->
+      <!-- Arena stack (Split-Color Bar) -->
       <div class="arena-stack">
 
         <div class="arena-row arena-golf" onclick="show(1)">
-          <div class="arena-label">OPEN <span>GOLF</span></div>
-          <button class="arena-cta cta-play">PLAY NOW <span class="arrow">→</span></button>
+          <div class="arena-accent"></div>
+          <div class="arena-body">
+            <div class="arena-label">OPEN <span>GOLF</span></div>
+            <button class="arena-cta cta-play">PLAY NOW <span class="arrow">→</span></button>
+          </div>
         </div>
 
         <div class="arena-row arena-padel">
-          <div class="arena-label">OPEN <span>PADEL</span></div>
-          <button class="arena-cta cta-soon">COMING SOON <span class="arrow">→</span></button>
+          <div class="arena-accent"></div>
+          <div class="arena-body">
+            <div class="arena-label">OPEN <span>PADEL</span></div>
+            <button class="arena-cta cta-soon">COMING SOON</button>
+          </div>
         </div>
 
         <div class="arena-row arena-tennis">
-          <div class="arena-label">OPEN <span>TENNIS</span></div>
-          <button class="arena-cta cta-soon">COMING SOON <span class="arrow">→</span></button>
+          <div class="arena-accent"></div>
+          <div class="arena-body">
+            <div class="arena-label">OPEN <span>TENNIS</span></div>
+            <button class="arena-cta cta-soon">COMING SOON</button>
+          </div>
         </div>
 
         <div class="arena-row arena-pickleball">
-          <div class="arena-label">OPEN <span>PICKLEBALL</span></div>
-          <button class="arena-cta cta-soon">COMING SOON <span class="arrow">→</span></button>
+          <div class="arena-accent"></div>
+          <div class="arena-body">
+            <div class="arena-label">OPEN <span>PICKLEBALL</span></div>
+            <button class="arena-cta cta-soon">COMING SOON</button>
+          </div>
         </div>
 
       </div>
@@ -939,6 +952,20 @@ const screens = [
         <button class="btn-outline" style="flex:1;padding:11px;font-size:10px;border-radius:8px;">INVITE TO PLAY</button>
         <button class="btn-outline" style="padding:11px 14px;font-size:14px;border-radius:8px;">+</button>
       </div>
+
+      <!-- Quick Tags -->
+      <div style="margin:0 18px 16px;">
+        <div style="font-size:9px;color:var(--mid);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;">Quick Tags</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+          <div style="position:relative;padding:6px 14px;border-radius:20px;border:1px solid rgba(184,242,106,0.3);background:rgba(184,242,106,0.1);font-size:10px;color:var(--green);">Friendly<span style="position:absolute;top:-7px;right:-4px;background:var(--green);color:#000;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;">14</span></div>
+          <div style="position:relative;padding:6px 14px;border-radius:20px;border:1px solid rgba(184,242,106,0.3);background:rgba(184,242,106,0.1);font-size:10px;color:var(--green);">Good pace<span style="position:absolute;top:-7px;right:-4px;background:var(--green);color:#000;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;">12</span></div>
+          <div style="position:relative;padding:6px 14px;border-radius:20px;border:1px solid rgba(184,242,106,0.3);background:rgba(184,242,106,0.1);font-size:10px;color:var(--green);">Competitive<span style="position:absolute;top:-7px;right:-4px;background:var(--green);color:#000;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;">11</span></div>
+          <div style="position:relative;padding:6px 14px;border-radius:20px;border:1px solid rgba(184,242,106,0.3);background:rgba(184,242,106,0.1);font-size:10px;color:var(--green);">Great chat<span style="position:absolute;top:-7px;right:-4px;background:var(--green);color:#000;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;">9</span></div>
+          <div style="position:relative;padding:6px 14px;border-radius:20px;border:1px solid var(--border);font-size:10px;color:#888;">Punctual<span style="position:absolute;top:-7px;right:-4px;background:#444;color:#ccc;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;">6</span></div>
+          <div style="position:relative;padding:6px 14px;border-radius:20px;border:1px solid var(--border);font-size:10px;color:#888;">Fair play<span style="position:absolute;top:-7px;right:-4px;background:#444;color:#ccc;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;">4</span></div>
+        </div>
+      </div>
+
       <!-- Community Reviews - horizontal scroll -->
       <div style="margin-bottom:16px;">
         <div style="display:flex;align-items:center;justify-content:space-between;padding:0 18px;margin-bottom:10px;">
@@ -1458,14 +1485,7 @@ const screens = [
         <div class="stat-cell"><div class="stat-val">38</div><div class="stat-label">Connections</div></div>
         <div class="stat-cell"><div class="stat-val">3</div><div class="stat-label">Clubs</div></div>
       </div>
-      <!-- Show Up Score -->
-      <div style="margin:0 18px 12px;padding:12px 14px;background:#141f0a;border:1px solid rgba(184,242,106,0.2);border-radius:10px;display:flex;align-items:center;justify-content:space-between;">
-        <div>
-          <div style="font-size:10px;color:var(--green);font-weight:600;margin-bottom:2px;">Show Up Score</div>
-          <div style="font-size:9px;color:#888;">Based on 24 completed rounds</div>
-        </div>
-        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:24px;font-weight:800;color:var(--green);">96%</div>
-      </div>
+      <!-- Show Up Score removed per request -->
       <div style="padding:10px 18px 8px;font-size:11px;color:#888;line-height:1.7;">Weekend golfer based in South London. Love a competitive Stableford round.</div>
       <div style="padding:0 18px 12px;display:flex;flex-wrap:wrap;gap:6px;">
         <div class="tag">Pinehill GC</div>
@@ -1881,6 +1901,20 @@ const screens = [
         <button class="btn-outline" style="flex:1;padding:11px;font-size:10px;border-radius:8px;">INVITE TO PLAY</button>
         <button class="btn-outline" style="padding:11px 14px;font-size:14px;border-radius:8px;">+</button>
       </div>
+
+      <!-- Quick Tags -->
+      <div style="margin:0 18px 16px;">
+        <div style="font-size:9px;color:var(--mid);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:10px;">Quick Tags</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+          <div style="position:relative;padding:6px 14px;border-radius:20px;border:1px solid rgba(184,242,106,0.3);background:rgba(184,242,106,0.1);font-size:10px;color:var(--green);">Friendly<span style="position:absolute;top:-7px;right:-4px;background:var(--green);color:#000;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;">14</span></div>
+          <div style="position:relative;padding:6px 14px;border-radius:20px;border:1px solid rgba(184,242,106,0.3);background:rgba(184,242,106,0.1);font-size:10px;color:var(--green);">Good pace<span style="position:absolute;top:-7px;right:-4px;background:var(--green);color:#000;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;">12</span></div>
+          <div style="position:relative;padding:6px 14px;border-radius:20px;border:1px solid rgba(184,242,106,0.3);background:rgba(184,242,106,0.1);font-size:10px;color:var(--green);">Competitive<span style="position:absolute;top:-7px;right:-4px;background:var(--green);color:#000;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;">11</span></div>
+          <div style="position:relative;padding:6px 14px;border-radius:20px;border:1px solid rgba(184,242,106,0.3);background:rgba(184,242,106,0.1);font-size:10px;color:var(--green);">Great chat<span style="position:absolute;top:-7px;right:-4px;background:var(--green);color:#000;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;">9</span></div>
+          <div style="position:relative;padding:6px 14px;border-radius:20px;border:1px solid var(--border);font-size:10px;color:#888;">Punctual<span style="position:absolute;top:-7px;right:-4px;background:#444;color:#ccc;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;">6</span></div>
+          <div style="position:relative;padding:6px 14px;border-radius:20px;border:1px solid var(--border);font-size:10px;color:#888;">Fair play<span style="position:absolute;top:-7px;right:-4px;background:#444;color:#ccc;font-size:7px;font-weight:700;padding:1px 5px;border-radius:10px;">4</span></div>
+        </div>
+      </div>
+
       <!-- Community Reviews - horizontal scroll -->
       <div style="margin-bottom:16px;">
         <div style="display:flex;align-items:center;justify-content:space-between;padding:0 18px;margin-bottom:10px;">
