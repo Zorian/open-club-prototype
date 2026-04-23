@@ -764,12 +764,12 @@ const screens = [
       <div class="status-bar"><span class="status-time">9:41</span><div class="status-icons">▌▌▌ ▾ ▮</div></div>
       <div class="page-header"><span class="ph-back">‹</span><span class="ph-title">Rewards Board</span><span></span></div>
 
-      <!-- Time filter pills -->
-      <div style="display:flex;gap:6px;padding:0 16px 12px;">
-        <div style="padding:7px 14px;border-radius:18px;font-size:10px;font-weight:600;background:rgba(184,242,106,0.1);border:1px solid rgba(184,242,106,0.3);color:var(--green);">This Week</div>
-        <div style="padding:7px 14px;border-radius:18px;font-size:10px;color:#666;background:#1a1a1a;border:1px solid rgba(255,255,255,0.06);">Month</div>
-        <div style="padding:7px 14px;border-radius:18px;font-size:10px;color:#666;background:#1a1a1a;border:1px solid rgba(255,255,255,0.06);">All Time</div>
-        <div style="padding:7px 14px;border-radius:18px;font-size:10px;color:#666;background:#1a1a1a;border:1px solid rgba(255,255,255,0.06);">My Club</div>
+      <!-- Time filter pills — Segmented Control -->
+      <div style="display:flex;background:rgba(255,255,255,0.04);border-radius:10px;padding:3px;gap:2px;margin:0 16px 12px;">
+        <div style="flex:1;text-align:center;padding:8px 4px;font-size:10px;font-weight:700;cursor:pointer;border-radius:8px;background:var(--green);color:#000;box-shadow:0 2px 8px rgba(184,242,106,0.25);">This Week</div>
+        <div style="flex:1;text-align:center;padding:8px 4px;font-size:10px;font-weight:600;cursor:pointer;border-radius:8px;color:#555;">Month</div>
+        <div style="flex:1;text-align:center;padding:8px 4px;font-size:10px;font-weight:600;cursor:pointer;border-radius:8px;color:#555;">All Time</div>
+        <div style="flex:1;text-align:center;padding:8px 4px;font-size:10px;font-weight:600;cursor:pointer;border-radius:8px;color:#555;">My Club</div>
       </div>
 
       <!-- Monthly Reward Banner -->
