@@ -967,9 +967,12 @@ const screens = [
         </div>
 
         <!-- LIVE GAME section -->
-        <div style="font-size:10px;letter-spacing:0.22em;color:#888;font-weight:600;margin-bottom:10px;">LIVE GAME</div>
+        <div style="font-size:10px;letter-spacing:0.22em;color:#888;font-weight:600;margin-bottom:10px;">LIVE GAMES (3)</div>
+      </div>
 
-        <div onclick="show(4)" style="border:1px solid var(--border);border-radius:14px;overflow:hidden;position:relative;background:url('flag-bg.jpg') center/cover no-repeat;margin-bottom:24px;cursor:pointer;">
+      <!-- Horizontal scroll for live game cards -->
+      <div style="display:flex;gap:10px;padding:0 18px 6px;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;margin-bottom:24px;">
+        <div onclick="show(4)" style="min-width:280px;max-width:280px;border:1px solid var(--border);border-radius:14px;overflow:hidden;position:relative;background:url('flag-bg.jpg') center/cover no-repeat;cursor:pointer;flex-shrink:0;scroll-snap-align:start;">
           <div style="padding:14px 14px 12px;position:relative;z-index:1;text-shadow:0 2px 4px rgba(0,0,0,0.95),0 0 10px rgba(0,0,0,0.7),0 1px 2px rgba(0,0,0,1);background:linear-gradient(180deg,rgba(0,0,0,0.78) 0%,rgba(0,0,0,0.55) 35%,rgba(0,0,0,0.35) 60%,rgba(0,0,0,0.15) 100%);">
             <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
               <div style="display:flex;align-items:center;gap:8px;">
@@ -990,18 +993,15 @@ const screens = [
                 <img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.15);" />
                 <div style="font-size:8px;color:#fff;font-weight:600;">Jason</div>
                 <div style="background:#b8f26a;color:#000;font-size:8.5px;font-weight:800;padding:2px 7px;border-radius:10px;text-shadow:none;line-height:1.2;">1.08</div>
-              </div>
-              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:8px;">
+              </div><div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:8px;">
                 <img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.15);" />
                 <div style="font-size:8px;color:#fff;font-weight:600;">Sarah</div>
                 <div style="background:#b8f26a;color:#000;font-size:8.5px;font-weight:800;padding:2px 7px;border-radius:10px;text-shadow:none;line-height:1.2;">8.4</div>
-              </div>
-              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:8px;">
+              </div><div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:8px;">
                 <img src="https://randomuser.me/api/portraits/men/67.jpg" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.15);" />
                 <div style="font-size:8px;color:#fff;font-weight:600;">Tom</div>
                 <div style="background:#ff9f43;color:#000;font-size:8.5px;font-weight:800;padding:2px 7px;border-radius:10px;text-shadow:none;line-height:1.2;">15.6</div>
-              </div>
-              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;">
+              </div><div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:8px;">
                 <img src="https://randomuser.me/api/portraits/women/65.jpg" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.15);" />
                 <div style="font-size:8px;color:#fff;font-weight:600;">Emma</div>
                 <div style="background:#ff9f43;color:#000;font-size:8.5px;font-weight:800;padding:2px 7px;border-radius:10px;text-shadow:none;line-height:1.2;">12.3</div>
@@ -1016,6 +1016,86 @@ const screens = [
             <button class="btn-green" style="font-size:9px;padding:7px 14px;border-radius:8px;font-weight:800;letter-spacing:0.08em;">VIEW GAME ›</button>
           </div>
         </div>
+        <div onclick="show(4)" style="min-width:280px;max-width:280px;border:1px solid var(--border);border-radius:14px;overflow:hidden;position:relative;background:url('flag-bg.jpg') center/cover no-repeat;cursor:pointer;flex-shrink:0;scroll-snap-align:start;">
+          <div style="padding:14px 14px 12px;position:relative;z-index:1;text-shadow:0 2px 4px rgba(0,0,0,0.95),0 0 10px rgba(0,0,0,0.7),0 1px 2px rgba(0,0,0,1);background:linear-gradient(180deg,rgba(0,0,0,0.78) 0%,rgba(0,0,0,0.55) 35%,rgba(0,0,0,0.35) 60%,rgba(0,0,0,0.15) 100%);">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+              <div style="display:flex;align-items:center;gap:8px;">
+                <div style="display:flex;align-items:center;gap:6px;background:rgba(255,90,95,0.2);border:1px solid rgba(255,90,95,0.5);padding:3px 9px;border-radius:10px;text-shadow:none;">
+                  <span style="width:6px;height:6px;border-radius:50%;background:#ff5a5f;animation:liveDot 1.4s infinite;"></span>
+                  <span style="font-size:9px;color:#ff5a5f;font-weight:800;letter-spacing:0.15em;">LIVE NOW</span>
+                </div>
+                <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;color:#fff;">09:15</div>
+              </div>
+              <div style="font-size:8px;background:rgba(255,255,255,0.18);color:#fff;padding:3px 8px;border-radius:10px;border:1px solid rgba(255,255,255,0.25);">2-Ball</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+              <span style="font-size:9px;color:#fff;">HI 5–20</span>
+              <span style="font-size:8px;color:var(--green);font-weight:700;background:rgba(184,242,106,0.18);padding:2px 7px;border-radius:6px;text-shadow:none;">£25</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:0;">
+              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:8px;">
+                <img src="https://randomuser.me/api/portraits/men/22.jpg" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.15);" />
+                <div style="font-size:8px;color:#fff;font-weight:600;">Alex</div>
+                <div style="background:#b8f26a;color:#000;font-size:8.5px;font-weight:800;padding:2px 7px;border-radius:10px;text-shadow:none;line-height:1.2;">5.2</div>
+              </div><div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:8px;">
+                <img src="https://randomuser.me/api/portraits/men/55.jpg" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.15);" />
+                <div style="font-size:8px;color:#fff;font-weight:600;">Dan</div>
+                <div style="background:#b8f26a;color:#000;font-size:8.5px;font-weight:800;padding:2px 7px;border-radius:10px;text-shadow:none;line-height:1.2;">11.4</div>
+              </div>
+            </div>
+          </div>
+          <div style="border-top:1px solid var(--border);padding:10px 14px;display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1;background:rgba(5,5,5,0.92);backdrop-filter:blur(10px);text-shadow:0 1px 3px rgba(0,0,0,0.9);">
+            <div>
+              <div style="font-size:11px;color:var(--white);font-weight:600;">Thorney Park GC</div>
+              <div style="font-size:9px;color:#aaa;margin-top:1px;">4.0 mi · West London</div>
+            </div>
+            <button class="btn-green" style="font-size:9px;padding:7px 14px;border-radius:8px;font-weight:800;letter-spacing:0.08em;">VIEW GAME ›</button>
+          </div>
+        </div>
+        <div onclick="show(4)" style="min-width:280px;max-width:280px;border:1px solid var(--border);border-radius:14px;overflow:hidden;position:relative;background:url('flag-bg.jpg') center/cover no-repeat;cursor:pointer;flex-shrink:0;scroll-snap-align:start;">
+          <div style="padding:14px 14px 12px;position:relative;z-index:1;text-shadow:0 2px 4px rgba(0,0,0,0.95),0 0 10px rgba(0,0,0,0.7),0 1px 2px rgba(0,0,0,1);background:linear-gradient(180deg,rgba(0,0,0,0.78) 0%,rgba(0,0,0,0.55) 35%,rgba(0,0,0,0.35) 60%,rgba(0,0,0,0.15) 100%);">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+              <div style="display:flex;align-items:center;gap:8px;">
+                <div style="display:flex;align-items:center;gap:6px;background:rgba(255,90,95,0.2);border:1px solid rgba(255,90,95,0.5);padding:3px 9px;border-radius:10px;text-shadow:none;">
+                  <span style="width:6px;height:6px;border-radius:50%;background:#ff5a5f;animation:liveDot 1.4s infinite;"></span>
+                  <span style="font-size:9px;color:#ff5a5f;font-weight:800;letter-spacing:0.15em;">LIVE NOW</span>
+                </div>
+                <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;color:#fff;">10:00</div>
+              </div>
+              <div style="font-size:8px;background:rgba(255,255,255,0.18);color:#fff;padding:3px 8px;border-radius:10px;border:1px solid rgba(255,255,255,0.25);">3-Ball</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+              <span style="font-size:9px;color:#fff;">HI 0–10</span>
+              <span style="font-size:8px;color:var(--green);font-weight:700;background:rgba(184,242,106,0.18);padding:2px 7px;border-radius:6px;text-shadow:none;">£100</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:0;">
+              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:8px;">
+                <img src="https://randomuser.me/api/portraits/men/36.jpg" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.15);" />
+                <div style="font-size:8px;color:#fff;font-weight:600;">Mike</div>
+                <div style="background:#b8f26a;color:#000;font-size:8.5px;font-weight:800;padding:2px 7px;border-radius:10px;text-shadow:none;line-height:1.2;">2.1</div>
+              </div><div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:8px;">
+                <img src="https://randomuser.me/api/portraits/women/38.jpg" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.15);" />
+                <div style="font-size:8px;color:#fff;font-weight:600;">Lisa</div>
+                <div style="background:#b8f26a;color:#000;font-size:8.5px;font-weight:800;padding:2px 7px;border-radius:10px;text-shadow:none;line-height:1.2;">4.5</div>
+              </div><div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:8px;">
+                <img src="https://randomuser.me/api/portraits/men/41.jpg" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.15);" />
+                <div style="font-size:8px;color:#fff;font-weight:600;">Ben</div>
+                <div style="background:#b8f26a;color:#000;font-size:8.5px;font-weight:800;padding:2px 7px;border-radius:10px;text-shadow:none;line-height:1.2;">7.8</div>
+              </div>
+            </div>
+          </div>
+          <div style="border-top:1px solid var(--border);padding:10px 14px;display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1;background:rgba(5,5,5,0.92);backdrop-filter:blur(10px);text-shadow:0 1px 3px rgba(0,0,0,0.9);">
+            <div>
+              <div style="font-size:11px;color:var(--white);font-weight:600;">Thorney Park GC</div>
+              <div style="font-size:9px;color:#aaa;margin-top:1px;">4.0 mi · West London</div>
+            </div>
+            <button class="btn-green" style="font-size:9px;padding:7px 14px;border-radius:8px;font-weight:800;letter-spacing:0.08em;">VIEW GAME ›</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Continue main padded content -->
+      <div style="padding:0 18px;">
 
         <!-- MEMBERS section -->
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
