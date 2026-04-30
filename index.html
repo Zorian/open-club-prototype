@@ -384,8 +384,8 @@ body{background:var(--bg);color:var(--white);font-family:'Plus Jakarta Sans',san
     <button class="screen-btn active" onclick="show(0)"><span class="sb-num">01</span><span class="sb-name">Home — Sport Branches</span><span class="sb-dot dot-green"></span></button>
     <button class="screen-btn" onclick="show(1)"><span class="sb-num">02</span><span class="sb-name">Home — Find Rounds</span><span class="sb-dot dot-green"></span></button>
     <button class="screen-btn" onclick="show(2)"><span class="sb-num">03</span><span class="sb-name">Map — Find Players</span><span class="sb-dot dot-green"></span></button>
-    <button class="screen-btn" onclick="show(3)"><span class="sb-num">03b</span><span class="sb-name">Map · Live + Soon</span><span class="sb-dot dot-green"></span></button>
-    <button class="screen-btn" onclick="show(4)"><span class="sb-num">03c</span><span class="sb-name">Round Sheet (tap pin)</span><span class="sb-dot dot-amber"></span></button>
+    <button class="screen-btn" onclick="show(3)"><span class="sb-num">03b</span><span class="sb-name">Live Rounds System</span><span class="sb-dot dot-green"></span></button>
+    <button class="screen-btn" onclick="show(4)"><span class="sb-num">03c</span><span class="sb-name">Round Detail Sheet</span><span class="sb-dot dot-amber"></span></button>
     <button class="screen-btn" onclick="show(5)"><span class="sb-num">04</span><span class="sb-name">Club Page (members)</span><span class="sb-dot dot-green"></span></button>
     <button class="screen-btn" onclick="show(6)"><span class="sb-num">05</span><span class="sb-name">Rewards Board</span><span class="sb-dot dot-green"></span></button>
     <button class="screen-btn" onclick="show(7)"><span class="sb-num">06</span><span class="sb-name">Player Profile</span><span class="sb-dot dot-green"></span></button>
@@ -877,8 +877,8 @@ const screens = [
   },
   // 3: FIND PLAYERS (map toggle)
   {
-    title: "Nearby Clubs — Map (Live + Soon)",
-    desc: "Map tab · live + starting-soon round pins layered on clubs · chip filters at top",
+    title: "Live Rounds Discovery System",
+    desc: "Real-time round-state engine · multi-filter chip system · geo-aware overlay layer · glanceable card carousel",
     html: `<div class="app" style="background:#0d0d0d;display:flex;flex-direction:column;height:100%;">
       <div class="status-bar" style="background:#000;color:#fff;padding:14px 22px 6px;"><span class="status-time" style="color:#fff;">9:41</span><div class="status-icons" style="color:#fff;">▌▌▌ ▾ ▮</div></div>
 <div style="background:#000;padding:8px 18px 10px;display:flex;align-items:center;gap:10px;">
@@ -1000,8 +1000,8 @@ const screens = [
   },
   // 3b: ROUND DETAIL SHEET
   {
-    title: "Round Detail — Bottom Sheet",
-    desc: "Tapped a Starting Soon pin · sheet slides up with round details, host, players, JOIN ROUND CTA",
+    title: "Round Detail — Native Bottom Sheet",
+    desc: "Native bottom-sheet component · wired to round detail + JOIN flow · multi-round-per-club routing logic",
     html: `<div class="app" style="background:#0d0d0d;display:flex;flex-direction:column;height:100%;">
       <div class="status-bar" style="background:#000;color:#fff;padding:14px 22px 6px;"><span class="status-time" style="color:#fff;">9:41</span><div class="status-icons" style="color:#fff;">▌▌▌ ▾ ▮</div></div>
 <div style="background:#000;padding:8px 18px 10px;display:flex;align-items:center;gap:10px;">
