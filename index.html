@@ -1025,55 +1025,183 @@ const screens = [
   },
   // 4: CLUB PAGE
   {
-    title: "Club Page — Members",
-    desc: "Tap a map pin → this page · shows all members tagged to this club",
-    html: `<div class="app">
-      <div class="status-bar"><span class="status-time">9:41</span><div class="status-icons">▌▌▌ ▾ ▮</div></div>
-      <div class="club-hero">
-        <div class="club-hero-overlay"></div>
-        <div style="font-size:50px;position:relative;z-index:1;">⛳</div>
+    title: "Club Page — Thorney Park",
+    desc: "Tap a map pin (no badge) → this page · hero photo, live game card, members list",
+    html: `<div class="app" style="background:#0a0a0a;">
+      <!-- HERO with golf course photo + branded flag -->
+      <div style="position:relative;width:100%;height:340px;overflow:hidden;flex-shrink:0;">
+        <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=1200&q=80" style="width:100%;height:100%;object-fit:cover;display:block;" alt="" />
+        <!-- Dark overlay at bottom for blend into page -->
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 35%,rgba(0,0,0,0) 60%,rgba(10,10,10,1) 100%);"></div>
+        <!-- Status bar -->
+        <div class="status-bar" style="position:absolute;top:0;left:0;right:0;z-index:10;color:#fff;background:transparent;"><span class="status-time" style="color:#fff;">9:41</span><div class="status-icons" style="color:#fff;">▌▌▌ ▾ ▮</div></div>
+        <!-- Top bar: close + menu -->
+        <div style="position:absolute;top:42px;left:0;right:0;display:flex;justify-content:space-between;padding:0 18px;z-index:10;">
+          <div onclick="show(3)" style="width:32px;height:32px;border-radius:50%;background:rgba(0,0,0,0.5);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;cursor:pointer;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </div>
+          <div style="width:32px;height:32px;border-radius:50%;background:rgba(0,0,0,0.5);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;cursor:pointer;">
+            <span style="color:#fff;font-size:18px;letter-spacing:1px;line-height:0;">⋯</span>
+          </div>
+        </div>
+        <!-- Pulsing flag badge centred (positioned in upper-middle of hero) -->
+        <div style="position:absolute;top:42%;left:50%;transform:translate(-50%,-50%);z-index:5;">
+          <div style="position:relative;width:88px;height:88px;display:flex;align-items:center;justify-content:center;">
+            <div style="position:absolute;inset:0;border-radius:50%;background:rgba(184,242,106,0.25);animation:flagPulse 2s infinite;"></div>
+            <div style="position:absolute;inset:8px;border-radius:50%;background:rgba(184,242,106,0.35);"></div>
+            <svg width="42" height="42" viewBox="0 0 24 24" fill="#b8f26a" xmlns="http://www.w3.org/2000/svg" style="position:relative;z-index:2;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.4));"><path d="M6 2v20h2v-9l11-4-11-4V2H6z"/></svg>
+          </div>
+        </div>
+        <style>@keyframes flagPulse{0%,100%{transform:scale(1);opacity:1;}50%{transform:scale(1.15);opacity:0.7;}}</style>
       </div>
-      <div class="page-header" style="margin-top:-10px;position:relative;z-index:2;">
-        <span class="ph-back">‹</span>
-        <span class="ph-title">Pinehill Golf Club</span>
-        <span class="ph-action">⋯</span>
+
+      <!-- Header below hero -->
+      <div style="padding:0 18px;margin-top:-20px;position:relative;z-index:6;">
+        <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;">
+          <div style="font-family:'Fraunces',serif;font-size:26px;font-weight:600;color:#fff;line-height:1.1;letter-spacing:-0.02em;flex:1;">Thorney Park Golf Course</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;">
+          <svg width="13" height="15" viewBox="0 0 24 24" fill="#888" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
+          <span style="font-size:11px;color:#aaa;font-weight:500;">4.0 mi away</span>
+          <span style="margin-left:6px;background:rgba(184,242,106,0.12);border:1px solid rgba(184,242,106,0.3);color:#b8f26a;font-size:10px;font-weight:600;padding:4px 10px;border-radius:12px;display:inline-flex;align-items:center;gap:5px;">
+            <span style="width:6px;height:6px;border-radius:50%;background:#b8f26a;"></span>
+            12 members online
+          </span>
+        </div>
+
+        <!-- Toggle: Social / Competitive -->
+        <div style="display:flex;background:#161616;border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:4px;margin-bottom:22px;">
+          <div style="flex:1;padding:10px;border-radius:10px;background:#b8f26a;color:#000;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:6px;cursor:pointer;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12.75c1.63 0 3.07.39 4.24.9 1.08.48 1.76 1.56 1.76 2.73V18H6v-1.61c0-1.18.68-2.26 1.76-2.73 1.17-.52 2.61-.91 4.24-.91zM4 13c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm1.13 1.1c-.37-.06-.74-.1-1.13-.1-.99 0-1.93.21-2.78.58A2.01 2.01 0 000 16.43V18h4.5v-1.61c0-.83.23-1.61.63-2.29zM20 13c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm4 3.43c0-.81-.48-1.53-1.22-1.85A6.95 6.95 0 0020 14c-.39 0-.76.04-1.13.1.4.68.63 1.46.63 2.29V18H24v-1.57zM12 6c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"/></svg>
+            Social Play
+          </div>
+          <div style="flex:1;padding:10px;border-radius:10px;color:#888;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:6px;cursor:pointer;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>
+            Competitive
+          </div>
+        </div>
+
+        <!-- LIVE GAME section -->
+        <div style="font-size:10px;letter-spacing:0.22em;color:#888;font-weight:600;margin-bottom:10px;">LIVE GAME</div>
+
+        <div onclick="show(4)" style="position:relative;border-radius:18px;overflow:hidden;margin-bottom:24px;border:1px solid rgba(184,242,106,0.2);cursor:pointer;background:#0d1908;">
+          <!-- Card bg image -->
+          <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=1200&q=80" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.45;" alt="" />
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.35) 0%,rgba(0,0,0,0.85) 100%);"></div>
+
+          <!-- Content -->
+          <div style="position:relative;z-index:2;padding:14px 16px;">
+            <!-- Top row: LIVE + time + 4-Ball -->
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+              <div style="display:flex;align-items:center;gap:8px;">
+                <div style="display:flex;align-items:center;gap:6px;background:rgba(255,90,95,0.18);border:1px solid rgba(255,90,95,0.4);padding:3px 9px;border-radius:10px;">
+                  <span style="width:6px;height:6px;border-radius:50%;background:#ff5a5f;animation:liveDot 1.4s infinite;"></span>
+                  <span style="font-size:9px;color:#ff5a5f;font-weight:800;letter-spacing:0.15em;">LIVE NOW</span>
+                </div>
+                <span style="font-size:11px;color:#fff;font-weight:600;">08:30</span>
+              </div>
+              <span style="font-size:9px;color:#fff;font-weight:600;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);padding:3px 9px;border-radius:10px;letter-spacing:0.05em;">4-Ball</span>
+            </div>
+
+            <!-- HI range + stake -->
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;">
+              <span style="font-size:10px;color:#bbb;font-weight:600;letter-spacing:0.05em;">HI 0–15</span>
+              <span style="background:#b8f26a;color:#000;font-size:10px;font-weight:800;padding:3px 9px;border-radius:8px;">£50</span>
+            </div>
+
+            <!-- Players row -->
+            <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:14px;">
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
+                <div style="position:relative;width:48px;height:48px;margin-bottom:6px;">
+                  <img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:100%;height:100%;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.1);" />
+                  <div style="position:absolute;bottom:-1px;right:-1px;width:11px;height:11px;border-radius:50%;background:#b8f26a;border:2px solid #0d1908;"></div>
+                </div>
+                <div style="font-size:11px;color:#fff;font-weight:600;margin-bottom:3px;">Jason</div>
+                <div style="font-size:9px;font-weight:700;background:#b8f26a;color:#000;padding:2px 8px;border-radius:6px;">1.08</div>
+              </div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
+                <div style="position:relative;width:48px;height:48px;margin-bottom:6px;">
+                  <img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:100%;height:100%;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.1);" />
+                  <div style="position:absolute;bottom:-1px;right:-1px;width:11px;height:11px;border-radius:50%;background:#b8f26a;border:2px solid #0d1908;"></div>
+                </div>
+                <div style="font-size:11px;color:#fff;font-weight:600;margin-bottom:3px;">Sarah</div>
+                <div style="font-size:9px;font-weight:700;background:#b8f26a;color:#000;padding:2px 8px;border-radius:6px;">8.4</div>
+              </div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
+                <div style="position:relative;width:48px;height:48px;margin-bottom:6px;">
+                  <img src="https://randomuser.me/api/portraits/men/67.jpg" style="width:100%;height:100%;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.1);" />
+                  <div style="position:absolute;bottom:-1px;right:-1px;width:11px;height:11px;border-radius:50%;background:#b8f26a;border:2px solid #0d1908;"></div>
+                </div>
+                <div style="font-size:11px;color:#fff;font-weight:600;margin-bottom:3px;">Tom</div>
+                <div style="font-size:9px;font-weight:700;background:#ff9f43;color:#000;padding:2px 8px;border-radius:6px;">15.6</div>
+              </div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
+                <div style="position:relative;width:48px;height:48px;margin-bottom:6px;">
+                  <img src="https://randomuser.me/api/portraits/women/65.jpg" style="width:100%;height:100%;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.1);" />
+                  <div style="position:absolute;bottom:-1px;right:-1px;width:11px;height:11px;border-radius:50%;background:#b8f26a;border:2px solid #0d1908;"></div>
+                </div>
+                <div style="font-size:11px;color:#fff;font-weight:600;margin-bottom:3px;">Emma</div>
+                <div style="font-size:9px;font-weight:700;background:#ff9f43;color:#000;padding:2px 8px;border-radius:6px;">12.3</div>
+              </div>
+            </div>
+
+            <!-- Bottom row: club info + view -->
+            <div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.08);padding-top:12px;">
+              <div>
+                <div style="font-size:13px;color:#fff;font-weight:700;">Thorney Park GC</div>
+                <div style="font-size:9px;color:#888;margin-top:1px;">4.0 mi · West London</div>
+              </div>
+              <div style="background:#b8f26a;color:#000;font-size:10px;font-weight:800;letter-spacing:0.1em;padding:9px 16px;border-radius:12px;">VIEW GAME ›</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MEMBERS section -->
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+          <div style="font-size:10px;letter-spacing:0.22em;color:#888;font-weight:600;">MEMBERS (12 ONLINE)</div>
+          <div style="font-size:10px;color:#b8f26a;font-weight:600;cursor:pointer;">View All ›</div>
+        </div>
+
+        <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:24px;">
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
+            <div style="position:relative;width:54px;height:54px;margin-bottom:6px;">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:100%;height:100%;border-radius:50%;object-fit:cover;" />
+              <div style="position:absolute;bottom:-1px;right:-1px;width:13px;height:13px;border-radius:50%;background:#b8f26a;border:2.5px solid #0a0a0a;"></div>
+            </div>
+            <div style="font-size:10px;color:#fff;font-weight:600;display:flex;align-items:center;gap:4px;"><span style="width:6px;height:6px;border-radius:50%;background:#b8f26a;"></span>Jason</div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
+            <div style="position:relative;width:54px;height:54px;margin-bottom:6px;">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:100%;height:100%;border-radius:50%;object-fit:cover;" />
+              <div style="position:absolute;bottom:-1px;right:-1px;width:13px;height:13px;border-radius:50%;background:#b8f26a;border:2.5px solid #0a0a0a;"></div>
+            </div>
+            <div style="font-size:10px;color:#fff;font-weight:600;display:flex;align-items:center;gap:4px;"><span style="width:6px;height:6px;border-radius:50%;background:#b8f26a;"></span>Sarah</div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
+            <div style="position:relative;width:54px;height:54px;margin-bottom:6px;">
+              <img src="https://randomuser.me/api/portraits/men/67.jpg" style="width:100%;height:100%;border-radius:50%;object-fit:cover;" />
+              <div style="position:absolute;bottom:-1px;right:-1px;width:13px;height:13px;border-radius:50%;background:#b8f26a;border:2.5px solid #0a0a0a;"></div>
+            </div>
+            <div style="font-size:10px;color:#fff;font-weight:600;display:flex;align-items:center;gap:4px;"><span style="width:6px;height:6px;border-radius:50%;background:#b8f26a;"></span>Tom</div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
+            <div style="position:relative;width:54px;height:54px;margin-bottom:6px;">
+              <img src="https://randomuser.me/api/portraits/women/65.jpg" style="width:100%;height:100%;border-radius:50%;object-fit:cover;" />
+              <div style="position:absolute;bottom:-1px;right:-1px;width:13px;height:13px;border-radius:50%;background:#b8f26a;border:2.5px solid #0a0a0a;"></div>
+            </div>
+            <div style="font-size:10px;color:#fff;font-weight:600;display:flex;align-items:center;gap:4px;"><span style="width:6px;height:6px;border-radius:50%;background:#b8f26a;"></span>Emma</div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
+            <div style="width:54px;height:54px;border-radius:50%;background:#1a1a1a;border:1.5px dashed rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:6px;">
+              <span style="color:#888;font-size:14px;font-weight:700;">+8</span>
+            </div>
+            <div style="font-size:10px;color:#888;font-weight:600;">View All ›</div>
+          </div>
+        </div>
+
       </div>
-      <div style="padding:0 18px 12px;display:flex;align-items:center;gap:10px;">
-        <span style="font-size:10px;color:#888;">📍 Kent, UK</span>
-        <span class="tag">6 members nearby</span>
-        <button style="margin-left:auto;font-size:9px;font-weight:700;letter-spacing:0.1em;background:var(--green);color:#000;padding:6px 12px;border-radius:14px;border:none;font-family:'Plus Jakarta Sans',sans-serif;cursor:pointer;white-space:nowrap;">+ JOIN CLUB</button>
-      </div>
-      <!-- Social Play / Competitive Toggle -->
-      <div style="display:flex;margin:0 18px 12px;background:#1a1a1a;border-radius:8px;overflow:hidden;border:1px solid var(--border);">
-        <div style="flex:1;padding:10px 0;text-align:center;background:var(--green);color:#000;font-size:11px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;">⛳ Social Play</div>
-        <div style="flex:1;padding:10px 0;text-align:center;color:#888;font-size:11px;font-family:'Plus Jakarta Sans',sans-serif;position:relative;">🏆 Competitive <span style="font-size:7px;background:rgba(184,242,106,0.15);color:var(--green);padding:2px 5px;border-radius:6px;font-weight:600;margin-left:2px;">Soon</span></div>
-      </div>
-      <div class="section-title">Members</div>
-      <div class="player-row">
-        <div class="player-av" style="background:none;padding:0;width:44px;height:44px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /><div class="online-dot"></div></div>
-        <div class="player-info"><div class="player-name">Jason M.</div><div class="player-sub"><span class="stars">★★★★</span>☆ · HI 1.08</div></div>
-        <div class="player-right"><div class="player-dist">1.1km</div><button class="btn-green" style="font-size:7.5px;padding:4px 8px;margin-top:4px;white-space:nowrap;">REQUEST TO JOIN</button></div>
-      </div>
-      <div class="player-row">
-        <div class="player-av" style="background:none;padding:0;width:44px;height:44px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /><div class="online-dot"></div></div>
-        <div class="player-info"><div class="player-name">Sarah K.</div><div class="player-sub"><span class="stars">★★★★</span>☆ · HI 8.4</div></div>
-        <div class="player-right"><div class="player-dist">850m</div><button style="font-size:7.5px;padding:4px 8px;margin-top:4px;background:#1a2a10;border:1px solid #4a7a20;color:#aad060;border-radius:4px;font-family:'Plus Jakarta Sans',sans-serif;white-space:nowrap;cursor:default;">REQUESTED ✓</button></div>
-      </div>
-      <div class="player-row">
-        <div class="player-av" style="background:none;padding:0;width:44px;height:44px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/men/67.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div>
-        <div class="player-info"><div class="player-name">Mark D.</div><div class="player-sub"><span class="stars">★★★</span>☆☆ · HI 12.1</div></div>
-        <div class="player-right"><div class="player-dist">850m</div><div class="tag amber" style="margin-top:4px;">INACTIVE</div></div>
-      </div>
-      <div class="player-row">
-        <div class="player-av" style="background:none;padding:0;width:44px;height:44px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/men/22.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /><div class="online-dot"></div></div>
-        <div class="player-info"><div class="player-name">Alex H.</div><div class="player-sub"><span class="stars">★★★★</span>☆ · HI 5.2</div></div>
-        <div class="player-right"><div class="player-dist">1.1km</div><button class="btn-outline" style="font-size:7.5px;padding:4px 8px;margin-top:4px;white-space:nowrap;">INVITE</button></div>
-      </div>
-      <div class="player-row">
-        <div class="player-av" style="background:none;padding:0;width:44px;height:44px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/men/55.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div>
-        <div class="player-info"><div class="player-name">Tom W.</div><div class="player-sub"><span class="stars">★★★</span>☆☆ · HI 15.6</div></div>
-        <div class="player-right"><div class="player-dist">1.2km</div><button class="btn-outline" style="font-size:7.5px;padding:4px 8px;margin-top:4px;white-space:nowrap;">REQUEST TO JOIN</button></div>
-      </div>
+
+      <style>@keyframes liveDot{0%,100%{opacity:1;}50%{opacity:0.4;}}</style>
     </div>`
   },
   // 4: LEADERBOARD
