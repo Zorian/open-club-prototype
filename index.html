@@ -349,6 +349,13 @@ body{background:var(--bg);color:var(--white);font-family:'Plus Jakarta Sans',san
 
 .lprofile .lbtn-row{margin:14px 14px 0;display:flex;gap:10px;}
 .lprofile .lbtn-msg{flex:1;background:var(--green);color:#000;border:none;font-size:11px;font-weight:800;letter-spacing:0.12em;padding:14px;border-radius:14px;font-family:'Plus Jakarta Sans',sans-serif;cursor:pointer;}
+/* Segmented action bar (variant 2) — used by Player Profile pages */
+.lprofile .lseg{margin:16px 14px 0;display:flex;background:#101010;border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:4px;gap:0;}
+.lprofile .lseg button{flex:1;background:transparent;border:none;color:#888;font-size:10.5px;font-weight:700;letter-spacing:0.08em;padding:11px 6px;border-radius:10px;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:5px;transition:background 0.18s ease, color 0.18s ease;}
+.lprofile .lseg button:hover{color:#f0ede6;}
+.lprofile .lseg .lseg-active{background:var(--green);color:#000;box-shadow:0 4px 12px rgba(184,242,106,0.3);}
+.lprofile .lseg .lseg-active:hover{color:#000;}
+.lprofile .lseg button svg{flex-shrink:0;}
 .lprofile .lbtn-inv{flex:1;background:transparent;color:var(--green);border:1.5px solid var(--green);font-size:11px;font-weight:700;letter-spacing:0.12em;padding:14px;border-radius:14px;font-family:'Plus Jakarta Sans',sans-serif;cursor:pointer;}
 .lprofile .lbtn-add{background:transparent;color:var(--green);border:1.5px solid rgba(184,242,106,0.5);font-family:'Plus Jakarta Sans',sans-serif;cursor:pointer;padding:8px;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;flex:0 0 70px;}
 .lprofile .lbtn-add svg{margin-bottom:2px;}
@@ -1530,10 +1537,19 @@ const screens = [
         <div class="lstat"><div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="8" r="3.5"/><path d="M2 19c0-3 3-5 7-5s7 2 7 5v1H2v-1z"/><circle cx="17.5" cy="9" r="2.7"/><path d="M16 14.5c2.5 0 6 1.5 6 4v1h-5v-.5c0-1.7-.7-3.2-1.7-4.3.2-.1.5-.2.7-.2z"/></svg></div><div class="lstat-text"><div class="nm">47</div><div class="lb">Connections</div></div></div>
       </div>
 
-      <div class="lbtn-row">
-        <button class="lbtn-msg">MESSAGE</button>
-        <button class="lbtn-inv">INVITE TO PLAY</button>
-        <button class="lbtn-add"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg><span class="lb">CONNECT</span></button>
+      <div class="lseg">
+        <button class="lseg-active">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          MESSAGE
+        </button>
+        <button>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v20h2v-9l11-4-11-4V2H6z"/></svg>
+          INVITE
+        </button>
+        <button>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+          CONNECT
+        </button>
       </div>
 
       <div class="lsec-h">Clubs</div>
@@ -2529,10 +2545,19 @@ const screens = [
         <div class="lstat"><div class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div><div class="lstat-text"><div class="nm">42</div><div class="lb">Matches</div></div></div>
       </div>
 
-      <div class="lbtn-row">
-        <button class="lbtn-msg">MESSAGE</button>
-        <button class="lbtn-inv">INVITE TO PLAY</button>
-        <button class="lbtn-add"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg><span class="lb">CONNECT</span></button>
+      <div class="lseg">
+        <button class="lseg-active">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          MESSAGE
+        </button>
+        <button>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v20h2v-9l11-4-11-4V2H6z"/></svg>
+          INVITE
+        </button>
+        <button>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+          CONNECT
+        </button>
       </div>
 
       <div class="lsec-h">Clubs</div>
