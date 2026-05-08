@@ -385,8 +385,7 @@ body{background:var(--bg);color:var(--white);font-family:'Plus Jakarta Sans',san
     <div class="group-label">Browse Mode (no signup)</div>
     <button class="screen-btn active" onclick="show(0)"><span class="sb-num">01</span><span class="sb-name">Home — Sport Branches</span><span class="sb-dot dot-green"></span></button>
     <button class="screen-btn" onclick="show(1)"><span class="sb-num">02</span><span class="sb-name">Home — Find Rounds</span><span class="sb-dot dot-green"></span></button>
-    <button class="screen-btn" onclick="show(23)"><span class="sb-num">02b</span><span class="sb-name">Start a Round (form)</span><span class="sb-dot dot-blue"></span></button>
-    <button class="screen-btn" onclick="show(2)"><span class="sb-num">03</span><span class="sb-name">Map — Find Players</span><span class="sb-dot dot-green"></span></button>
+    <button class="screen-btn" onclick="show(2)"><span class="sb-num">03</span><span class="sb-name">Start a Round (form)</span><span class="sb-dot dot-blue"></span></button>
     <button class="screen-btn" onclick="show(3)"><span class="sb-num">03b</span><span class="sb-name">Map · Live + Soon</span><span class="sb-dot dot-green"></span></button>
     <button class="screen-btn" onclick="show(4)"><span class="sb-num">03c</span><span class="sb-name">Round Sheet (tap pin)</span><span class="sb-dot dot-amber"></span></button>
     <button class="screen-btn" onclick="show(5)"><span class="sb-num">04</span><span class="sb-name">Club Page (members)</span><span class="sb-dot dot-green"></span></button>
@@ -651,7 +650,7 @@ const screens = [
 
       <!-- ═══ + Start a Round CTA ═══ -->
       <div style="margin:10px 18px 4px;">
-        <button class="btn-green" onclick="show(23)" style="width:100%;font-size:12px;padding:12px 0;border-radius:12px;font-weight:700;letter-spacing:0.05em;cursor:pointer;">+ Start a Round</button>
+        <button class="btn-green" onclick="show(2)" style="width:100%;font-size:12px;padding:12px 0;border-radius:12px;font-weight:700;letter-spacing:0.05em;cursor:pointer;">+ Start a Round</button>
       </div>
 
       <!-- ═══ SECTION: Weekly Leaderboard (Trending style) ═══ -->
@@ -733,11 +732,104 @@ const screens = [
       <div class="bnav"><div class="bnav-tab"><div class="bnav-icon active">⌂</div><div class="bnav-label active">Find Rounds</div></div><div class="bnav-tab"><div class="bnav-icon">◎</div><div class="bnav-label">Map</div></div><div class="bnav-tab"><div class="bnav-icon">✉</div><div class="bnav-label">Messages</div></div><div class="bnav-tab"><div class="bnav-icon">👤</div><div class="bnav-label">Profile</div></div></div>
     </div>`
   },
-  // 2: MAP
+  // 2: START A ROUND (form opened from Find Rounds CTA)
   {
-    title: "Map — Find Players",
-    desc: "Centre nav tab · MAIN feature · golf club pins · tap pin = club members",
-    html: `<div class="app" style="height:100%;background:#000;"></div>`
+    title: "Start a Round",
+    desc: "Opens from + Start a Round button · host creates a new round · Members rate / Visitors rate toggle next to price",
+    html: `<div class="app" style="background:#000;display:block;height:100%;overflow-y:auto;">
+      <div class="status-bar" style="background:#000;padding:14px 22px 4px;"><span class="status-time" style="color:#fff;">9:41</span><div class="status-icons" style="color:#fff;">▌▌▌ ▾ ▮</div></div>
+
+      <!-- Header with back arrow + title -->
+      <div style="display:flex;align-items:center;gap:14px;padding:14px 18px 18px;">
+        <div style="width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;background:rgba(255,255,255,0.04);">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </div>
+        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:800;color:#fff;letter-spacing:-0.02em;">Start a Round</div>
+      </div>
+
+      <!-- COURSE / CLUB -->
+      <div style="padding:0 18px;">
+        <div style="font-size:9px;color:#888;letter-spacing:0.16em;font-weight:700;margin-bottom:8px;">COURSE / CLUB <span style="color:var(--green);">*</span></div>
+        <div class="form-field" style="margin:0 0 18px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <div style="font-size:11px;color:#666;">Search clubs or type course name</div>
+        </div>
+      </div>
+
+      <!-- DATE + TIME row -->
+      <div style="display:flex;gap:10px;padding:0 18px;">
+        <div style="flex:1;">
+          <div style="font-size:9px;color:#888;letter-spacing:0.16em;font-weight:700;margin-bottom:8px;">DATE <span style="color:var(--green);">*</span></div>
+          <div class="form-field" style="margin:0 0 18px;justify-content:space-between;">
+            <span style="font-size:11px;color:#666;">Select date</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b8f26a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+        </div>
+        <div style="flex:1;">
+          <div style="font-size:9px;color:#888;letter-spacing:0.16em;font-weight:700;margin-bottom:8px;">TIME <span style="color:var(--green);">*</span></div>
+          <div class="form-field" style="margin:0 0 18px;justify-content:space-between;">
+            <span style="font-size:11px;color:#666;">Select time</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b8f26a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAR -->
+      <div style="padding:0 18px;">
+        <div style="font-size:9px;color:#888;letter-spacing:0.16em;font-weight:700;margin-bottom:8px;">PAR</div>
+        <div class="form-field" style="margin:0 0 18px;">
+          <span style="font-size:13px;color:#fff;font-weight:600;">72</span>
+        </div>
+      </div>
+
+      <!-- PLAYERS -->
+      <div style="padding:0 18px;">
+        <div style="font-size:9px;color:#888;letter-spacing:0.16em;font-weight:700;margin-bottom:8px;">PLAYERS</div>
+        <div style="display:flex;gap:8px;margin-bottom:18px;">
+          <div style="flex:1;background:#1a1a1a;border:1px solid var(--border);border-radius:10px;padding:14px 0;text-align:center;cursor:pointer;">
+            <div style="font-size:18px;font-weight:800;color:#888;line-height:1;">2</div>
+            <div style="font-size:8.5px;color:#666;margin-top:4px;letter-spacing:0.04em;">Pair</div>
+          </div>
+          <div style="flex:1;background:#1a1a1a;border:1px solid var(--border);border-radius:10px;padding:14px 0;text-align:center;cursor:pointer;">
+            <div style="font-size:18px;font-weight:800;color:#888;line-height:1;">3</div>
+            <div style="font-size:8.5px;color:#666;margin-top:4px;letter-spacing:0.04em;">Three-ball</div>
+          </div>
+          <div style="flex:1;background:#b8f26a;border:1px solid #b8f26a;border-radius:10px;padding:14px 0;text-align:center;cursor:pointer;box-shadow:0 0 14px rgba(184,242,106,0.3);">
+            <div style="font-size:18px;font-weight:800;color:#000;line-height:1;">4</div>
+            <div style="font-size:8.5px;color:#000;margin-top:4px;letter-spacing:0.04em;font-weight:700;">Four-ball</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRICE + RATE TYPE TOGGLE (NEW) -->
+      <div style="padding:0 18px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+          <div style="font-size:9px;color:#888;letter-spacing:0.16em;font-weight:700;">PRICE (£)</div>
+          <!-- Rate type toggle -->
+          <div style="display:flex;background:#0f0f0f;border:1px solid var(--border);border-radius:8px;padding:3px;gap:2px;">
+            <div style="font-size:9px;font-weight:700;color:#000;background:#b8f26a;padding:5px 10px;border-radius:6px;letter-spacing:0.04em;cursor:pointer;">MEMBERS</div>
+            <div style="font-size:9px;font-weight:700;color:#888;padding:5px 10px;border-radius:6px;letter-spacing:0.04em;cursor:pointer;">VISITORS</div>
+          </div>
+        </div>
+        <div class="form-field" style="margin:0 0 4px;">
+          <span style="font-size:13px;color:#fff;font-weight:600;">30</span>
+        </div>
+        <div style="font-size:9px;color:#666;margin-bottom:18px;line-height:1.4;">Set the rate guests will pay to join. Toggle <span style="color:var(--green);font-weight:600;">Visitors</span> if your course charges non-members a different rate.</div>
+      </div>
+
+      <!-- DESCRIPTION -->
+      <div style="padding:0 18px;">
+        <div style="font-size:9px;color:#888;letter-spacing:0.16em;font-weight:700;margin-bottom:8px;">DESCRIPTION (OPTIONAL)</div>
+        <div class="form-field" style="margin:0 0 22px;align-items:flex-start;min-height:90px;padding:14px;">
+          <span style="font-size:11px;color:#666;line-height:1.5;">Tell players about this round...</span>
+        </div>
+      </div>
+
+      <!-- CREATE ROUND CTA -->
+      <div style="padding:0 18px 22px;">
+        <button class="btn-green" style="width:100%;font-size:13px;padding:15px 0;border-radius:14px;font-weight:800;letter-spacing:0.08em;">+ CREATE ROUND</button>
+      </div>
+    </div>`
   },
   // 3: FIND PLAYERS (map toggle)
   {
@@ -1616,7 +1708,7 @@ const screens = [
 
       <!-- + Start a Round CTA -->
       <div style="margin:10px 18px 4px;">
-        <button class="btn-green" onclick="show(23)" style="width:100%;font-size:12px;padding:12px 0;border-radius:12px;font-weight:700;letter-spacing:0.05em;cursor:pointer;">+ Start a Round</button>
+        <button class="btn-green" onclick="show(2)" style="width:100%;font-size:12px;padding:12px 0;border-radius:12px;font-weight:700;letter-spacing:0.05em;cursor:pointer;">+ Start a Round</button>
       </div>
 
       <!-- ═══ SECTION: Weekly Leaderboard (Gradient Bars) ═══ -->
@@ -2397,112 +2489,13 @@ const screens = [
       </div>
     </div>`
   },
-  // 23: START A ROUND (form opened from Find Rounds CTA)
-  {
-    title: "Start a Round",
-    desc: "Opens from + Start a Round button · host creates a new round · Members rate / Visitors rate toggle next to price",
-    html: `<div class="app" style="background:#000;display:block;height:100%;overflow-y:auto;">
-      <div class="status-bar" style="background:#000;padding:14px 22px 4px;"><span class="status-time" style="color:#fff;">9:41</span><div class="status-icons" style="color:#fff;">▌▌▌ ▾ ▮</div></div>
-
-      <!-- Header with back arrow + title -->
-      <div style="display:flex;align-items:center;gap:14px;padding:14px 18px 18px;">
-        <div style="width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;background:rgba(255,255,255,0.04);">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-        </div>
-        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:800;color:#fff;letter-spacing:-0.02em;">Start a Round</div>
-      </div>
-
-      <!-- COURSE / CLUB -->
-      <div style="padding:0 18px;">
-        <div style="font-size:9px;color:#888;letter-spacing:0.16em;font-weight:700;margin-bottom:8px;">COURSE / CLUB <span style="color:var(--green);">*</span></div>
-        <div class="form-field" style="margin:0 0 18px;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <div style="font-size:11px;color:#666;">Search clubs or type course name</div>
-        </div>
-      </div>
-
-      <!-- DATE + TIME row -->
-      <div style="display:flex;gap:10px;padding:0 18px;">
-        <div style="flex:1;">
-          <div style="font-size:9px;color:#888;letter-spacing:0.16em;font-weight:700;margin-bottom:8px;">DATE <span style="color:var(--green);">*</span></div>
-          <div class="form-field" style="margin:0 0 18px;justify-content:space-between;">
-            <span style="font-size:11px;color:#666;">Select date</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b8f26a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          </div>
-        </div>
-        <div style="flex:1;">
-          <div style="font-size:9px;color:#888;letter-spacing:0.16em;font-weight:700;margin-bottom:8px;">TIME <span style="color:var(--green);">*</span></div>
-          <div class="form-field" style="margin:0 0 18px;justify-content:space-between;">
-            <span style="font-size:11px;color:#666;">Select time</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b8f26a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- PAR -->
-      <div style="padding:0 18px;">
-        <div style="font-size:9px;color:#888;letter-spacing:0.16em;font-weight:700;margin-bottom:8px;">PAR</div>
-        <div class="form-field" style="margin:0 0 18px;">
-          <span style="font-size:13px;color:#fff;font-weight:600;">72</span>
-        </div>
-      </div>
-
-      <!-- PLAYERS -->
-      <div style="padding:0 18px;">
-        <div style="font-size:9px;color:#888;letter-spacing:0.16em;font-weight:700;margin-bottom:8px;">PLAYERS</div>
-        <div style="display:flex;gap:8px;margin-bottom:18px;">
-          <div style="flex:1;background:#1a1a1a;border:1px solid var(--border);border-radius:10px;padding:14px 0;text-align:center;cursor:pointer;">
-            <div style="font-size:18px;font-weight:800;color:#888;line-height:1;">2</div>
-            <div style="font-size:8.5px;color:#666;margin-top:4px;letter-spacing:0.04em;">Pair</div>
-          </div>
-          <div style="flex:1;background:#1a1a1a;border:1px solid var(--border);border-radius:10px;padding:14px 0;text-align:center;cursor:pointer;">
-            <div style="font-size:18px;font-weight:800;color:#888;line-height:1;">3</div>
-            <div style="font-size:8.5px;color:#666;margin-top:4px;letter-spacing:0.04em;">Three-ball</div>
-          </div>
-          <div style="flex:1;background:#b8f26a;border:1px solid #b8f26a;border-radius:10px;padding:14px 0;text-align:center;cursor:pointer;box-shadow:0 0 14px rgba(184,242,106,0.3);">
-            <div style="font-size:18px;font-weight:800;color:#000;line-height:1;">4</div>
-            <div style="font-size:8.5px;color:#000;margin-top:4px;letter-spacing:0.04em;font-weight:700;">Four-ball</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- PRICE + RATE TYPE TOGGLE (NEW) -->
-      <div style="padding:0 18px;">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
-          <div style="font-size:9px;color:#888;letter-spacing:0.16em;font-weight:700;">PRICE (£)</div>
-          <!-- Rate type toggle -->
-          <div style="display:flex;background:#0f0f0f;border:1px solid var(--border);border-radius:8px;padding:3px;gap:2px;">
-            <div style="font-size:9px;font-weight:700;color:#000;background:#b8f26a;padding:5px 10px;border-radius:6px;letter-spacing:0.04em;cursor:pointer;">MEMBERS</div>
-            <div style="font-size:9px;font-weight:700;color:#888;padding:5px 10px;border-radius:6px;letter-spacing:0.04em;cursor:pointer;">VISITORS</div>
-          </div>
-        </div>
-        <div class="form-field" style="margin:0 0 4px;">
-          <span style="font-size:13px;color:#fff;font-weight:600;">30</span>
-        </div>
-        <div style="font-size:9px;color:#666;margin-bottom:18px;line-height:1.4;">Set the rate guests will pay to join. Toggle <span style="color:var(--green);font-weight:600;">Visitors</span> if your course charges non-members a different rate.</div>
-      </div>
-
-      <!-- DESCRIPTION -->
-      <div style="padding:0 18px;">
-        <div style="font-size:9px;color:#888;letter-spacing:0.16em;font-weight:700;margin-bottom:8px;">DESCRIPTION (OPTIONAL)</div>
-        <div class="form-field" style="margin:0 0 22px;align-items:flex-start;min-height:90px;padding:14px;">
-          <span style="font-size:11px;color:#666;line-height:1.5;">Tell players about this round...</span>
-        </div>
-      </div>
-
-      <!-- CREATE ROUND CTA -->
-      <div style="padding:0 18px 22px;">
-        <button class="btn-green" style="width:100%;font-size:13px;padding:15px 0;border-radius:14px;font-weight:800;letter-spacing:0.08em;">+ CREATE ROUND</button>
-      </div>
-    </div>`
-  },
 ];
 
 
 const screenInfo = [
   { journey: [], shows: ["Open Club logo and tagline", "Sport branch selector — Golf, Padel, Tennis, Pickleball", "Only Open Golf is active — rest show 'Coming Soon'", "Positions Open Club as a multi-sport platform, not just a golf app", "'Choose your game' CTA at top of branches", "LOG IN button at bottom for returning users"], tip: "This is the PLATFORM play. User sees Open Club as a multi-sport ecosystem from the first screen. Only Golf is live — the other branches (Padel, Tennis, Pickleball) are greyed out with 'Coming Soon'. Creates anticipation and shows long-term vision to investors.", note: "Tapping Open Golf should navigate to the Home screen (Find Rounds). The Coming Soon branches should show a subtle toast or do nothing. This screen replaces the old Explore/Login split — browse-first UX is preserved via the Golf branch card." },
   { journey: [["Open app", "Lands here automatically"], ["Swipe round cards horizontally", "→ Browse available rounds"], ["Tap any round card", "→ Round Detail"], ["Scroll down to leaderboard", "→ See rankings"]], shows: ["Find Rounds title + search icon", "Sport toggle pills (horizontal scroll)", "Upcoming Rounds — horizontal swipe carousel with round cards", "Open spots shown as + circles inside cards", "Full-width + Start a Round CTA button", "Weekly Leaderboard — Trending style with ↑↓ arrows showing rank movement", "5 leaderboard rows with position, avatar, name, HI, points"], tip: "REDESIGNED home feed. Horizontal card swipe for rounds (inspired by modern app patterns). Leaderboard now shows rank movement with green ↑ and red ↓ arrows — creates competitive tension and drives engagement. Users can see at a glance who's climbing and who's dropping." },
-  { journey: [["Tap centre nav button", "Opens full-screen map"], ["See ⛳ pins = golf clubs", "Number = active members"], ["Tap any pin", "→ Club Page (Screen 04)"]], shows: ["Map / Find Players toggle at top", "Full-screen dark map of London", "Golf club pins with member counts", "City area labels + road badges", "Golf Clubs Near You header"], tip: "This is the MAIN feature — the centre button in the nav. Lawrence specifically wants this to be the hero of the app. Toggle lets users switch to Find Players view." },
+  { journey: [["Find Rounds", "→ Tap + Start a Round"], ["Form opens", "Host fills date, time, players, price"], ["Toggles Members or Visitors rate", "→ Tap CREATE ROUND"]], shows: ["Course / Club search", "Date + Time pickers (side by side)", "Par field (defaults 72)", "Players selector — 2 Pair · 3 Three-ball · 4 Four-ball (Four-ball selected)", "Price (£) field", "Members / Visitors rate toggle next to price", "Description textarea (optional)", "Full-width CREATE ROUND CTA"], tip: "NEW screen — opens when host taps + Start a Round on the home feed. Members/Visitors toggle lets the host set the correct rate type so guests know whether they're paying a member rate or a visitor rate at the course.", note: "When the round is created, the rate type flows through to the round card on the Find Rounds feed (showing 'Members rate £30' or 'Visitors rate £60' in green) and to the round detail screen. This makes pricing transparent so visitors aren't surprised at the gate." },
   { journey: [["Discover tab", "→ Tap Find Players toggle"], ["Player list loads", "Filterable by sport, location, handicap"]], shows: ["Map / Find Players toggle (Find Players active)", "Filter pills: Golf, Location, Handicap range", "Player list with avatar, name, rating, availability", "Distance from user", "INVITE and INACTIVE status buttons"], tip: "Alternative to map view — users can browse all players without going through club pins. Same discover tab, different view.", note: "Sort order = activity first, then distance. A player who hasn't opened the app in 6 months should NOT appear above an active player just because they're closer. Ranking: (1) Active now, (2) Seen today, (3) Seen this week, (4) Seen this month, (5) Inactive — distance only acts as a tiebreaker within each activity tier." },
   { journey: [["Discover Map", "→ Tap a club pin"], ["Club Page loads", "Members shown"]], shows: ["Club name + location", "Member count badge", "Every Open Club user tagged to this club", "Name, handicap, star rating, distance", "REQUEST TO JOIN / INVITE / REQUESTED buttons"], tip: "Members appear here because they selected this club during sign up. This is the data segmentation that powers the map." },
   { journey: [["Find Rounds home", "→ Tap leaderboard strip"], ["Rewards Board loads", "All players ranked"]], shows: ["🏆 Monthly Reward banner — prize from Open Club", "Points: 3pts confirmed match · 5pts invite who joins · 5pts review left", "Top 3 podium display", "Full ranked list with points tally", "HI + star rating per player"], tip: "Top player each month wins a reward from Open Club (free round, guest pass etc). Points reset monthly. Drives engagement and repeat play." },
@@ -2522,8 +2515,6 @@ const screenInfo = [
   { journey: [["My Profile", "→ Tap EDIT PROFILE"]], shows: ["Change photo", "Edit name, bio, location", "Update handicap", "Add/remove club memberships"], tip: null },
   { journey: [["Round marked complete", "→ 3 hours later"], ["Push notification", "→ Opens review screen"]], shows: ["Who you played with + where", "1–5 star rating", "Did they show up? — Yes on time · Late · No show", "Quick tags with count badges: Friendly ×7, Good pace ×9 etc", "Optional written review", "Skip option"], tip: "Only players confirmed in the same round can review each other — prevents fake reviews." },
   { journey: [["Any player profile", "Scroll to see reviews"]], shows: ["Aggregate star rating + review count", "Show Up Score % with community ratings", "Individual review cards: reviewer name, stars, written review, tags with counts"], tip: "This is what makes Open Club self-policing. Bad actors get low ratings and people stop accepting their requests." },
-  { journey: [["Find Rounds", "→ Tap + Start a Round"], ["Form opens", "Host fills date, time, players, price"], ["Toggles Members or Visitors rate", "→ Tap CREATE ROUND"]], shows: ["Course / Club search", "Date + Time pickers (side by side)", "Par field (defaults 72)", "Players selector — 2 Pair · 3 Three-ball · 4 Four-ball (Four-ball selected)", "Price (£) field", "Members / Visitors rate toggle next to price", "Description textarea (optional)", "Full-width CREATE ROUND CTA"], tip: "NEW screen — opens when host taps + Start a Round on the home feed. Members/Visitors toggle lets the host set the correct rate type so guests know whether they're paying a member rate or a visitor rate at the course.", note: "When the round is created, the rate type flows through to the round card on the Find Rounds feed (showing 'Members rate £30' or 'Visitors rate £60' in green) and to the round detail screen. This makes pricing transparent so visitors aren't surprised at the gate." },
-  { journey: [["Find Rounds", "→ Tap + Start a Round"], ["Form opens", "Host fills date, time, players, price"], ["Toggles Members or Visitors rate", "→ Tap CREATE ROUND"]], shows: ["Course / Club search", "Date + Time pickers (side by side)", "Par field (defaults 72)", "Players selector — 2 Pair · 3 Three-ball · 4 Four-ball (Four-ball selected)", "Price (£) field", "Members / Visitors rate toggle next to price", "Description textarea (optional)", "Full-width CREATE ROUND CTA"], tip: "NEW screen — opens when host taps + Start a Round on the home feed. Members/Visitors toggle lets the host set the correct rate type so guests know whether they're paying a member rate or a visitor rate at the course.", note: "When the round is created, the rate type flows through to the round card on the Find Rounds feed (showing 'Members rate £30' or 'Visitors rate £60' in green) and to the round detail screen. This makes pricing transparent so visitors aren't surprised at the gate." }
 ];
 
 let current = 0;
