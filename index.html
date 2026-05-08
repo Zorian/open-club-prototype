@@ -1631,7 +1631,7 @@ const screens = [
       <div class="form-field"><div class="field-icon">🔒</div><div class="field-text">Confirm password</div></div>
       <div style="margin:4px 18px 12px;">
         <div style="font-size:9px;color:var(--mid);margin-bottom:6px;letter-spacing:0.05em;">Were you referred by a friend?</div>
-        <div class="form-field" style="margin:0;background:#141414;border-color:rgba(184,242,106,0.2);"><div class="field-icon" style="font-size:12px;">🎟</div><div class="field-text" style="font-size:11px;">Enter referral code (optional)</div></div>
+        <div class="form-field" style="margin:0;background:#141414;border-color:rgba(184,242,106,0.2);"><div class="field-icon" style="font-size:13px;color:#b8f26a;font-weight:700;">@</div><div class="field-text" style="font-size:11px;">Enter their @handle (optional)</div></div>
       </div>
       <div style="padding:8px 18px 12px;"><button class="btn-green" style="width:100%;padding:14px;font-size:12px;letter-spacing:0.15em;border-radius:8px;">CONTINUE</button></div>
       <div style="padding:0 18px;display:flex;align-items:center;gap:12px;"><div style="flex:1;height:1px;background:var(--border);"></div><div style="font-size:10px;color:var(--mid);">or</div><div style="flex:1;height:1px;background:var(--border);"></div></div>
@@ -1745,14 +1745,14 @@ const screens = [
           <div style="position:absolute;right:3px;top:3px;width:18px;height:18px;background:#000;border-radius:50%;"></div>
         </div>
       </div>
-      <!-- Referral code box -->
+      <!-- Referred? Enter their @handle -->
       <div style="margin:0 18px 16px;background:#141414;border:1px solid rgba(184,242,106,0.15);border-radius:10px;padding:14px 16px;">
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
-          <span style="font-size:14px;">🎟</span>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#b8f26a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"/></svg>
           <div style="font-size:11px;font-weight:600;color:var(--white);">Were you referred?</div>
         </div>
-        <div style="font-size:9px;color:#888;margin-bottom:10px;line-height:1.5;">If a friend invited you to Open Club, enter their code below — they'll earn 2 reward points.</div>
-        <div class="form-field" style="margin:0;background:#1a1a1a;"><div class="field-icon" style="font-size:11px;">✦</div><div class="field-text" style="font-size:11px;">Type referral code here...</div></div>
+        <div style="font-size:9px;color:#888;margin-bottom:10px;line-height:1.5;">If a friend invited you to Open Club, enter their <b style="color:#b8f26a;">@handle</b> below — they'll earn 15 reward points.</div>
+        <div class="form-field" style="margin:0;background:#1a1a1a;"><div class="field-icon" style="font-size:13px;color:#b8f26a;font-weight:700;">@</div><div class="field-text" style="font-size:11px;">Enter their @handle...</div></div>
       </div>
       <div style="padding:0 18px 20px;"><button class="btn-green" style="width:100%;padding:14px;font-size:12px;letter-spacing:0.15em;border-radius:8px;">LET'S GO ⛳</button></div>
     </div>`
@@ -2056,17 +2056,17 @@ const screens = [
           <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:34px;font-weight:800;color:#fff;letter-spacing:-0.025em;line-height:1;">Eric T.</div>
           <svg width="22" height="22" viewBox="0 0 24 24" fill="#b8f26a" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l2.4 2.7 3.6-.6.6 3.6 2.7 2.4-2.7 2.4-.6 3.6-3.6-.6L12 18l-2.4-2.7-3.6.6-.6-3.6L2.7 9.9l2.7-2.4.6-3.6 3.6.6L12 2z"/><path d="M10 12.5l1.7 1.7L15 11" stroke="#000" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <div style="color:#b8f26a;font-size:13px;font-weight:600;margin-bottom:10px;">@erict</div>
+        <!-- @handle = referral code (one identity) with copy icon -->
+        <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:12px;">
+          <span style="color:#b8f26a;font-size:14px;font-weight:700;letter-spacing:-0.01em;">@erict</span>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#b8f26a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="cursor:pointer;opacity:0.85;"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        </div>
 
-        <!-- Referral code + earn badge (speech-bubble callout, Lorenzo style) -->
-        <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:12px;position:relative;">
-          <div style="background:rgba(184,242,106,0.08);border:1px solid rgba(184,242,106,0.4);color:#b8f26a;font-size:11px;font-weight:700;padding:6px 12px;border-radius:10px;display:flex;align-items:center;gap:8px;letter-spacing:0.06em;">
-            <span>REFERRAL CODE: <b style="color:#fff;">ET24</b></span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          </div>
+        <!-- Share @handle — earn 15 pts per signup (speech bubble) -->
+        <div style="display:flex;align-items:center;justify-content:center;margin-bottom:12px;position:relative;">
           <!-- Speech bubble with diagonal tail pointing down-left toward the referral code -->
           <div style="position:relative;background:#1a1a1a;border:1px solid rgba(184,242,106,0.35);border-radius:14px;padding:7px 10px;display:flex;align-items:center;gap:6px;box-shadow:0 4px 12px rgba(0,0,0,0.5);">
-            <span style="font-size:9.5px;color:#e8e8e8;line-height:1.2;text-align:left;font-weight:500;">Earn 15 points<br/>for each referral</span>
+            <span style="font-size:10px;color:#e8e8e8;line-height:1.25;text-align:left;font-weight:500;">Share <b style="color:#b8f26a;">@erict</b><br/>earn 15 pts per signup</span>
             <!-- Green gift SVG -->
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
               <path d="M20 12V22H4V12" stroke="#b8f26a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
