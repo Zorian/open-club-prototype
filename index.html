@@ -1842,20 +1842,25 @@ const screens = [
         </div>
         <div style="color:#b8f26a;font-size:13px;font-weight:600;margin-bottom:10px;">@erict</div>
 
-        <!-- Referral code + earn badge (speech-bubble callout) -->
-        <div style="display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:12px;position:relative;">
+        <!-- Referral code + earn badge (speech-bubble callout, Lorenzo style) -->
+        <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:12px;position:relative;">
           <div style="background:rgba(184,242,106,0.08);border:1px solid rgba(184,242,106,0.4);color:#b8f26a;font-size:11px;font-weight:700;padding:6px 12px;border-radius:10px;display:flex;align-items:center;gap:8px;letter-spacing:0.06em;">
             <span>REFERRAL CODE: <b style="color:#fff;">ET24</b></span>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
           </div>
-          <!-- Speech bubble with tail pointing left toward the referral code -->
-          <div style="position:relative;background:#0f0f0f;border:1px solid rgba(184,242,106,0.3);border-radius:12px;padding:6px 10px;display:flex;align-items:center;gap:6px;box-shadow:0 2px 8px rgba(0,0,0,0.5);">
-            <span style="font-size:9.5px;color:#ccc;line-height:1.2;text-align:left;">Earn 15 points<br/>for each referral</span>
-            <span style="font-size:14px;">🎁</span>
-            <!-- Border tail (sits behind, slightly larger) -->
-            <span style="position:absolute;left:-8px;top:50%;transform:translateY(-50%);width:0;height:0;border-top:7px solid transparent;border-bottom:7px solid transparent;border-right:8px solid rgba(184,242,106,0.3);"></span>
-            <!-- Fill tail (sits in front, matches bubble bg) -->
-            <span style="position:absolute;left:-6px;top:50%;transform:translateY(-50%);width:0;height:0;border-top:6px solid transparent;border-bottom:6px solid transparent;border-right:7px solid #0f0f0f;"></span>
+          <!-- Speech bubble with diagonal tail pointing down-left toward the referral code -->
+          <div style="position:relative;background:#1a1a1a;border:1px solid rgba(184,242,106,0.35);border-radius:14px;padding:7px 10px;display:flex;align-items:center;gap:6px;box-shadow:0 4px 12px rgba(0,0,0,0.5);">
+            <span style="font-size:9.5px;color:#e8e8e8;line-height:1.2;text-align:left;font-weight:500;">Earn 15 points<br/>for each referral</span>
+            <!-- Green gift SVG -->
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+              <path d="M20 12V22H4V12" stroke="#b8f26a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M22 7H2V12H22V7Z" stroke="#b8f26a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="rgba(184,242,106,0.15)"/>
+              <path d="M12 22V7" stroke="#b8f26a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 7H7.5C6.83696 7 6.20107 6.73661 5.73223 6.26777C5.26339 5.79893 5 5.16304 5 4.5C5 3.83696 5.26339 3.20107 5.73223 2.73223C6.20107 2.26339 6.83696 2 7.5 2C11 2 12 7 12 7Z" stroke="#b8f26a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 7H16.5C17.163 7 17.7989 6.73661 18.2678 6.26777C18.7366 5.79893 19 5.16304 19 4.5C19 3.83696 18.7366 3.20107 18.2678 2.73223C17.7989 2.26339 17.163 2 16.5 2C13 2 12 7 12 7Z" stroke="#b8f26a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <!-- Diagonal tail (border layer) -->
+            <span style="position:absolute;left:-7px;bottom:6px;width:14px;height:14px;background:#1a1a1a;border-left:1px solid rgba(184,242,106,0.35);border-bottom:1px solid rgba(184,242,106,0.35);transform:rotate(45deg);border-bottom-left-radius:3px;"></span>
           </div>
         </div>
 
