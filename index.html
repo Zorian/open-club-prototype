@@ -1842,15 +1842,20 @@ const screens = [
         </div>
         <div style="color:#b8f26a;font-size:13px;font-weight:600;margin-bottom:10px;">@erict</div>
 
-        <!-- Referral code + earn badge -->
-        <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:12px;position:relative;">
+        <!-- Referral code + earn badge (speech-bubble callout) -->
+        <div style="display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:12px;position:relative;">
           <div style="background:rgba(184,242,106,0.08);border:1px solid rgba(184,242,106,0.4);color:#b8f26a;font-size:11px;font-weight:700;padding:6px 12px;border-radius:10px;display:flex;align-items:center;gap:8px;letter-spacing:0.06em;">
             <span>REFERRAL CODE: <b style="color:#fff;">ET24</b></span>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
           </div>
-          <div style="background:#0f0f0f;border:1px solid rgba(184,242,106,0.25);border-radius:10px;padding:5px 10px;display:flex;align-items:center;gap:6px;">
+          <!-- Speech bubble with tail pointing left toward the referral code -->
+          <div style="position:relative;background:#0f0f0f;border:1px solid rgba(184,242,106,0.3);border-radius:12px;padding:6px 10px;display:flex;align-items:center;gap:6px;box-shadow:0 2px 8px rgba(0,0,0,0.5);">
             <span style="font-size:9.5px;color:#ccc;line-height:1.2;text-align:left;">Earn 15 points<br/>for each referral</span>
             <span style="font-size:14px;">🎁</span>
+            <!-- Border tail (sits behind, slightly larger) -->
+            <span style="position:absolute;left:-8px;top:50%;transform:translateY(-50%);width:0;height:0;border-top:7px solid transparent;border-bottom:7px solid transparent;border-right:8px solid rgba(184,242,106,0.3);"></span>
+            <!-- Fill tail (sits in front, matches bubble bg) -->
+            <span style="position:absolute;left:-6px;top:50%;transform:translateY(-50%);width:0;height:0;border-top:6px solid transparent;border-bottom:6px solid transparent;border-right:7px solid #0f0f0f;"></span>
           </div>
         </div>
 
