@@ -1020,36 +1020,165 @@ const screens = [
 
       </div>
 
-      <!-- BOTTOM SHEET (selected club: Finchley) -->
-      <div style="background:#0a0a0a;border-top:1px solid var(--border);padding:8px 14px 10px;flex-shrink:0;">
+      <!-- BOTTOM SHEET (live rounds today — swipeable carousel) -->
+      <div style="background:#0a0a0a;border-top:1px solid var(--border);padding:8px 0 8px;flex-shrink:0;">
         <div style="width:36px;height:3px;background:rgba(255,255,255,0.2);border-radius:2px;margin:0 auto 8px;"></div>
-        <div style="display:flex;gap:10px;">
-          <div style="width:78px;height:78px;border-radius:8px;overflow:hidden;flex-shrink:0;background:url('flag-bg.jpg') center/cover no-repeat;"></div>
-          <div style="flex:1;min-width:0;">
-            <div style="display:flex;align-items:center;gap:5px;margin-bottom:3px;">
-              <span style="font-size:12px;font-weight:700;color:#fff;">Finchley Golf Club</span>
-              <svg width="9" height="9" viewBox="0 0 24 24" fill="#f5c850" style="flex-shrink:0;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <span style="font-size:10px;color:#fff;font-weight:600;">4.6</span>
-              <span style="font-size:9px;color:#888;">(128)</span>
+
+        <!-- Header -->
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:0 14px;margin-bottom:8px;">
+          <div style="display:flex;align-items:center;gap:6px;">
+            <span style="width:6px;height:6px;border-radius:50%;background:#ff3b30;animation:liveBadgePulse 1.4s ease-in-out infinite;"></span>
+            <span style="font-size:9px;letter-spacing:0.2em;color:#fff;font-weight:700;">5 ROUNDS TODAY</span>
+          </div>
+          <span style="font-size:8px;color:#888;letter-spacing:0.05em;">Swipe →</span>
+        </div>
+
+        <!-- Scrollable carousel -->
+        <style>.live-scroller::-webkit-scrollbar{display:none;}</style>
+        <div class="live-scroller" style="display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 14px 4px;-webkit-overflow-scrolling:touch;scrollbar-width:none;">
+
+          <!-- Card 1: Finchley (LIVE) -->
+          <div style="flex:0 0 calc(100% - 22px);scroll-snap-align:start;display:flex;gap:10px;">
+            <div style="width:78px;height:78px;border-radius:8px;overflow:hidden;flex-shrink:0;background:url('flag-bg.jpg') center/cover no-repeat;position:relative;">
+              <span style="position:absolute;top:4px;left:4px;background:#ff3b30;color:#fff;font-size:7px;font-weight:800;padding:2px 5px;border-radius:3px;letter-spacing:0.1em;">● LIVE</span>
             </div>
-            <div style="font-size:9.5px;color:var(--green);font-weight:600;margin-bottom:4px;"><b>8 km away</b> · 6 members online</div>
-            <div style="display:flex;gap:5px;margin-bottom:6px;">
-              <span style="background:rgba(255,255,255,0.06);border:1px solid var(--border);font-size:8.5px;color:#aaa;padding:2px 6px;border-radius:4px;">HCP Range 5–28</span>
-              <span style="background:rgba(255,255,255,0.06);border:1px solid var(--border);font-size:8.5px;color:#aaa;padding:2px 6px;border-radius:4px;font-weight:700;">££</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:8px;">
-              <div style="display:flex;align-items:center;">
-                <img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:18px;height:18px;border-radius:50%;border:1.5px solid #0a0a0a;object-fit:cover;" />
-                <img src="https://randomuser.me/api/portraits/men/45.jpg" style="width:18px;height:18px;border-radius:50%;border:1.5px solid #0a0a0a;margin-left:-6px;object-fit:cover;" />
-                <img src="https://randomuser.me/api/portraits/women/22.jpg" style="width:18px;height:18px;border-radius:50%;border:1.5px solid #0a0a0a;margin-left:-6px;object-fit:cover;" />
-                <span style="font-size:8.5px;color:#888;margin-left:4px;">+3</span>
+            <div style="flex:1;min-width:0;">
+              <div style="font-size:12px;font-weight:700;color:#fff;margin-bottom:3px;">Finchley Golf Club</div>
+              <div style="font-size:9.5px;color:var(--green);font-weight:600;margin-bottom:4px;"><b>8 km away</b> · 6 members online</div>
+              <div style="display:flex;gap:5px;margin-bottom:6px;">
+                <span style="background:rgba(255,255,255,0.06);border:1px solid var(--border);font-size:8.5px;color:#aaa;padding:2px 6px;border-radius:4px;">HCP 5–28</span>
+                <span style="background:rgba(255,255,255,0.06);border:1px solid var(--border);font-size:8.5px;color:#aaa;padding:2px 6px;border-radius:4px;font-weight:700;">££</span>
               </div>
-              <div style="margin-left:auto;display:flex;gap:6px;">
-                <button style="background:transparent;border:1px solid var(--border);color:#fff;font-size:9px;font-weight:700;padding:6px 10px;border-radius:6px;cursor:pointer;letter-spacing:0.02em;">View details</button>
-                <button class="btn-green" style="font-size:9px;font-weight:800;padding:6px 12px;border-radius:6px;letter-spacing:0.02em;">Join Round</button>
+              <div style="display:flex;align-items:center;gap:8px;">
+                <div style="display:flex;align-items:center;">
+                  <img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:18px;height:18px;border-radius:50%;border:1.5px solid #0a0a0a;object-fit:cover;" />
+                  <img src="https://randomuser.me/api/portraits/men/45.jpg" style="width:18px;height:18px;border-radius:50%;border:1.5px solid #0a0a0a;margin-left:-6px;object-fit:cover;" />
+                  <img src="https://randomuser.me/api/portraits/women/22.jpg" style="width:18px;height:18px;border-radius:50%;border:1.5px solid #0a0a0a;margin-left:-6px;object-fit:cover;" />
+                  <span style="font-size:8.5px;color:#888;margin-left:4px;">+3</span>
+                </div>
+                <div style="margin-left:auto;display:flex;gap:6px;">
+                  <button style="background:transparent;border:1px solid var(--border);color:#fff;font-size:9px;font-weight:700;padding:6px 10px;border-radius:6px;cursor:pointer;letter-spacing:0.02em;">View details</button>
+                  <button class="btn-green" style="font-size:9px;font-weight:800;padding:6px 12px;border-radius:6px;letter-spacing:0.02em;">Join Round</button>
+                </div>
               </div>
             </div>
           </div>
+
+          <!-- Card 2: City of London GC (LIVE) -->
+          <div style="flex:0 0 calc(100% - 22px);scroll-snap-align:start;display:flex;gap:10px;">
+            <div style="width:78px;height:78px;border-radius:8px;overflow:hidden;flex-shrink:0;background:linear-gradient(135deg,#2d4a3a,#1a2e22);position:relative;display:flex;align-items:center;justify-content:center;">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="#b8f26a" opacity="0.7"><path d="M6 2v20h2v-9l11-4-11-4V2H6z"/></svg>
+              <span style="position:absolute;top:4px;left:4px;background:#ff3b30;color:#fff;font-size:7px;font-weight:800;padding:2px 5px;border-radius:3px;letter-spacing:0.1em;">● LIVE</span>
+            </div>
+            <div style="flex:1;min-width:0;">
+              <div style="font-size:12px;font-weight:700;color:#fff;margin-bottom:3px;">City of London GC</div>
+              <div style="font-size:9.5px;color:var(--green);font-weight:600;margin-bottom:4px;"><b>5 km away</b> · 10 members online</div>
+              <div style="display:flex;gap:5px;margin-bottom:6px;">
+                <span style="background:rgba(255,255,255,0.06);border:1px solid var(--border);font-size:8.5px;color:#aaa;padding:2px 6px;border-radius:4px;">HCP 8–24</span>
+                <span style="background:rgba(255,255,255,0.06);border:1px solid var(--border);font-size:8.5px;color:#aaa;padding:2px 6px;border-radius:4px;font-weight:700;">£££</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;">
+                <div style="display:flex;align-items:center;">
+                  <img src="https://randomuser.me/api/portraits/men/68.jpg" style="width:18px;height:18px;border-radius:50%;border:1.5px solid #0a0a0a;object-fit:cover;" />
+                  <img src="https://randomuser.me/api/portraits/women/68.jpg" style="width:18px;height:18px;border-radius:50%;border:1.5px solid #0a0a0a;margin-left:-6px;object-fit:cover;" />
+                  <img src="https://randomuser.me/api/portraits/men/55.jpg" style="width:18px;height:18px;border-radius:50%;border:1.5px solid #0a0a0a;margin-left:-6px;object-fit:cover;" />
+                  <span style="font-size:8.5px;color:#888;margin-left:4px;">+7</span>
+                </div>
+                <div style="margin-left:auto;display:flex;gap:6px;">
+                  <button style="background:transparent;border:1px solid var(--border);color:#fff;font-size:9px;font-weight:700;padding:6px 10px;border-radius:6px;cursor:pointer;letter-spacing:0.02em;">View details</button>
+                  <button class="btn-green" style="font-size:9px;font-weight:800;padding:6px 12px;border-radius:6px;letter-spacing:0.02em;">Join Round</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Wimbledon Park (TEES 3:00 PM) -->
+          <div style="flex:0 0 calc(100% - 22px);scroll-snap-align:start;display:flex;gap:10px;">
+            <div style="width:78px;height:78px;border-radius:8px;overflow:hidden;flex-shrink:0;background:linear-gradient(135deg,#3a4a2d,#22341a);position:relative;display:flex;align-items:center;justify-content:center;">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="#b8f26a" opacity="0.7"><path d="M6 2v20h2v-9l11-4-11-4V2H6z"/></svg>
+              <span style="position:absolute;top:4px;left:4px;background:rgba(0,0,0,0.78);color:var(--green);font-size:7px;font-weight:800;padding:2px 5px;border-radius:3px;letter-spacing:0.05em;border:1px solid rgba(184,242,106,0.3);">3:00 PM</span>
+            </div>
+            <div style="flex:1;min-width:0;">
+              <div style="font-size:12px;font-weight:700;color:#fff;margin-bottom:3px;">Wimbledon Park GC</div>
+              <div style="font-size:9.5px;color:var(--green);font-weight:600;margin-bottom:4px;"><b>6 km away</b> · 4 spots left</div>
+              <div style="display:flex;gap:5px;margin-bottom:6px;">
+                <span style="background:rgba(255,255,255,0.06);border:1px solid var(--border);font-size:8.5px;color:#aaa;padding:2px 6px;border-radius:4px;">HCP 12–28</span>
+                <span style="background:rgba(255,255,255,0.06);border:1px solid var(--border);font-size:8.5px;color:#aaa;padding:2px 6px;border-radius:4px;font-weight:700;">££</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;">
+                <div style="display:flex;align-items:center;">
+                  <img src="https://randomuser.me/api/portraits/women/22.jpg" style="width:18px;height:18px;border-radius:50%;border:1.5px solid #0a0a0a;object-fit:cover;" />
+                  <img src="https://randomuser.me/api/portraits/men/45.jpg" style="width:18px;height:18px;border-radius:50%;border:1.5px solid #0a0a0a;margin-left:-6px;object-fit:cover;" />
+                  <span style="font-size:8.5px;color:#888;margin-left:4px;">+1</span>
+                </div>
+                <div style="margin-left:auto;display:flex;gap:6px;">
+                  <button style="background:transparent;border:1px solid var(--border);color:#fff;font-size:9px;font-weight:700;padding:6px 10px;border-radius:6px;cursor:pointer;letter-spacing:0.02em;">View details</button>
+                  <button class="btn-green" style="font-size:9px;font-weight:800;padding:6px 12px;border-radius:6px;letter-spacing:0.02em;">Join Round</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Totteridge GC (TEES 4:30 PM) -->
+          <div style="flex:0 0 calc(100% - 22px);scroll-snap-align:start;display:flex;gap:10px;">
+            <div style="width:78px;height:78px;border-radius:8px;overflow:hidden;flex-shrink:0;background:linear-gradient(135deg,#2d3a4a,#1a2234);position:relative;display:flex;align-items:center;justify-content:center;">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="#b8f26a" opacity="0.7"><path d="M6 2v20h2v-9l11-4-11-4V2H6z"/></svg>
+              <span style="position:absolute;top:4px;left:4px;background:rgba(0,0,0,0.78);color:var(--green);font-size:7px;font-weight:800;padding:2px 5px;border-radius:3px;letter-spacing:0.05em;border:1px solid rgba(184,242,106,0.3);">4:30 PM</span>
+            </div>
+            <div style="flex:1;min-width:0;">
+              <div style="font-size:12px;font-weight:700;color:#fff;margin-bottom:3px;">Totteridge GC</div>
+              <div style="font-size:9.5px;color:var(--green);font-weight:600;margin-bottom:4px;"><b>9 km away</b> · 2 spots left</div>
+              <div style="display:flex;gap:5px;margin-bottom:6px;">
+                <span style="background:rgba(255,255,255,0.06);border:1px solid var(--border);font-size:8.5px;color:#aaa;padding:2px 6px;border-radius:4px;">HCP 10–22</span>
+                <span style="background:rgba(255,255,255,0.06);border:1px solid var(--border);font-size:8.5px;color:#aaa;padding:2px 6px;border-radius:4px;font-weight:700;">£</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;">
+                <div style="display:flex;align-items:center;">
+                  <img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:18px;height:18px;border-radius:50%;border:1.5px solid #0a0a0a;object-fit:cover;" />
+                  <img src="https://randomuser.me/api/portraits/women/68.jpg" style="width:18px;height:18px;border-radius:50%;border:1.5px solid #0a0a0a;margin-left:-6px;object-fit:cover;" />
+                </div>
+                <div style="margin-left:auto;display:flex;gap:6px;">
+                  <button style="background:transparent;border:1px solid var(--border);color:#fff;font-size:9px;font-weight:700;padding:6px 10px;border-radius:6px;cursor:pointer;letter-spacing:0.02em;">View details</button>
+                  <button class="btn-green" style="font-size:9px;font-weight:800;padding:6px 12px;border-radius:6px;letter-spacing:0.02em;">Join Round</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Brent Valley GC (TEES 5:00 PM) -->
+          <div style="flex:0 0 calc(100% - 22px);scroll-snap-align:start;display:flex;gap:10px;">
+            <div style="width:78px;height:78px;border-radius:8px;overflow:hidden;flex-shrink:0;background:linear-gradient(135deg,#4a3a2d,#34221a);position:relative;display:flex;align-items:center;justify-content:center;">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="#b8f26a" opacity="0.7"><path d="M6 2v20h2v-9l11-4-11-4V2H6z"/></svg>
+              <span style="position:absolute;top:4px;left:4px;background:rgba(0,0,0,0.78);color:var(--green);font-size:7px;font-weight:800;padding:2px 5px;border-radius:3px;letter-spacing:0.05em;border:1px solid rgba(184,242,106,0.3);">5:00 PM</span>
+            </div>
+            <div style="flex:1;min-width:0;">
+              <div style="font-size:12px;font-weight:700;color:#fff;margin-bottom:3px;">Brent Valley GC</div>
+              <div style="font-size:9.5px;color:var(--green);font-weight:600;margin-bottom:4px;"><b>7 km away</b> · 3 spots left</div>
+              <div style="display:flex;gap:5px;margin-bottom:6px;">
+                <span style="background:rgba(255,255,255,0.06);border:1px solid var(--border);font-size:8.5px;color:#aaa;padding:2px 6px;border-radius:4px;">HCP 6–20</span>
+                <span style="background:rgba(255,255,255,0.06);border:1px solid var(--border);font-size:8.5px;color:#aaa;padding:2px 6px;border-radius:4px;font-weight:700;">££</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;">
+                <div style="display:flex;align-items:center;">
+                  <img src="https://randomuser.me/api/portraits/men/55.jpg" style="width:18px;height:18px;border-radius:50%;border:1.5px solid #0a0a0a;object-fit:cover;" />
+                </div>
+                <div style="margin-left:auto;display:flex;gap:6px;">
+                  <button style="background:transparent;border:1px solid var(--border);color:#fff;font-size:9px;font-weight:700;padding:6px 10px;border-radius:6px;cursor:pointer;letter-spacing:0.02em;">View details</button>
+                  <button class="btn-green" style="font-size:9px;font-weight:800;padding:6px 12px;border-radius:6px;letter-spacing:0.02em;">Join Round</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Pagination dots -->
+        <div style="display:flex;justify-content:center;gap:4px;margin-top:6px;">
+          <span style="width:14px;height:3px;border-radius:2px;background:var(--green);"></span>
+          <span style="width:4px;height:3px;border-radius:2px;background:rgba(255,255,255,0.25);"></span>
+          <span style="width:4px;height:3px;border-radius:2px;background:rgba(255,255,255,0.25);"></span>
+          <span style="width:4px;height:3px;border-radius:2px;background:rgba(255,255,255,0.25);"></span>
+          <span style="width:4px;height:3px;border-radius:2px;background:rgba(255,255,255,0.25);"></span>
         </div>
       </div>
 
