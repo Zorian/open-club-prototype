@@ -2991,9 +2991,9 @@ const screens = [
           <div style="font-size:11px;color:var(--mid);margin-top:2px;">All your rounds at a glance</div>
         </div>
       </div>
-      <div style="display:flex;gap:8px;padding:6px 18px 16px;">
-        <button id="mr-tab-active" onclick="myRoundsTab('active')" style="flex:1;padding:10px;border-radius:22px;background:rgba(184,242,106,0.1);border:1px solid var(--green);color:var(--green);font-weight:800;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;font-family:'Plus Jakarta Sans',sans-serif;">Active <span style="background:var(--green);color:#000;font-size:10px;font-weight:800;padding:2px 8px;border-radius:10px;">2</span></button>
-        <button id="mr-tab-history" onclick="myRoundsTab('history')" style="flex:1;padding:10px;border-radius:22px;background:transparent;border:1px solid var(--border);color:#888;font-weight:700;font-size:13px;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;">History</button>
+      <div style="display:flex;background:rgba(255,255,255,0.04);border-radius:30px;padding:4px;margin:6px 18px 18px;">
+        <button id="mr-tab-active" onclick="myRoundsTab('active')" style="flex:1;padding:11px;border-radius:26px;background:var(--green);color:#000;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;border:none;font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:-0.01em;">Active <span style="background:rgba(0,0,0,0.15);color:#000;font-size:10px;font-weight:800;padding:2px 8px;border-radius:10px;">2</span></button>
+        <button id="mr-tab-history" onclick="myRoundsTab('history')" style="flex:1;padding:11px;border-radius:26px;background:transparent;color:#888;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:-0.01em;">History</button>
       </div>
       <div id="mr-view-active">
         <div style="margin:0 18px 12px;background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;">
@@ -3064,11 +3064,7 @@ const screens = [
             </div>
           </div>
         </div>
-        <div style="margin:18px 18px 100px;padding:14px;background:var(--card);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;gap:12px;cursor:pointer;">
-          <div style="width:38px;height:38px;border-radius:10px;background:rgba(184,242,106,0.12);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">📅</div>
-          <div style="flex:1;"><div style="font-size:13px;font-weight:700;">Need to make changes?</div><div style="font-size:10px;color:var(--mid);margin-top:2px;">You can leave a round or manage requests.</div></div>
-          <div style="color:var(--mid);font-size:16px;">›</div>
-        </div>
+        <div style="height:80px;"></div>
       </div>
       <div id="mr-view-history" style="display:none;">
         <div style="margin:0 18px 10px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;display:flex;gap:12px;align-items:center;cursor:pointer;">
@@ -3116,11 +3112,7 @@ const screens = [
           <div style="text-align:right;"><div style="font-size:9px;font-weight:700;color:#ff8a8a;background:rgba(255,138,138,0.12);padding:3px 8px;border-radius:8px;display:inline-block;">Withdrawn</div></div>
           <div style="color:var(--mid);font-size:14px;">›</div>
         </div>
-        <div style="margin:18px 18px 100px;padding:14px;background:var(--card);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;gap:12px;cursor:pointer;">
-          <div style="width:38px;height:38px;border-radius:10px;background:rgba(184,242,106,0.12);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">📅</div>
-          <div style="flex:1;"><div style="font-size:13px;font-weight:700;">Past rounds and scorecards</div><div style="font-size:10px;color:var(--mid);margin-top:2px;">Review scorecards or share results.</div></div>
-          <div style="color:var(--mid);font-size:16px;">›</div>
-        </div>
+        <div style="height:80px;"></div>
       </div>
     </div>`
   },
@@ -3205,21 +3197,21 @@ function myRoundsTab(view) {
   const histView = document.getElementById('mr-view-history');
   if (!activeBtn || !histBtn) return;
   if (view === 'active') {
-    activeBtn.style.background = 'rgba(184,242,106,0.1)';
-    activeBtn.style.borderColor = 'var(--green)';
-    activeBtn.style.color = 'var(--green)';
+    activeBtn.style.background = 'var(--green)';
+    activeBtn.style.color = '#000';
+    activeBtn.style.fontWeight = '800';
     histBtn.style.background = 'transparent';
-    histBtn.style.borderColor = 'rgba(255,255,255,0.07)';
     histBtn.style.color = '#888';
+    histBtn.style.fontWeight = '700';
     activeView.style.display = 'block';
     histView.style.display = 'none';
   } else {
-    histBtn.style.background = 'rgba(184,242,106,0.1)';
-    histBtn.style.borderColor = 'var(--green)';
-    histBtn.style.color = 'var(--green)';
+    histBtn.style.background = 'var(--green)';
+    histBtn.style.color = '#000';
+    histBtn.style.fontWeight = '800';
     activeBtn.style.background = 'transparent';
-    activeBtn.style.borderColor = 'rgba(255,255,255,0.07)';
     activeBtn.style.color = '#888';
+    activeBtn.style.fontWeight = '700';
     activeView.style.display = 'none';
     histView.style.display = 'block';
   }
