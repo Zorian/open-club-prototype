@@ -3000,78 +3000,90 @@ const screens = [
         </div>
       </div>
       <div style="display:flex;background:rgba(255,255,255,0.04);border-radius:30px;padding:4px;margin:6px 18px 18px;">
-        <button id="mr-tab-active" onclick="myRoundsTab('active')" style="flex:1;padding:11px;border-radius:26px;background:var(--green);color:#000;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;border:none;font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:-0.01em;">Active <span style="background:rgba(0,0,0,0.15);color:#000;font-size:10px;font-weight:800;padding:2px 8px;border-radius:10px;">2</span></button>
-        <button id="mr-tab-history" onclick="myRoundsTab('history')" style="flex:1;padding:11px;border-radius:26px;background:transparent;color:#888;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:-0.01em;">History</button>
+        <button id="mr-tab-active" onclick="myRoundsTab('active')" style="flex:1;padding:10px 6px;border-radius:26px;background:var(--green);color:#000;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:6px;cursor:pointer;border:none;font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:-0.01em;">Active <span style="background:rgba(0,0,0,0.15);color:#000;font-size:9px;font-weight:800;padding:2px 7px;border-radius:10px;">1</span></button>
+        <button id="mr-tab-upcoming" onclick="myRoundsTab('upcoming')" style="flex:1;padding:10px 6px;border-radius:26px;background:transparent;color:#888;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:6px;cursor:pointer;border:none;font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:-0.01em;">Upcoming <span style="background:rgba(255,255,255,0.08);color:#aaa;font-size:9px;font-weight:800;padding:2px 7px;border-radius:10px;">3</span></button>
+        <button id="mr-tab-history" onclick="myRoundsTab('history')" style="flex:1;padding:10px 6px;border-radius:26px;background:transparent;color:#888;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:-0.01em;">History</button>
       </div>
       <div id="mr-view-active">
         <style>@keyframes livePulse{0%,100%{box-shadow:0 0 0 0 rgba(184,242,106,0.6);}50%{box-shadow:0 0 0 6px rgba(184,242,106,0);}}</style>
-        <!-- ═══ URGENT BANNER: rounds within 24 hours ═══ -->
-        <div style="margin:0 18px 14px;background:linear-gradient(135deg,#1a2308,#0d1404);border:1px solid rgba(184,242,106,0.3);border-radius:16px;overflow:hidden;position:relative;">
+
+        <!-- ═══ LIVE NOW · single live round ═══ -->
+        <div style="margin:0 18px 12px;background:var(--card);border:2px solid var(--green);border-radius:14px;padding:14px;display:flex;gap:12px;align-items:flex-start;box-shadow:0 0 20px rgba(184,242,106,0.15);">
+          <div style="width:60px;height:60px;flex-shrink:0;border-radius:10px;background:url('flag-bg.jpg') center/cover no-repeat,linear-gradient(135deg,#2d4a1e,#0a1f04);position:relative;overflow:hidden;">
+            <div style="position:absolute;bottom:4px;left:50%;transform:translateX(-50%);font-size:7px;font-weight:800;letter-spacing:0.05em;padding:2px 8px;border-radius:4px;background:var(--green);color:#000;">LIVE</div>
+          </div>
+          <div style="flex:1;min-width:0;">
+            <div style="font-size:14px;font-weight:800;color:#fff;">Pinehill Golf Club</div>
+            <div style="font-size:10px;color:var(--mid);margin-top:3px;">Live now · Hole 7 · 4-Ball</div>
+            <div style="display:flex;align-items:center;margin-top:8px;">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:22px;height:22px;border-radius:50%;border:2px solid var(--card);margin-right:-6px;object-fit:cover;" />
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:22px;height:22px;border-radius:50%;border:2px solid var(--card);margin-right:-6px;object-fit:cover;" />
+            </div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;">
+            <div style="font-size:11px;font-weight:800;color:var(--white);display:flex;align-items:center;gap:5px;justify-content:flex-end;"><span style="width:6px;height:6px;border-radius:50%;background:var(--green);animation:livePulse 1.5s infinite;"></span>Hole 7</div>
+            <div style="font-size:10px;color:var(--green);font-weight:800;margin-top:2px;">Live</div>
+            <div style="display:flex;gap:12px;align-items:center;margin-top:14px;justify-content:flex-end;">
+              <span onclick="show(15)" style="color:#5b8de8;font-size:16px;cursor:pointer;">💬</span>
+              <span style="color:#ff5a5f;font-size:14px;cursor:pointer;">⤴</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Update Score CTA — live-only -->
+        <div style="margin:0 18px 14px;background:var(--green);color:#000;padding:13px;border-radius:14px;text-align:center;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;">
+          ✏️ Update Score
+        </div>
+
+        <div style="height:60px;"></div>
+      </div>
+
+      <!-- ═══════════════════════════════════════════════════ -->
+      <!-- UPCOMING TAB                                          -->
+      <!-- ═══════════════════════════════════════════════════ -->
+      <div id="mr-view-upcoming" style="display:none;">
+
+        <!-- WITHIN 24 HOURS banner -->
+        <div style="margin:0 18px 14px;background:linear-gradient(135deg,#1a2308,#0d1404);border:1px solid rgba(184,242,106,0.3);border-radius:16px;overflow:hidden;">
           <div style="padding:10px 14px;background:rgba(184,242,106,0.08);border-bottom:1px solid rgba(184,242,106,0.15);display:flex;align-items:center;justify-content:space-between;">
             <div style="font-size:10px;font-weight:800;color:var(--green);letter-spacing:0.1em;display:flex;align-items:center;gap:6px;">
               <span style="width:6px;height:6px;border-radius:50%;background:var(--green);animation:livePulse 1.5s infinite;"></span>
               WITHIN 24 HOURS
             </div>
-            <div style="font-size:10px;font-weight:800;color:#000;background:var(--green);padding:2px 8px;border-radius:10px;">2</div>
+            <div style="font-size:10px;font-weight:800;color:#000;background:var(--green);padding:2px 8px;border-radius:10px;">1</div>
           </div>
           <div style="padding:14px;">
-
-            <!-- LIVE: Pinehill -->
-            <div style="display:flex;gap:12px;align-items:flex-start;padding:10px;background:rgba(0,0,0,0.3);border-radius:10px;margin-bottom:8px;">
-              <div style="width:44px;height:44px;flex-shrink:0;border-radius:10px;background:url('flag-bg.jpg') center/cover no-repeat,linear-gradient(135deg,#2d4a1e,#0a1f04);position:relative;overflow:hidden;">
-                <div style="position:absolute;bottom:3px;left:50%;transform:translateX(-50%);font-size:7px;font-weight:800;letter-spacing:0.05em;padding:2px 6px;border-radius:4px;background:var(--green);color:#000;">LIVE</div>
-              </div>
-              <div style="flex:1;min-width:0;">
-                <div style="font-size:13px;font-weight:700;color:#fff;">Pinehill Golf Club</div>
-                <div style="font-size:9px;color:#bbb;margin-top:2px;">Live now · Hole 7 · 4-Ball</div>
-                <div style="display:flex;align-items:center;margin-top:6px;">
-                  <img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:20px;height:20px;border-radius:50%;border:2px solid #0d1404;margin-right:-5px;object-fit:cover;" />
-                  <img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:20px;height:20px;border-radius:50%;border:2px solid #0d1404;margin-right:-5px;object-fit:cover;" />
-                </div>
-              </div>
-              <div style="text-align:right;flex-shrink:0;">
-                <div style="font-size:10px;font-weight:700;color:var(--white);display:flex;align-items:center;gap:4px;justify-content:flex-end;"><span style="width:5px;height:5px;border-radius:50%;background:var(--green);"></span>Hole 7</div>
-                <div style="font-size:9px;color:var(--green);font-weight:700;margin-top:1px;">Live</div>
-                <div style="display:flex;gap:10px;align-items:center;margin-top:8px;justify-content:flex-end;">
-                  <span onclick="show(15)" style="color:#5b8de8;font-size:14px;cursor:pointer;">💬</span>
-                  <span style="color:#ff5a5f;font-size:13px;cursor:pointer;">⤴</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- PENDING: Royal Blackheath -->
-            <div style="display:flex;gap:12px;align-items:flex-start;padding:10px;background:rgba(0,0,0,0.3);border-radius:10px;">
-              <div style="width:44px;height:44px;flex-shrink:0;border-radius:10px;background:url('flag-bg.jpg') center/cover no-repeat,linear-gradient(135deg,#2d4a1e,#0a1f04);position:relative;overflow:hidden;">
+            <div style="background:var(--card);border:2px solid var(--green);border-radius:12px;padding:12px;display:flex;gap:12px;align-items:flex-start;">
+              <div style="width:50px;height:50px;flex-shrink:0;border-radius:10px;background:url('flag-bg.jpg') center/cover no-repeat,linear-gradient(135deg,#2d4a1e,#0a1f04);position:relative;overflow:hidden;">
                 <div style="position:absolute;bottom:3px;left:50%;transform:translateX(-50%);font-size:7px;font-weight:800;letter-spacing:0.05em;padding:2px 6px;border-radius:4px;background:#ffb450;color:#000;">PENDING</div>
               </div>
               <div style="flex:1;min-width:0;">
                 <div style="font-size:13px;font-weight:700;color:#fff;">Royal Blackheath</div>
                 <div style="font-size:9px;color:#bbb;margin-top:2px;">Sat 5 Apr · 13:00 · 4-Ball</div>
                 <div style="display:flex;align-items:center;margin-top:6px;">
-                  <img src="https://randomuser.me/api/portraits/men/85.jpg" style="width:20px;height:20px;border-radius:50%;border:2px solid #0d1404;margin-right:-5px;object-fit:cover;" />
-                  <img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:20px;height:20px;border-radius:50%;border:2px solid #0d1404;margin-right:-5px;object-fit:cover;" />
+                  <img src="https://randomuser.me/api/portraits/men/85.jpg" style="width:20px;height:20px;border-radius:50%;border:2px solid var(--card);margin-right:-5px;object-fit:cover;" />
+                  <img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:20px;height:20px;border-radius:50%;border:2px solid var(--card);margin-right:-5px;object-fit:cover;" />
                   <div style="width:20px;height:20px;border-radius:50%;border:1.5px dashed rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;color:#888;font-size:10px;margin-right:-5px;">+</div>
                 </div>
               </div>
               <div style="text-align:right;flex-shrink:0;">
                 <div style="font-size:10px;font-weight:700;color:#ffb450;display:flex;align-items:center;gap:4px;justify-content:flex-end;">⏱ Starts in</div>
-                <div style="font-size:10px;color:#ffb450;font-weight:800;margin-top:1px;">2h 15m</div>
+                <div style="font-size:11px;color:#ffb450;font-weight:800;margin-top:1px;">2h 15m</div>
                 <div style="display:flex;gap:10px;align-items:center;margin-top:8px;justify-content:flex-end;">
                   <span onclick="show(15)" style="color:#5b8de8;font-size:14px;cursor:pointer;">💬</span>
                   <span style="color:#ff5a5f;font-size:13px;cursor:pointer;">⤴</span>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
 
-        <!-- ═══ DIVIDER ═══ -->
+        <!-- Divider + Later this week -->
         <div style="height:1px;background:var(--border);margin:18px 18px 14px;"></div>
         <div style="padding:0 18px 10px;font-size:10px;font-weight:700;color:var(--mid);letter-spacing:0.08em;">LATER THIS WEEK · 2 ROUNDS</div>
 
-        <!-- Wimbledon Park — Thursday -->
-        <div style="margin:0 18px 8px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px;display:flex;gap:10px;align-items:flex-start;opacity:0.9;">
+        <!-- Wimbledon -->
+        <div style="margin:0 18px 8px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px;display:flex;gap:10px;align-items:flex-start;">
           <div style="width:44px;height:44px;flex-shrink:0;border-radius:10px;background:url('flag-bg.jpg') center/cover no-repeat,linear-gradient(135deg,#2d4a1e,#0a1f04);"></div>
           <div style="flex:1;min-width:0;">
             <div style="font-size:13px;font-weight:600;">Wimbledon Park GC</div>
@@ -3087,8 +3099,8 @@ const screens = [
           </div>
         </div>
 
-        <!-- Surrey Downs — Saturday -->
-        <div style="margin:0 18px 8px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px;display:flex;gap:10px;align-items:flex-start;opacity:0.9;">
+        <!-- Surrey Downs -->
+        <div style="margin:0 18px 8px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px;display:flex;gap:10px;align-items:flex-start;">
           <div style="width:44px;height:44px;flex-shrink:0;border-radius:10px;background:url('flag-bg.jpg') center/cover no-repeat,linear-gradient(135deg,#2d4a1e,#0a1f04);"></div>
           <div style="flex:1;min-width:0;">
             <div style="font-size:13px;font-weight:600;">Surrey Downs GC</div>
@@ -3104,7 +3116,8 @@ const screens = [
           </div>
         </div>
 
-        <div style="height:80px;"></div>
+        <div style="height:60px;"></div>
+      
       
       <div id="mr-view-history" style="display:none;">
         <div style="margin:0 18px 10px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;display:flex;gap:12px;align-items:center;cursor:pointer;">
@@ -3231,29 +3244,29 @@ function next() { if(current < screens.length-1) show(current+1); }
 function prev() { if(current > 0) show(current-1); }
 
 function myRoundsTab(view) {
-  const activeBtn = document.getElementById('mr-tab-active');
-  const histBtn = document.getElementById('mr-tab-history');
-  const activeView = document.getElementById('mr-view-active');
-  const histView = document.getElementById('mr-view-history');
-  if (!activeBtn || !histBtn) return;
-  if (view === 'active') {
-    activeBtn.style.background = 'var(--green)';
-    activeBtn.style.color = '#000';
-    activeBtn.style.fontWeight = '800';
-    histBtn.style.background = 'transparent';
-    histBtn.style.color = '#888';
-    histBtn.style.fontWeight = '700';
-    activeView.style.display = 'block';
-    histView.style.display = 'none';
-  } else {
-    histBtn.style.background = 'var(--green)';
-    histBtn.style.color = '#000';
-    histBtn.style.fontWeight = '800';
-    activeBtn.style.background = 'transparent';
-    activeBtn.style.color = '#888';
-    activeBtn.style.fontWeight = '700';
-    activeView.style.display = 'none';
-    histView.style.display = 'block';
+  const tabs = {
+    active:   document.getElementById('mr-tab-active'),
+    upcoming: document.getElementById('mr-tab-upcoming'),
+    history:  document.getElementById('mr-tab-history')
+  };
+  const views = {
+    active:   document.getElementById('mr-view-active'),
+    upcoming: document.getElementById('mr-view-upcoming'),
+    history:  document.getElementById('mr-view-history')
+  };
+  if (!tabs.active || !tabs.upcoming || !tabs.history) return;
+  for (const k in tabs) {
+    if (k === view) {
+      tabs[k].style.background = 'var(--green)';
+      tabs[k].style.color = '#000';
+      tabs[k].style.fontWeight = '800';
+      if (views[k]) views[k].style.display = 'block';
+    } else {
+      tabs[k].style.background = 'transparent';
+      tabs[k].style.color = '#888';
+      tabs[k].style.fontWeight = '700';
+      if (views[k]) views[k].style.display = 'none';
+    }
   }
 }
 
