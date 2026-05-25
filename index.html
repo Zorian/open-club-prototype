@@ -728,59 +728,58 @@ const screens = [
         <div style="color:#666;font-size:14px;">⌃</div>
       </div>
 
-      <!-- Horizontal carousel of active rounds -->
+      <!-- Horizontal carousel of active rounds — same card style as Upcoming, dropped down -->
       <div style="display:flex;gap:10px;padding:0 18px 8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;">
 
-        <!-- Card 1: LIVE — Royal Blackheath -->
-        <div style="min-width:280px;max-width:280px;flex-shrink:0;scroll-snap-align:start;background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;">
-          <div style="padding:12px;display:flex;gap:10px;align-items:flex-start;">
-            <div style="width:50px;height:50px;flex-shrink:0;border-radius:10px;background:url('flag-bg.jpg') center/cover no-repeat,linear-gradient(135deg,#2d4a1e,#0a1f04);position:relative;overflow:hidden;">
-              <div style="position:absolute;bottom:3px;left:50%;transform:translateX(-50%);font-size:7px;font-weight:800;letter-spacing:0.05em;padding:2px 6px;border-radius:4px;background:var(--green);color:#000;">LIVE</div>
-            </div>
-            <div style="width:28px;height:28px;flex-shrink:0;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;color:#1e3d0a;font-weight:800;align-self:center;">OC</div>
-            <div style="flex:1;min-width:0;">
-              <div style="font-size:13px;font-weight:700;color:var(--white);">Royal Blackheath</div>
-              <div style="font-size:9px;color:var(--mid);margin-top:2px;">Live now · Hole 7 · 4-Ball</div>
-              <div style="display:flex;align-items:center;margin-top:6px;">
-                <img src="https://randomuser.me/api/portraits/men/85.jpg" style="width:20px;height:20px;border-radius:50%;border:2px solid var(--card);margin-right:-5px;object-fit:cover;" />
-                <img src="https://randomuser.me/api/portraits/women/22.jpg" style="width:20px;height:20px;border-radius:50%;border:2px solid var(--card);margin-right:-5px;object-fit:cover;" />
+        <!-- Active Card 1: LIVE -->
+        <div style="min-width:250px;max-width:250px;border:1px solid rgba(184,242,106,0.45);border-radius:14px;overflow:hidden;scroll-snap-align:start;flex-shrink:0;position:relative;background:url('flag-bg.jpg') center/cover no-repeat;box-shadow:0 0 18px rgba(184,242,106,0.13);">
+          <div style="padding:12px 12px 10px;position:relative;z-index:1;text-shadow:0 2px 4px rgba(0,0,0,0.95),0 0 10px rgba(0,0,0,0.7),0 1px 2px rgba(0,0,0,1);">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+              <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;">Wed 20 May · 23:10</div>
+              <div style="display:flex;gap:5px;align-items:center;">
+                <div style="display:flex;align-items:center;gap:4px;font-size:8px;background:rgba(184,242,106,0.22);color:var(--green);padding:3px 8px;border-radius:10px;border:1px solid rgba(184,242,106,0.5);font-weight:700;text-shadow:none;"><span style="width:5px;height:5px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green);"></span>LIVE</div>
+                <div style="font-size:8px;background:rgba(255,255,255,0.18);color:#fff;padding:3px 8px;border-radius:10px;border:1px solid rgba(255,255,255,0.25);">2-Ball</div>
               </div>
             </div>
-            <div style="text-align:right;flex-shrink:0;align-self:flex-start;">
-              <div style="font-size:10px;font-weight:700;color:var(--white);display:flex;align-items:center;gap:4px;justify-content:flex-end;"><span style="width:5px;height:5px;border-radius:50%;background:var(--green);"></span>Hole 7</div>
-              <div style="font-size:9px;color:var(--green);font-weight:700;margin-top:1px;">Live</div>
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;"><span style="font-size:10px;color:var(--green);font-weight:700;">Members rate</span><span style="font-size:11px;color:var(--green);font-weight:800;">£50</span><span style="font-size:9px;color:rgba(255,255,255,0.85);font-weight:600;">⛳ 9H</span></div>
+            <div style="display:flex;align-items:center;gap:0;">
+              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:8px;"><img src="https://randomuser.me/api/portraits/men/85.jpg" style="width:32px;height:32px;border-radius:50%;object-fit:cover;border:1.5px solid var(--green);" /><div style="font-size:8px;color:#fff;">You</div><div style="background:#b8f26a;color:#000;font-size:8.5px;font-weight:800;padding:2px 7px;border-radius:10px;text-shadow:none;letter-spacing:0.02em;line-height:1.2;">10</div></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:8px;"><img src="https://randomuser.me/api/portraits/men/45.jpg" style="width:32px;height:32px;border-radius:50%;object-fit:cover;border:1.5px solid var(--green);" /><div style="font-size:8px;color:#fff;">Lawrence</div><div style="background:#b8f26a;color:#000;font-size:8.5px;font-weight:800;padding:2px 7px;border-radius:10px;text-shadow:none;letter-spacing:0.02em;line-height:1.2;">15</div></div>
             </div>
           </div>
-          <div style="display:flex;border-top:1px solid var(--border);">
-            <div style="flex:1;padding:10px;text-align:center;font-size:10px;font-weight:700;color:#5b8de8;cursor:pointer;">💬 Match Chat</div>
-            <div style="flex:1;padding:10px;text-align:center;font-size:10px;font-weight:700;color:#ff5a5f;cursor:pointer;border-left:1px solid var(--border);">← Leave Round</div>
+          <div style="border-top:1px solid var(--border);padding:8px 10px;display:flex;justify-content:space-between;align-items:center;gap:8px;position:relative;z-index:1;background:rgba(5,5,5,0.92);backdrop-filter:blur(10px);text-shadow:0 1px 3px rgba(0,0,0,0.9);">
+            <div style="min-width:0;"><div style="font-size:10px;color:var(--white);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Abbey Hotel Golf &amp; Health Club</div><div style="font-size:8px;color:var(--green);margin-top:1px;">Your round</div></div>
+            <div style="display:flex;gap:6px;align-items:center;flex-shrink:0;">
+              <div style="width:30px;height:28px;border-radius:7px;border:1px solid rgba(184,242,106,0.4);background:rgba(184,242,106,0.08);display:flex;align-items:center;justify-content:center;font-size:12px;cursor:pointer;">💬</div>
+              <button class="btn-outline" style="font-size:8px;padding:7px 12px;border-radius:7px;">MANAGE</button>
+            </div>
           </div>
         </div>
 
-        <!-- Card 2: PENDING — Pinehill -->
-        <div style="min-width:280px;max-width:280px;flex-shrink:0;scroll-snap-align:start;background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;">
-          <div style="padding:12px;display:flex;gap:10px;align-items:flex-start;">
-            <div style="width:50px;height:50px;flex-shrink:0;border-radius:10px;background:url('flag-bg.jpg') center/cover no-repeat,linear-gradient(135deg,#2d4a1e,#0a1f04);position:relative;overflow:hidden;">
-              <div style="position:absolute;bottom:3px;left:50%;transform:translateX(-50%);font-size:7px;font-weight:800;letter-spacing:0.05em;padding:2px 6px;border-radius:4px;background:#ffb450;color:#000;">PENDING</div>
-            </div>
-            <div style="width:28px;height:28px;flex-shrink:0;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;color:#1e3d0a;font-weight:800;align-self:center;">OC</div>
-            <div style="flex:1;min-width:0;">
-              <div style="font-size:13px;font-weight:700;color:var(--white);">Pinehill Golf Club</div>
-              <div style="font-size:9px;color:var(--mid);margin-top:2px;">Sat 5 Apr · 08:30 · 4-Ball</div>
-              <div style="display:flex;align-items:center;margin-top:6px;">
-                <img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:20px;height:20px;border-radius:50%;border:2px solid var(--card);margin-right:-5px;object-fit:cover;" />
-                <img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:20px;height:20px;border-radius:50%;border:2px solid var(--card);margin-right:-5px;object-fit:cover;" />
-                <div style="width:20px;height:20px;border-radius:50%;border:1.5px dashed rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;color:#888;font-size:10px;margin-right:-5px;">+</div>
+        <!-- Active Card 2: PENDING / Starts soon -->
+        <div style="min-width:250px;max-width:250px;border:1px solid rgba(255,180,80,0.4);border-radius:14px;overflow:hidden;scroll-snap-align:start;flex-shrink:0;position:relative;background:url('flag-bg.jpg') center/cover no-repeat;">
+          <div style="padding:12px 12px 10px;position:relative;z-index:1;text-shadow:0 2px 4px rgba(0,0,0,0.95),0 0 10px rgba(0,0,0,0.7),0 1px 2px rgba(0,0,0,1);">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+              <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;">Sat 5 Apr · 08:30</div>
+              <div style="display:flex;gap:5px;align-items:center;">
+                <div style="display:flex;align-items:center;gap:4px;font-size:8px;background:rgba(255,180,80,0.2);color:#ffb450;padding:3px 8px;border-radius:10px;border:1px solid rgba(255,180,80,0.45);font-weight:700;text-shadow:none;">⏱ 2h 15m</div>
+                <div style="font-size:8px;background:rgba(255,255,255,0.18);color:#fff;padding:3px 8px;border-radius:10px;border:1px solid rgba(255,255,255,0.25);">4-Ball</div>
               </div>
             </div>
-            <div style="text-align:right;flex-shrink:0;align-self:flex-start;">
-              <div style="font-size:10px;font-weight:700;color:#ffb450;display:flex;align-items:center;gap:4px;justify-content:flex-end;">⏱ Starts in</div>
-              <div style="font-size:10px;color:#ffb450;font-weight:800;margin-top:1px;">2h 15m</div>
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;"><span style="font-size:10px;color:var(--green);font-weight:700;">Members rate</span><span style="font-size:11px;color:var(--green);font-weight:800;">£30</span><span style="font-size:9px;color:rgba(255,255,255,0.85);font-weight:600;">⛳ 18H</span></div>
+            <div style="display:flex;align-items:center;gap:0;">
+              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:8px;"><img src="https://randomuser.me/api/portraits/men/85.jpg" style="width:32px;height:32px;border-radius:50%;object-fit:cover;border:1.5px solid var(--green);" /><div style="font-size:8px;color:#fff;">You</div><div style="background:#b8f26a;color:#000;font-size:8.5px;font-weight:800;padding:2px 7px;border-radius:10px;text-shadow:none;letter-spacing:0.02em;line-height:1.2;">10</div></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:8px;"><img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:32px;height:32px;border-radius:50%;object-fit:cover;border:1.5px solid rgba(255,255,255,0.7);" /><div style="font-size:8px;color:#fff;">Sarah</div><div style="background:#b8f26a;color:#000;font-size:8.5px;font-weight:800;padding:2px 7px;border-radius:10px;text-shadow:none;letter-spacing:0.02em;line-height:1.2;">8.4</div></div>
+              <div style="width:1px;height:40px;background:rgba(255,255,255,0.5);margin:0 8px;"></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;"><div style="width:32px;height:32px;border-radius:50%;border:1.5px dashed rgba(255,255,255,0.8);display:flex;align-items:center;justify-content:center;font-size:14px;color:rgba(255,255,255,1);">+</div><div style="font-size:8px;color:var(--green);">Open</div></div>
             </div>
           </div>
-          <div style="display:flex;border-top:1px solid var(--border);">
-            <div style="flex:1;padding:10px;text-align:center;font-size:10px;font-weight:700;color:#5b8de8;cursor:pointer;">💬 Match Chat</div>
-            <div style="flex:1;padding:10px;text-align:center;font-size:10px;font-weight:700;color:#ff5a5f;cursor:pointer;border-left:1px solid var(--border);">← Leave Round</div>
+          <div style="border-top:1px solid var(--border);padding:8px 10px;display:flex;justify-content:space-between;align-items:center;gap:8px;position:relative;z-index:1;background:rgba(5,5,5,0.92);backdrop-filter:blur(10px);text-shadow:0 1px 3px rgba(0,0,0,0.9);">
+            <div style="min-width:0;"><div style="font-size:10px;color:var(--white);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Pinehill Golf Club</div><div style="font-size:8px;color:var(--green);margin-top:1px;">Your round</div></div>
+            <div style="display:flex;gap:6px;align-items:center;flex-shrink:0;">
+              <div style="width:30px;height:28px;border-radius:7px;border:1px solid rgba(184,242,106,0.4);background:rgba(184,242,106,0.08);display:flex;align-items:center;justify-content:center;font-size:12px;cursor:pointer;">💬</div>
+              <button class="btn-outline" style="font-size:8px;padding:7px 12px;border-radius:7px;">MANAGE</button>
+            </div>
           </div>
         </div>
 
@@ -2128,59 +2127,58 @@ const screens = [
         <div style="color:#666;font-size:14px;">⌃</div>
       </div>
 
-      <!-- Horizontal carousel of active rounds -->
+      <!-- Horizontal carousel of active rounds — same card style as Upcoming, dropped down -->
       <div style="display:flex;gap:10px;padding:0 18px 8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;">
 
-        <!-- Card 1: LIVE — Royal Blackheath -->
-        <div style="min-width:280px;max-width:280px;flex-shrink:0;scroll-snap-align:start;background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;">
-          <div style="padding:12px;display:flex;gap:10px;align-items:flex-start;">
-            <div style="width:50px;height:50px;flex-shrink:0;border-radius:10px;background:url('flag-bg.jpg') center/cover no-repeat,linear-gradient(135deg,#2d4a1e,#0a1f04);position:relative;overflow:hidden;">
-              <div style="position:absolute;bottom:3px;left:50%;transform:translateX(-50%);font-size:7px;font-weight:800;letter-spacing:0.05em;padding:2px 6px;border-radius:4px;background:var(--green);color:#000;">LIVE</div>
-            </div>
-            <div style="width:28px;height:28px;flex-shrink:0;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;color:#1e3d0a;font-weight:800;align-self:center;">OC</div>
-            <div style="flex:1;min-width:0;">
-              <div style="font-size:13px;font-weight:700;color:var(--white);">Royal Blackheath</div>
-              <div style="font-size:9px;color:var(--mid);margin-top:2px;">Live now · Hole 7 · 4-Ball</div>
-              <div style="display:flex;align-items:center;margin-top:6px;">
-                <img src="https://randomuser.me/api/portraits/men/85.jpg" style="width:20px;height:20px;border-radius:50%;border:2px solid var(--card);margin-right:-5px;object-fit:cover;" />
-                <img src="https://randomuser.me/api/portraits/women/22.jpg" style="width:20px;height:20px;border-radius:50%;border:2px solid var(--card);margin-right:-5px;object-fit:cover;" />
+        <!-- Active Card 1: LIVE -->
+        <div style="min-width:250px;max-width:250px;border:1px solid rgba(184,242,106,0.45);border-radius:14px;overflow:hidden;scroll-snap-align:start;flex-shrink:0;position:relative;background:url('flag-bg.jpg') center/cover no-repeat;box-shadow:0 0 18px rgba(184,242,106,0.13);">
+          <div style="padding:12px 12px 10px;position:relative;z-index:1;text-shadow:0 2px 4px rgba(0,0,0,0.95),0 0 10px rgba(0,0,0,0.7),0 1px 2px rgba(0,0,0,1);">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+              <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;">Wed 20 May · 23:10</div>
+              <div style="display:flex;gap:5px;align-items:center;">
+                <div style="display:flex;align-items:center;gap:4px;font-size:8px;background:rgba(184,242,106,0.22);color:var(--green);padding:3px 8px;border-radius:10px;border:1px solid rgba(184,242,106,0.5);font-weight:700;text-shadow:none;"><span style="width:5px;height:5px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green);"></span>LIVE</div>
+                <div style="font-size:8px;background:rgba(255,255,255,0.18);color:#fff;padding:3px 8px;border-radius:10px;border:1px solid rgba(255,255,255,0.25);">2-Ball</div>
               </div>
             </div>
-            <div style="text-align:right;flex-shrink:0;align-self:flex-start;">
-              <div style="font-size:10px;font-weight:700;color:var(--white);display:flex;align-items:center;gap:4px;justify-content:flex-end;"><span style="width:5px;height:5px;border-radius:50%;background:var(--green);"></span>Hole 7</div>
-              <div style="font-size:9px;color:var(--green);font-weight:700;margin-top:1px;">Live</div>
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;"><span style="font-size:10px;color:var(--green);font-weight:700;">Members rate</span><span style="font-size:11px;color:var(--green);font-weight:800;">£50</span><span style="font-size:9px;color:rgba(255,255,255,0.85);font-weight:600;">⛳ 9H</span></div>
+            <div style="display:flex;align-items:center;gap:0;">
+              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:8px;"><img src="https://randomuser.me/api/portraits/men/85.jpg" style="width:32px;height:32px;border-radius:50%;object-fit:cover;border:1.5px solid var(--green);" /><div style="font-size:8px;color:#fff;">You</div><div style="background:#b8f26a;color:#000;font-size:8.5px;font-weight:800;padding:2px 7px;border-radius:10px;text-shadow:none;letter-spacing:0.02em;line-height:1.2;">10</div></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:8px;"><img src="https://randomuser.me/api/portraits/men/45.jpg" style="width:32px;height:32px;border-radius:50%;object-fit:cover;border:1.5px solid var(--green);" /><div style="font-size:8px;color:#fff;">Lawrence</div><div style="background:#b8f26a;color:#000;font-size:8.5px;font-weight:800;padding:2px 7px;border-radius:10px;text-shadow:none;letter-spacing:0.02em;line-height:1.2;">15</div></div>
             </div>
           </div>
-          <div style="display:flex;border-top:1px solid var(--border);">
-            <div style="flex:1;padding:10px;text-align:center;font-size:10px;font-weight:700;color:#5b8de8;cursor:pointer;">💬 Match Chat</div>
-            <div style="flex:1;padding:10px;text-align:center;font-size:10px;font-weight:700;color:#ff5a5f;cursor:pointer;border-left:1px solid var(--border);">← Leave Round</div>
+          <div style="border-top:1px solid var(--border);padding:8px 10px;display:flex;justify-content:space-between;align-items:center;gap:8px;position:relative;z-index:1;background:rgba(5,5,5,0.92);backdrop-filter:blur(10px);text-shadow:0 1px 3px rgba(0,0,0,0.9);">
+            <div style="min-width:0;"><div style="font-size:10px;color:var(--white);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Abbey Hotel Golf &amp; Health Club</div><div style="font-size:8px;color:var(--green);margin-top:1px;">Your round</div></div>
+            <div style="display:flex;gap:6px;align-items:center;flex-shrink:0;">
+              <div style="width:30px;height:28px;border-radius:7px;border:1px solid rgba(184,242,106,0.4);background:rgba(184,242,106,0.08);display:flex;align-items:center;justify-content:center;font-size:12px;cursor:pointer;">💬</div>
+              <button class="btn-outline" style="font-size:8px;padding:7px 12px;border-radius:7px;">MANAGE</button>
+            </div>
           </div>
         </div>
 
-        <!-- Card 2: PENDING — Pinehill -->
-        <div style="min-width:280px;max-width:280px;flex-shrink:0;scroll-snap-align:start;background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;">
-          <div style="padding:12px;display:flex;gap:10px;align-items:flex-start;">
-            <div style="width:50px;height:50px;flex-shrink:0;border-radius:10px;background:url('flag-bg.jpg') center/cover no-repeat,linear-gradient(135deg,#2d4a1e,#0a1f04);position:relative;overflow:hidden;">
-              <div style="position:absolute;bottom:3px;left:50%;transform:translateX(-50%);font-size:7px;font-weight:800;letter-spacing:0.05em;padding:2px 6px;border-radius:4px;background:#ffb450;color:#000;">PENDING</div>
-            </div>
-            <div style="width:28px;height:28px;flex-shrink:0;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;color:#1e3d0a;font-weight:800;align-self:center;">OC</div>
-            <div style="flex:1;min-width:0;">
-              <div style="font-size:13px;font-weight:700;color:var(--white);">Pinehill Golf Club</div>
-              <div style="font-size:9px;color:var(--mid);margin-top:2px;">Sat 5 Apr · 08:30 · 4-Ball</div>
-              <div style="display:flex;align-items:center;margin-top:6px;">
-                <img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:20px;height:20px;border-radius:50%;border:2px solid var(--card);margin-right:-5px;object-fit:cover;" />
-                <img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:20px;height:20px;border-radius:50%;border:2px solid var(--card);margin-right:-5px;object-fit:cover;" />
-                <div style="width:20px;height:20px;border-radius:50%;border:1.5px dashed rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;color:#888;font-size:10px;margin-right:-5px;">+</div>
+        <!-- Active Card 2: PENDING / Starts soon -->
+        <div style="min-width:250px;max-width:250px;border:1px solid rgba(255,180,80,0.4);border-radius:14px;overflow:hidden;scroll-snap-align:start;flex-shrink:0;position:relative;background:url('flag-bg.jpg') center/cover no-repeat;">
+          <div style="padding:12px 12px 10px;position:relative;z-index:1;text-shadow:0 2px 4px rgba(0,0,0,0.95),0 0 10px rgba(0,0,0,0.7),0 1px 2px rgba(0,0,0,1);">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+              <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;">Sat 5 Apr · 08:30</div>
+              <div style="display:flex;gap:5px;align-items:center;">
+                <div style="display:flex;align-items:center;gap:4px;font-size:8px;background:rgba(255,180,80,0.2);color:#ffb450;padding:3px 8px;border-radius:10px;border:1px solid rgba(255,180,80,0.45);font-weight:700;text-shadow:none;">⏱ 2h 15m</div>
+                <div style="font-size:8px;background:rgba(255,255,255,0.18);color:#fff;padding:3px 8px;border-radius:10px;border:1px solid rgba(255,255,255,0.25);">4-Ball</div>
               </div>
             </div>
-            <div style="text-align:right;flex-shrink:0;align-self:flex-start;">
-              <div style="font-size:10px;font-weight:700;color:#ffb450;display:flex;align-items:center;gap:4px;justify-content:flex-end;">⏱ Starts in</div>
-              <div style="font-size:10px;color:#ffb450;font-weight:800;margin-top:1px;">2h 15m</div>
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;"><span style="font-size:10px;color:var(--green);font-weight:700;">Members rate</span><span style="font-size:11px;color:var(--green);font-weight:800;">£30</span><span style="font-size:9px;color:rgba(255,255,255,0.85);font-weight:600;">⛳ 18H</span></div>
+            <div style="display:flex;align-items:center;gap:0;">
+              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:8px;"><img src="https://randomuser.me/api/portraits/men/85.jpg" style="width:32px;height:32px;border-radius:50%;object-fit:cover;border:1.5px solid var(--green);" /><div style="font-size:8px;color:#fff;">You</div><div style="background:#b8f26a;color:#000;font-size:8.5px;font-weight:800;padding:2px 7px;border-radius:10px;text-shadow:none;letter-spacing:0.02em;line-height:1.2;">10</div></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:8px;"><img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:32px;height:32px;border-radius:50%;object-fit:cover;border:1.5px solid rgba(255,255,255,0.7);" /><div style="font-size:8px;color:#fff;">Sarah</div><div style="background:#b8f26a;color:#000;font-size:8.5px;font-weight:800;padding:2px 7px;border-radius:10px;text-shadow:none;letter-spacing:0.02em;line-height:1.2;">8.4</div></div>
+              <div style="width:1px;height:40px;background:rgba(255,255,255,0.5);margin:0 8px;"></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;"><div style="width:32px;height:32px;border-radius:50%;border:1.5px dashed rgba(255,255,255,0.8);display:flex;align-items:center;justify-content:center;font-size:14px;color:rgba(255,255,255,1);">+</div><div style="font-size:8px;color:var(--green);">Open</div></div>
             </div>
           </div>
-          <div style="display:flex;border-top:1px solid var(--border);">
-            <div style="flex:1;padding:10px;text-align:center;font-size:10px;font-weight:700;color:#5b8de8;cursor:pointer;">💬 Match Chat</div>
-            <div style="flex:1;padding:10px;text-align:center;font-size:10px;font-weight:700;color:#ff5a5f;cursor:pointer;border-left:1px solid var(--border);">← Leave Round</div>
+          <div style="border-top:1px solid var(--border);padding:8px 10px;display:flex;justify-content:space-between;align-items:center;gap:8px;position:relative;z-index:1;background:rgba(5,5,5,0.92);backdrop-filter:blur(10px);text-shadow:0 1px 3px rgba(0,0,0,0.9);">
+            <div style="min-width:0;"><div style="font-size:10px;color:var(--white);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Pinehill Golf Club</div><div style="font-size:8px;color:var(--green);margin-top:1px;">Your round</div></div>
+            <div style="display:flex;gap:6px;align-items:center;flex-shrink:0;">
+              <div style="width:30px;height:28px;border-radius:7px;border:1px solid rgba(184,242,106,0.4);background:rgba(184,242,106,0.08);display:flex;align-items:center;justify-content:center;font-size:12px;cursor:pointer;">💬</div>
+              <button class="btn-outline" style="font-size:8px;padding:7px 12px;border-radius:7px;">MANAGE</button>
+            </div>
           </div>
         </div>
 
