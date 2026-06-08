@@ -1678,107 +1678,137 @@ const screens = [
   },
   // 4: LEADERBOARD
   {
-    title: "Rewards Board",
-    desc: "Earn points by playing, reviewing & inviting · top player wins monthly reward",
-    html: `<div class="app">
+    title: "Rewards",
+    desc: "Monthly reward tiers · how to climb (points & penalties) · podium · full rankings",
+    html: `<div class="app" style="background:#0a0a0a;">
       <div class="status-bar"><span class="status-time">9:41</span><div class="status-icons">▌▌▌ ▾ ▮</div></div>
-      <div class="page-header"><span class="ph-back">‹</span><span class="ph-title">Rewards Board</span><span></span></div>
+      <div class="page-header"><span class="ph-back">‹</span><span class="ph-title">Rewards</span><span></span></div>
 
-      <!-- Time filter pills — Segmented Control -->
-      <div style="display:flex;background:rgba(255,255,255,0.04);border-radius:10px;padding:3px;gap:2px;margin:0 16px 12px;">
-        <div style="flex:1;text-align:center;padding:8px 4px;font-size:10px;font-weight:700;cursor:pointer;border-radius:8px;background:var(--green);color:#000;box-shadow:0 2px 8px rgba(184,242,106,0.25);">This Week</div>
-        <div style="flex:1;text-align:center;padding:8px 4px;font-size:10px;font-weight:600;cursor:pointer;border-radius:8px;color:#555;">Month</div>
-        <div style="flex:1;text-align:center;padding:8px 4px;font-size:10px;font-weight:600;cursor:pointer;border-radius:8px;color:#555;">All Time</div>
-        <div style="flex:1;text-align:center;padding:8px 4px;font-size:10px;font-weight:600;cursor:pointer;border-radius:8px;color:#555;">My Club</div>
-      </div>
-
-      <!-- Monthly Reward Banner -->
-      <div style="margin:0 14px 10px;background:linear-gradient(135deg,#1a2f0a,#0f1f06);border:1px solid rgba(184,242,106,0.2);border-radius:12px;padding:12px 14px;">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
-          <span style="font-size:14px;">🏆</span>
-          <span style="font-size:11px;color:var(--green);font-weight:700;">April Monthly Reward</span>
-          <span style="margin-left:auto;font-size:8px;color:#888;background:rgba(255,255,255,0.06);padding:2px 8px;border-radius:10px;">15 days left</span>
+      <!-- June Reward card -->
+      <div style="margin:4px 16px 14px;background:linear-gradient(135deg,#16200c,#0e1607);border:1px solid rgba(184,242,106,0.18);border-radius:16px;padding:16px 16px 14px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+          <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:800;color:var(--green);">June Reward</span>
+          <span style="font-size:9px;font-weight:700;letter-spacing:0.06em;color:#bcbcb4;background:rgba(255,255,255,0.07);padding:4px 10px;border-radius:20px;">22 DAYS LEFT</span>
         </div>
-        <div style="font-size:10px;color:#ccc;line-height:1.5;">🎁 <strong style="color:var(--white);">Free round + guest pass</strong> at Pinehill GC</div>
-      </div>
-
-      <!-- Points system -->
-      <div style="margin:0 14px 12px;background:#141414;border:1px solid var(--border);border-radius:10px;padding:10px 14px;">
-        <div style="font-size:8px;letter-spacing:0.15em;text-transform:uppercase;color:var(--mid);margin-bottom:8px;">How to earn points</div>
-        <div style="display:flex;flex-direction:column;gap:5px;">
-          <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:13px;font-weight:800;color:var(--green);width:24px;">25</span><span style="font-size:9px;color:#888;">pts · Invite a player who joins the app</span></div>
-          <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:13px;font-weight:800;color:var(--green);width:24px;">20</span><span style="font-size:9px;color:#888;">pts · Complete a confirmed match</span></div>
-          <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:13px;font-weight:800;color:var(--green);width:24px;">15</span><span style="font-size:9px;color:#888;">pts · Leave a review on a player</span></div>
-          <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:13px;font-weight:800;color:var(--green);width:24px;">2</span><span style="font-size:9px;color:#888;flex:1;">pts · Daily log in</span><button style="background:var(--green);color:#000;font-size:7px;font-weight:700;padding:4px 10px;border-radius:6px;border:none;font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:0.08em;cursor:pointer;">CLAIM</button></div>
+        <div style="display:flex;flex-direction:column;gap:11px;">
+          <div style="font-size:13px;color:#ecece4;line-height:1.3;"><span style="color:#9a9a92;">1st place</span> 🏅 Golf bag (Callaway) Camouflage</div>
+          <div style="font-size:13px;color:#ecece4;line-height:1.3;"><span style="color:#9a9a92;">2nd place</span> Golf Tee time X1 (£40 cap)</div>
+          <div style="font-size:13px;color:#ecece4;line-height:1.3;"><span style="color:#9a9a92;">3rd place</span> Golf srixon balls x12</div>
         </div>
       </div>
 
-      <!-- Podium — gradient style -->
-      <div style="display:flex;align-items:flex-end;justify-content:center;gap:6px;padding:10px 16px 0;">
-        <div style="display:flex;flex-direction:column;align-items:center;width:80px;">
-          <img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:44px;height:44px;border-radius:50%;object-fit:cover;border:2.5px solid rgba(192,192,192,0.5);margin-bottom:4px;" />
-          <div style="font-size:10px;font-weight:600;">Sarah K.</div>
-          <div style="width:100%;height:60px;background:linear-gradient(180deg,rgba(192,192,192,0.12) 0%,transparent 100%);border-radius:10px 10px 0 0;margin-top:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid rgba(192,192,192,0.15);border-bottom:none;">
-            <div style="font-size:14px;font-weight:800;color:#C0C0C0;">2nd</div>
-            <div style="font-size:8px;color:#888;">91pts</div>
+      <!-- How to climb -->
+      <div style="margin:0 16px 18px;background:#121212;border:1px solid var(--border);border-radius:16px;padding:16px 14px 14px;">
+        <div style="font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#7a7a72;font-weight:700;margin-bottom:14px;">How to climb</div>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:40px;height:40px;border-radius:11px;background:rgba(184,242,106,0.1);color:var(--green);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
+            <div style="flex:1;font-size:13px;color:var(--white);font-weight:500;">Complete a match</div>
+            <div style="font-size:12px;font-weight:800;color:var(--green);background:rgba(184,242,106,0.12);padding:5px 12px;border-radius:12px;">+10</div>
           </div>
-        </div>
-        <div style="display:flex;flex-direction:column;align-items:center;width:90px;">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,215,0,0.5);box-shadow:0 0 16px rgba(255,215,0,0.2);margin-bottom:4px;" />
-          <div style="font-size:11px;font-weight:700;">Jason M.</div>
-          <div style="width:100%;height:80px;background:linear-gradient(180deg,rgba(255,215,0,0.15) 0%,transparent 100%);border-radius:10px 10px 0 0;margin-top:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid rgba(255,215,0,0.2);border-bottom:none;">
-            <div style="font-size:16px;font-weight:800;color:#FFD700;">1st</div>
-            <div style="font-size:8px;color:#888;">98pts</div>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:40px;height:40px;border-radius:11px;background:rgba(184,242,106,0.1);color:var(--green);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg></div>
+            <div style="flex:1;font-size:13px;color:var(--white);font-weight:500;">Request to join a game</div>
+            <div style="font-size:12px;font-weight:800;color:var(--green);background:rgba(184,242,106,0.12);padding:5px 12px;border-radius:12px;">+5</div>
           </div>
-        </div>
-        <div style="display:flex;flex-direction:column;align-items:center;width:80px;">
-          <img src="https://randomuser.me/api/portraits/men/22.jpg" style="width:44px;height:44px;border-radius:50%;object-fit:cover;border:2.5px solid rgba(205,127,50,0.5);margin-bottom:4px;" />
-          <div style="font-size:10px;font-weight:600;">Alex H.</div>
-          <div style="width:100%;height:48px;background:linear-gradient(180deg,rgba(205,127,50,0.12) 0%,transparent 100%);border-radius:10px 10px 0 0;margin-top:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid rgba(205,127,50,0.15);border-bottom:none;">
-            <div style="font-size:14px;font-weight:800;color:#CD7F32;">3rd</div>
-            <div style="font-size:8px;color:#888;">87pts</div>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:40px;height:40px;border-radius:11px;background:rgba(184,242,106,0.1);color:var(--green);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg></div>
+            <div style="flex:1;font-size:13px;color:var(--white);font-weight:500;">Invite a player who joins</div>
+            <div style="font-size:12px;font-weight:800;color:var(--green);background:rgba(184,242,106,0.12);padding:5px 12px;border-radius:12px;">+20</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:40px;height:40px;border-radius:11px;background:rgba(184,242,106,0.1);color:var(--green);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+            <div style="flex:1;font-size:13px;color:var(--white);font-weight:500;">Leave a review</div>
+            <div style="font-size:12px;font-weight:800;color:var(--green);background:rgba(184,242,106,0.12);padding:5px 12px;border-radius:12px;">+25</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:40px;height:40px;border-radius:11px;background:rgba(255,90,90,0.1);color:#ff6b6b;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg></div>
+            <div style="flex:1;font-size:13px;color:var(--white);font-weight:500;">Leave a round you joined</div>
+            <div style="font-size:12px;font-weight:800;color:#ff6b6b;background:rgba(255,90,90,0.12);padding:5px 12px;border-radius:12px;">-10</div>
           </div>
         </div>
       </div>
-      <div style="height:1px;background:rgba(255,255,255,0.06);margin:0 14px 12px;"></div>
 
-      <!-- Full Rankings — Gradient Bars -->
-      <div style="padding:0 14px 4px;font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--mid);margin-bottom:8px;">Full Rankings</div>
-      <div style="margin:0 14px 10px;display:flex;flex-direction:column;gap:4px;">
-        <div style="display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:12px;background:linear-gradient(90deg,rgba(255,215,0,0.15) 0%,transparent 60%);border-left:3px solid #FFD700;">
-          <span style="font-size:15px;font-weight:800;color:#FFD700;width:18px;">1</span>
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,215,0,0.4);" />
-          <div style="flex:1;"><div style="font-size:12px;font-weight:600;">Jason M.</div><div style="font-size:9px;color:#888;">HI 1.08 · ★★★★☆</div></div>
-          <div style="font-size:13px;font-weight:800;color:var(--green);">98pts</div>
+      <!-- Podium -->
+      <div style="padding:0 18px 6px;">
+        <div style="display:flex;align-items:flex-end;justify-content:center;gap:16px;margin-bottom:14px;">
+          <div style="display:flex;flex-direction:column;align-items:center;width:86px;">
+            <div style="position:relative;margin-bottom:7px;">
+              <img src="https://randomuser.me/api/portraits/men/45.jpg" style="width:58px;height:58px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.15);" />
+              <div style="position:absolute;bottom:-3px;right:-3px;width:21px;height:21px;border-radius:50%;background:#a8a8a0;color:#000;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;border:2.5px solid #0a0a0a;">2</div>
+            </div>
+            <div style="font-size:12px;font-weight:600;color:var(--white);">Jaydon</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;width:100px;">
+            <div style="font-size:22px;line-height:1;margin-bottom:3px;">🏆</div>
+            <div style="position:relative;margin-bottom:7px;">
+              <img src="https://randomuser.me/api/portraits/men/85.jpg" style="width:78px;height:78px;border-radius:50%;object-fit:cover;border:3px solid var(--green);box-shadow:0 0 20px rgba(184,242,106,0.3);" />
+              <div style="position:absolute;bottom:-3px;right:-3px;width:24px;height:24px;border-radius:50%;background:var(--green);color:#000;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;border:2.5px solid #0a0a0a;">1</div>
+            </div>
+            <div style="font-size:13px;font-weight:700;color:var(--white);">Larenzo</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;width:86px;">
+            <div style="position:relative;margin-bottom:7px;">
+              <img src="https://randomuser.me/api/portraits/men/22.jpg" style="width:58px;height:58px;border-radius:50%;object-fit:cover;border:2px solid rgba(205,127,50,0.55);" />
+              <div style="position:absolute;bottom:-3px;right:-3px;width:21px;height:21px;border-radius:50%;background:#CD7F32;color:#000;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;border:2.5px solid #0a0a0a;">3</div>
+            </div>
+            <div style="font-size:12px;font-weight:600;color:var(--white);">Jamie</div>
+          </div>
         </div>
-        <div style="display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:12px;background:linear-gradient(90deg,rgba(192,192,192,0.08) 0%,transparent 60%);border-left:3px solid #C0C0C0;">
-          <span style="font-size:15px;font-weight:800;color:#C0C0C0;width:18px;">2</span>
-          <img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid rgba(192,192,192,0.3);" />
-          <div style="flex:1;"><div style="font-size:12px;font-weight:600;">Sarah K.</div><div style="font-size:9px;color:#888;">HI 8.4 · ★★★★☆</div></div>
-          <div style="font-size:13px;font-weight:700;color:#999;">91pts</div>
+        <div style="display:flex;align-items:flex-end;justify-content:center;gap:10px;">
+          <div style="flex:1;max-width:118px;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:14px;padding:15px 8px;text-align:center;">
+            <div style="font-size:19px;font-weight:800;color:#d2d2ca;">2nd</div>
+            <div style="font-size:10px;color:#888;margin-top:3px;">90 pts</div>
+          </div>
+          <div style="flex:1;max-width:118px;background:linear-gradient(180deg,rgba(184,242,106,0.18),rgba(184,242,106,0.04));border:1px solid rgba(184,242,106,0.4);border-radius:14px;padding:24px 8px;text-align:center;box-shadow:0 0 20px rgba(184,242,106,0.1);">
+            <div style="font-size:24px;font-weight:800;color:var(--green);">1st</div>
+            <div style="font-size:11px;color:var(--green);font-weight:600;margin-top:3px;">210 pts</div>
+          </div>
+          <div style="flex:1;max-width:118px;background:linear-gradient(180deg,rgba(205,127,50,0.13),transparent);border:1px solid rgba(205,127,50,0.28);border-radius:14px;padding:15px 8px;text-align:center;">
+            <div style="font-size:19px;font-weight:800;color:#CD7F32;">3rd</div>
+            <div style="font-size:10px;color:#888;margin-top:3px;">50 pts</div>
+          </div>
         </div>
-        <div style="display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:12px;background:linear-gradient(90deg,rgba(205,127,50,0.08) 0%,transparent 60%);border-left:3px solid #CD7F32;">
-          <span style="font-size:15px;font-weight:800;color:#CD7F32;width:18px;">3</span>
+      </div>
+
+      <!-- Full Rankings -->
+      <div style="padding:18px 16px 6px;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#7a7a72;font-weight:700;">Full Rankings</div>
+      <div style="margin:0 14px 14px;display:flex;flex-direction:column;gap:5px;">
+        <div style="display:flex;align-items:center;gap:11px;padding:11px 12px;border-radius:13px;background:linear-gradient(90deg,rgba(184,242,106,0.14) 0%,transparent 62%);border-left:3px solid var(--green);">
+          <span style="font-size:14px;font-weight:800;color:var(--green);width:16px;">1</span>
+          <img src="https://randomuser.me/api/portraits/men/85.jpg" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid rgba(184,242,106,0.4);" />
+          <div style="flex:1;"><div style="font-size:12px;font-weight:600;color:var(--white);">Larenzo</div><div style="font-size:9px;color:#888;">HI 6.2 · ★★★★★</div></div>
+          <div style="font-size:13px;font-weight:800;color:var(--green);">210 pts</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:11px;padding:11px 12px;border-radius:13px;background:linear-gradient(90deg,rgba(255,255,255,0.05) 0%,transparent 60%);border-left:3px solid #a8a8a0;">
+          <span style="font-size:14px;font-weight:800;color:#cfcfca;width:16px;">2</span>
+          <img src="https://randomuser.me/api/portraits/men/45.jpg" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.12);" />
+          <div style="flex:1;"><div style="font-size:12px;font-weight:600;color:var(--white);">Jaydon</div><div style="font-size:9px;color:#888;">HI 10.0 · ★★★★☆</div></div>
+          <div style="font-size:13px;font-weight:700;color:#999;">90 pts</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:11px;padding:11px 12px;border-radius:13px;background:linear-gradient(90deg,rgba(205,127,50,0.1) 0%,transparent 60%);border-left:3px solid #CD7F32;">
+          <span style="font-size:14px;font-weight:800;color:#CD7F32;width:16px;">3</span>
           <img src="https://randomuser.me/api/portraits/men/22.jpg" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid rgba(205,127,50,0.3);" />
-          <div style="flex:1;"><div style="font-size:12px;font-weight:600;">Alex H.</div><div style="font-size:9px;color:#888;">HI 5.2 · ★★★★☆</div></div>
-          <div style="font-size:13px;font-weight:700;color:#999;">87pts</div>
+          <div style="flex:1;"><div style="font-size:12px;font-weight:600;color:var(--white);">Jamie</div><div style="font-size:9px;color:#888;">HI 14.3 · ★★★★☆</div></div>
+          <div style="font-size:13px;font-weight:700;color:#999;">50 pts</div>
         </div>
-        <div style="display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:12px;background:linear-gradient(90deg,rgba(255,255,255,0.03) 0%,transparent 60%);border-left:3px solid #333;">
-          <span style="font-size:15px;font-weight:800;color:#555;width:18px;">4</span>
+        <div style="display:flex;align-items:center;gap:11px;padding:11px 12px;border-radius:13px;background:linear-gradient(90deg,rgba(255,255,255,0.03) 0%,transparent 60%);border-left:3px solid #333;">
+          <span style="font-size:14px;font-weight:800;color:#555;width:16px;">4</span>
           <img src="https://randomuser.me/api/portraits/men/67.jpg" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.08);" />
-          <div style="flex:1;"><div style="font-size:12px;font-weight:600;">Mark D.</div><div style="font-size:9px;color:#888;">HI 12.1 · ★★★☆☆</div></div>
-          <div style="font-size:13px;font-weight:700;color:#999;">74pts</div>
+          <div style="flex:1;"><div style="font-size:12px;font-weight:600;color:var(--white);">Mark D.</div><div style="font-size:9px;color:#888;">HI 12.1 · ★★★☆☆</div></div>
+          <div style="font-size:13px;font-weight:700;color:#999;">42 pts</div>
         </div>
-        <div style="display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:12px;background:linear-gradient(90deg,rgba(255,255,255,0.03) 0%,transparent 60%);border-left:3px solid #333;">
-          <span style="font-size:15px;font-weight:800;color:#555;width:18px;">5</span>
+        <div style="display:flex;align-items:center;gap:11px;padding:11px 12px;border-radius:13px;background:linear-gradient(90deg,rgba(255,255,255,0.03) 0%,transparent 60%);border-left:3px solid #333;">
+          <span style="font-size:14px;font-weight:800;color:#555;width:16px;">5</span>
           <img src="https://randomuser.me/api/portraits/men/55.jpg" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.08);" />
-          <div style="flex:1;"><div style="font-size:12px;font-weight:600;">Tom W.</div><div style="font-size:9px;color:#888;">HI 15.6 · ★★★☆☆</div></div>
-          <div style="font-size:13px;font-weight:700;color:#999;">68pts</div>
+          <div style="flex:1;"><div style="font-size:12px;font-weight:600;color:var(--white);">Tom W.</div><div style="font-size:9px;color:#888;">HI 15.6 · ★★★☆☆</div></div>
+          <div style="font-size:13px;font-weight:700;color:#999;">28 pts</div>
         </div>
       </div>
     </div>`
   },
-  // 5: PLAYER PROFILE
+  
+// 5: PLAYER PROFILE
   {
     title: "Player Profile — Full View",
     desc: "Reached from map, members list, leaderboard · MESSAGE triggers signup if browsing",
