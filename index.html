@@ -1694,19 +1694,34 @@ const screens = [
 
       <div style="display:flex;gap:10px;padding:0 18px 4px;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;">
 
-        <!-- Slide 1: Review your round -->
-        <div style="min-width:300px;max-width:300px;scroll-snap-align:start;flex-shrink:0;border-radius:16px;border:1px solid rgba(184,242,106,0.45);background:linear-gradient(135deg,#16210b,#0f1808);padding:15px 15px 14px;display:flex;flex-direction:column;gap:11px;box-shadow:0 0 18px rgba(184,242,106,0.1);">
-          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px;">
-            <div style="width:38px;height:38px;border-radius:11px;background:rgba(184,242,106,0.14);color:var(--green);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-            <div style="font-size:8px;font-weight:800;letter-spacing:0.08em;color:#000;background:var(--green);padding:4px 9px;border-radius:20px;white-space:nowrap;">READY TO CLAIM</div>
+        <!-- Slide 1: Active round — finish & claim -->
+        <div style="min-width:300px;max-width:300px;scroll-snap-align:start;flex-shrink:0;border-radius:16px;overflow:hidden;position:relative;border:1px solid rgba(184,242,106,0.45);background:url('flag-bg.jpg') center/cover no-repeat,#16210b;box-shadow:0 0 18px rgba(184,242,106,0.12);">
+          <div style="padding:13px 14px 11px;position:relative;z-index:1;text-shadow:0 2px 4px rgba(0,0,0,0.95),0 0 10px rgba(0,0,0,0.7);">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+              <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;">Sun 31 May · 17:15</div>
+              <div style="display:flex;gap:5px;align-items:center;">
+                <div style="font-size:8px;background:rgba(184,242,106,0.22);color:var(--green);padding:3px 8px;border-radius:10px;border:1px solid rgba(184,242,106,0.5);font-weight:700;text-shadow:none;">✓ COMPLETE</div>
+                <div style="font-size:8px;background:rgba(255,255,255,0.18);color:#fff;padding:3px 8px;border-radius:10px;border:1px solid rgba(255,255,255,0.25);">4-Ball · 9H</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:0;margin-bottom:11px;">
+              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:8px;"><img src="https://randomuser.me/api/portraits/men/85.jpg" style="width:34px;height:34px;border-radius:50%;object-fit:cover;border:1.5px solid var(--green);" /><div style="font-size:8px;color:#fff;">You</div><div style="background:#b8f26a;color:#000;font-size:8.5px;font-weight:800;padding:2px 7px;border-radius:10px;text-shadow:none;line-height:1.2;">15</div></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:8px;"><img src="https://randomuser.me/api/portraits/men/45.jpg" style="width:34px;height:34px;border-radius:50%;object-fit:cover;border:1.5px solid var(--green);" /><div style="font-size:8px;color:#fff;">Jaydon</div><div style="background:#b8f26a;color:#000;font-size:8.5px;font-weight:800;padding:2px 7px;border-radius:10px;text-shadow:none;line-height:1.2;">10</div></div>
+            </div>
+            <div style="background:rgba(184,242,106,0.12);border:1px solid rgba(184,242,106,0.4);border-radius:11px;padding:10px 11px;text-shadow:none;">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:9px;">
+                <div style="width:20px;height:20px;border-radius:50%;background:var(--green);color:#000;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;line-height:1;">✓</div>
+                <div style="font-size:10.5px;color:var(--white);font-weight:700;line-height:1.25;">Awaiting your review<div style="font-size:8.5px;color:#9bbf6a;font-weight:600;">Finish your round to claim +25 pts.</div></div>
+              </div>
+              <button onclick="show(21)" style="width:100%;background:#b8f26a;color:#000;border:none;font-size:11px;font-weight:800;letter-spacing:0.02em;padding:10px;border-radius:9px;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:5px;">Review Round ›</button>
+            </div>
           </div>
-          <div>
-            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:800;color:var(--white);margin-bottom:4px;">Review your round</div>
-            <div style="font-size:11px;color:#9b9b93;line-height:1.45;">Your round at Huntswood is complete. Rate your players to claim your points.</div>
-          </div>
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:2px;">
-            <div style="font-size:13px;font-weight:800;color:var(--green);background:rgba(184,242,106,0.12);padding:6px 11px;border-radius:11px;">+25 pts</div>
-            <button onclick="show(21)" style="background:var(--green);color:#000;border:none;font-size:11px;font-weight:800;padding:9px 15px;border-radius:9px;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;">Review now ›</button>
+          <div style="border-top:1px solid var(--border);padding:9px 12px;display:flex;justify-content:space-between;align-items:center;gap:8px;position:relative;z-index:1;background:rgba(5,5,5,0.92);backdrop-filter:blur(10px);text-shadow:0 1px 3px rgba(0,0,0,0.9);">
+            <div style="min-width:0;"><div style="font-size:11px;color:var(--white);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Huntswood Golf Club</div><div style="font-size:8px;color:var(--green);margin-top:1px;">Your round</div></div>
+            <div style="display:flex;gap:6px;align-items:center;flex-shrink:0;">
+              <div style="width:32px;height:30px;border-radius:7px;border:1px solid rgba(184,242,106,0.4);background:rgba(184,242,106,0.08);display:flex;align-items:center;justify-content:center;font-size:13px;cursor:pointer;">💬</div>
+              <button class="btn-outline" style="font-size:8px;padding:8px 12px;border-radius:7px;">MANAGE</button>
+            </div>
           </div>
         </div>
 
