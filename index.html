@@ -2752,44 +2752,22 @@ const screens = [
   // 15: INBOX
   {
     title: "Inbox",
-    desc: "All conversations · invite notifications live here too",
+    desc: "Tabbed inbox · Messages, Invites, Requests, Match Chat · tap a tab to switch",
     html: `<div class="app">
       <div class="status-bar"><span class="status-time">9:41</span><div class="status-icons">▌▌▌ ▾ ▮</div></div>
-      <div class="page-header"><span class="ph-back">‹</span><span class="ph-title">Inbox</span><span style="font-size:18px;">🔔</span></div>
-      <div style="display:flex;margin:0 18px 14px;background:#1a1a1a;border:1px solid var(--border);border-radius:8px;overflow:hidden;">
-        <div style="flex:1;padding:10px 0;text-align:center;font-size:10px;color:#000;background:var(--green);font-weight:600;letter-spacing:0.05em;">Messages</div>
-        <div style="flex:1;padding:10px 0;text-align:center;font-size:10px;color:#888;letter-spacing:0.05em;">Groups</div>
-        <div style="flex:1;padding:10px 0;text-align:center;font-size:10px;color:#888;letter-spacing:0.05em;">Game Notifs</div>
+      <div style="padding:12px 18px 12px;"><div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:26px;font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1;">Inbox</div></div>
+      <div style="display:flex;align-items:center;gap:3px;margin:0 16px 12px;background:#121212;border:1px solid var(--border);border-radius:16px;padding:5px;overflow-x:auto;scrollbar-width:none;white-space:nowrap;">
+        <div id="oc-tab-messages" onclick="ocInbox('messages')" style="flex-shrink:0;padding:9px 12px;border-radius:12px;font-size:10px;font-weight:800;cursor:pointer;transition:.2s;">Messages</div>
+        <div id="oc-tab-invites" onclick="ocInbox('invites')" style="flex-shrink:0;padding:9px 12px;border-radius:12px;font-size:10px;font-weight:800;cursor:pointer;transition:.2s;">Invites</div>
+        <div id="oc-tab-requests" onclick="ocInbox('requests')" style="flex-shrink:0;padding:9px 12px;border-radius:12px;font-size:10px;font-weight:800;cursor:pointer;transition:.2s;">Requests</div>
+        <div id="oc-tab-match" onclick="ocInbox('match')" style="flex-shrink:0;padding:9px 11px;border-radius:12px;font-size:10px;font-weight:800;cursor:pointer;transition:.2s;display:flex;align-items:center;gap:6px;">Match Chat<span id="oc-tab-match-badge" style="font-size:8.5px;font-weight:800;min-width:16px;height:16px;padding:0 4px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;">6</span></div>
       </div>
-      <div style="margin:0 18px 14px;background:#1a1a1a;border:1px solid var(--border);border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:10px;"><div style="font-size:12px;opacity:0.4;">🔍</div><div style="font-size:11px;color:#555;">Search messages...</div></div>
-      <div class="player-row" style="padding:12px 18px;background:#141f0a;border-bottom:1px solid var(--border);">
-        <div class="player-av" style="background:none;padding:0;width:44px;height:44px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/men/32.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /><div class="online-dot"></div></div>
-        <div class="player-info">
-          <div style="display:flex;justify-content:space-between;"><div class="player-name">Jason M.</div><div style="font-size:9px;color:var(--mid);">2m ago</div></div>
-          <div style="font-size:10px;color:#888;margin-top:2px;">You up for a round at Pinehill this Tuesday?</div>
-        </div>
-        <div style="width:8px;height:8px;border-radius:50%;background:var(--green);flex-shrink:0;"></div>
+      <div style="margin:0 16px 10px;background:#141414;border:1px solid var(--border);border-radius:12px;padding:11px 14px;display:flex;align-items:center;gap:10px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <div style="font-size:11px;color:#555;">Search...</div>
       </div>
-      <div class="player-row" style="padding:12px 18px;border-bottom:1px solid var(--border);">
-        <div class="player-av" style="background:none;padding:0;width:44px;height:44px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/women/44.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div>
-        <div class="player-info">
-          <div style="display:flex;justify-content:space-between;"><div class="player-name">Sarah K.</div><div style="font-size:9px;color:var(--mid);">1h ago</div></div>
-          <div style="font-size:10px;color:#888;margin-top:2px;">Accepted your invite to play ✓</div>
-        </div>
-      </div>
-      <div class="player-row" style="padding:12px 18px;border-bottom:1px solid var(--border);">
-        <div class="player-av" style="background:none;padding:0;width:44px;height:44px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/men/22.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div>
-        <div class="player-info">
-          <div style="display:flex;justify-content:space-between;"><div class="player-name">Alex H.</div><div style="font-size:9px;color:var(--mid);">Yesterday</div></div>
-          <div style="font-size:10px;color:#888;margin-top:2px;">Hey, what's your usual handicap these days?</div>
-        </div>
-      </div>
-      <div style="margin:14px 18px;background:#1a1a1a;border:1px solid rgba(232,168,91,0.2);border-radius:10px;padding:12px 14px;">
-        <div style="font-size:8px;color:#e8a85b;letter-spacing:0.15em;margin-bottom:6px;">⛳ INVITE RECEIVED</div>
-        <div style="font-size:11px;color:var(--white);margin-bottom:4px;">Mark D. invited you to play</div>
-        <div style="font-size:9px;color:#888;margin-bottom:10px;">Beckenham Place · Sat 5 April · 9:00am</div>
-        <div style="display:flex;gap:8px;"><button class="btn-green" style="flex:1;padding:8px;font-size:9px;border-radius:6px;">ACCEPT</button><button class="btn-outline" style="flex:1;padding:8px;font-size:9px;border-radius:6px;">DECLINE</button></div>
-      </div>
+      <div id="oc-inbox-body"></div>
+      <div class="bnav"><div class="bnav-tab"><div class="bnav-icon">⌂</div><div class="bnav-label">Find Rounds</div></div><div class="bnav-tab"><div class="bnav-icon">◎</div><div class="bnav-label">Map</div></div><div class="bnav-tab"><div class="bnav-icon active">✉</div><div class="bnav-label active">Inbox</div></div><div class="bnav-tab"><div class="bnav-icon">👤</div><div class="bnav-label">Profile</div></div></div>
     </div>`
   },
   // 15b: GAME NOTIFICATIONS
@@ -3376,7 +3354,7 @@ const screenInfo = [
   { journey: [["Find Rounds", "→ Tap a round card"]], shows: ["Open Match status + Tee booked badge", "Stableford format + HI range", "Requests for places row", "Player grid with pending state", "💬 Chat with players button → Match Chat", "Club info block", "REQUEST TO JOIN button"], tip: "Tap 'Chat with players' to open Match Chat (Screen 14) — group chat with all confirmed players.", note: "If the host leaves the round, the entire game is cancelled. Host privileges do not transfer to another player." },
   { journey: [["Round Detail", "→ Tap 'Chat with players'"], ["Match Chat loads", "All round players visible"]], shows: ["Match Chat header with club + date", "Info banner: 'This is a group chat for your round'", "Player join notifications with handicaps", "Chat bubbles from all players", "Your messages in green (right-aligned)", "Message input + send button"], tip: "Group chat for coordinating the round. All confirmed players can see messages. Accessed from Round Detail page." },
   { journey: [["Tab 3 (right nav)", "→ Profile tab"]], shows: ["Own photo, name, handicap, star rating", "Review count", "Show Up Score % with round count", "Stats: Rounds, Connections, Clubs", "Bio + club membership tags", "Recent connections list", "Community Reviews with tags + counts", "Individual review cards (scrollable)"], tip: "Your own profile is scrollable — scroll down to see your reviews from other players." },
-  { journey: [["My Profile", "→ Tap inbox icon"], ["Messages tab", "active by default"]], shows: ["Toggle: Messages / Game Notifications", "Search bar", "Conversation list with unread dots", "Invite notifications appear here too"], tip: null },
+  { journey: [["My Profile", "→ Tap inbox icon"], ["Messages tab", "active by default"]], shows: ["Tabs: Messages / Invites / Requests / Match Chat", "Search bar", "Conversation list with unread dots", "Match Chat shows unread count badge", "Tap a DM → Message Thread, tap a Match Chat → group chat"], tip: null },
   { journey: [["Inbox toggle", "→ Tap Game Notifications"]], shows: ["Invite received — Accept / Decline buttons", "Accepted into a game confirmation", "Round confirmed notification", "Request declined notification", "Round complete — CONFIRM COMPLETION +1 PT"], tip: "Both players must confirm completion for the leaderboard point to count." },
   { journey: [["Inbox", "→ Tap conversation"], ["Player Profile", "→ Tap MESSAGE"]], shows: ["Chat bubbles sent/received", "Player name + online status", "Text input + send", "Invite to Play inline shortcut", "Open Club Memes — shareable in-chat meme cards", "OC Meme button in message bar — opens meme picker"], tip: null, note: "Open Club Memes will be included in messaging. Players can send branded meme cards (golf, padel, tennis) directly in chat via the gold OC button. Drives engagement, shareability, and brand personality within conversations." },
   { journey: [["My Profile", "→ Tap EDIT PROFILE"]], shows: ["Change photo", "Edit name, bio, location", "Update handicap", "Add/remove club memberships"], tip: null },
@@ -3514,11 +3492,99 @@ function ocInitDiscover(){
   }
 }
 
+/* ===== Inbox tabs (Messages / Invites / Requests / Match Chat) ===== */
+function ocDM(av,name,msg,time,unread){
+  return `<div class="player-row" onclick="show(19)" style="cursor:pointer;${unread?'background:#141f0a;':''}">
+    <div class="player-av" style="background:none;padding:0;width:44px;height:44px;overflow:hidden;flex-shrink:0;position:relative;"><img src="https://randomuser.me/api/portraits/${av}.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
+    <div class="player-info"><div style="display:flex;justify-content:space-between;"><div class="player-name">${name}</div><div style="font-size:9px;color:var(--mid);">${time}</div></div><div style="font-size:10px;color:#888;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:200px;">${msg}</div></div>
+    ${unread?'<div style="width:8px;height:8px;border-radius:50%;background:var(--green);flex-shrink:0;"></div>':''}
+  </div>`;
+}
+function ocInvite(av,name,club,when,fmt){
+  return `<div style="margin:12px 16px;background:#141414;border:1px solid rgba(232,168,91,0.25);border-radius:12px;padding:13px 14px;">
+    <div style="font-size:8px;color:#e8a85b;letter-spacing:0.15em;margin-bottom:9px;font-weight:800;">\u26f3 INVITE RECEIVED</div>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+      <img src="https://randomuser.me/api/portraits/${av}.jpg" style="width:38px;height:38px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+      <div style="flex:1;min-width:0;"><div style="font-size:11px;color:#fff;font-weight:700;">${name} invited you to play</div><div style="font-size:9px;color:#888;margin-top:2px;">${club} \u00b7 ${when}${fmt?' \u00b7 '+fmt:''}</div></div>
+    </div>
+    <div style="display:flex;gap:8px;"><button class="btn-green" style="flex:1;padding:9px;font-size:9px;border-radius:7px;">ACCEPT</button><button class="btn-outline" style="flex:1;padding:9px;font-size:9px;border-radius:7px;">DECLINE</button></div>
+  </div>`;
+}
+function ocReq(av,name,club,when,hi){
+  return `<div style="margin:12px 16px;background:#141414;border:1px solid var(--border);border-radius:12px;padding:13px 14px;">
+    <div style="font-size:8px;color:var(--green);letter-spacing:0.15em;margin-bottom:9px;font-weight:800;">\ud83d\ude4b REQUEST TO JOIN</div>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+      <img src="https://randomuser.me/api/portraits/${av}.jpg" style="width:38px;height:38px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+      <div style="flex:1;min-width:0;"><div style="font-size:11px;color:#fff;font-weight:700;">${name} wants to join your round</div><div style="font-size:9px;color:#888;margin-top:2px;">${club} \u00b7 ${when} \u00b7 HI ${hi}</div></div>
+    </div>
+    <div style="display:flex;gap:8px;"><button class="btn-green" style="flex:1;padding:9px;font-size:9px;border-radius:7px;">APPROVE</button><button class="btn-outline" style="flex:1;padding:9px;font-size:9px;border-radius:7px;">DECLINE</button></div>
+  </div>`;
+}
+function ocReqSent(club,when){
+  return `<div style="margin:12px 16px;background:#101010;border:1px dashed var(--border);border-radius:12px;padding:13px 14px;">
+    <div style="font-size:8px;color:#888;letter-spacing:0.15em;margin-bottom:7px;font-weight:800;">\u23f3 REQUEST SENT</div>
+    <div style="font-size:11px;color:#ccc;margin-bottom:3px;">You asked to join a round</div>
+    <div style="font-size:9px;color:#777;margin-bottom:10px;">${club} \u00b7 ${when}</div>
+    <button style="width:100%;padding:9px;font-size:9px;border-radius:7px;background:rgba(255,255,255,0.05);border:1px solid var(--border);color:#888;font-weight:700;letter-spacing:0.1em;cursor:default;">REQUESTED \u00b7 PENDING</button>
+  </div>`;
+}
+function ocMatch(name,last,when,unread,fmt){
+  return `<div class="player-row" onclick="show(15)" style="cursor:pointer;${unread?'background:#141f0a;':''}">
+    <div style="width:44px;height:44px;border-radius:12px;background:url('flag-bg.jpg') center/cover no-repeat;flex-shrink:0;"></div>
+    <div class="player-info">
+      <div style="display:flex;justify-content:space-between;align-items:center;"><div class="player-name" style="display:flex;align-items:center;gap:6px;">${name}${fmt?`<span style="font-size:7.5px;background:rgba(255,255,255,0.1);color:#bbb;padding:1px 5px;border-radius:6px;font-weight:700;">${fmt}</span>`:''}</div><div style="font-size:9px;color:var(--mid);">${when}</div></div>
+      <div style="font-size:10px;color:#888;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:190px;">${last}</div>
+    </div>
+    ${unread?`<div style="min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--green);color:#0a0a0a;font-size:9px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">${unread}</div>`:''}
+  </div>`;
+}
+function ocCap(t){ return `<div style="font-size:9px;color:#666;letter-spacing:0.04em;padding:12px 18px 2px;text-transform:uppercase;font-weight:700;">${t}</div>`; }
+function ocInboxContent(tab){
+  if(tab==='messages'){
+    return ocDM('men/32','Jason M.','You up for a round at Pinehill this Tuesday?','2m',true)+
+           ocDM('women/44','Sarah K.','Accepted your invite to play \u2713','1h',false)+
+           ocDM('men/22','Alex H.',"Hey, what's your usual handicap these days?",'Yesterday',false)+
+           ocDM('women/68','Priya N.','Great game today \ud83d\ude4c same time next week?','2d',false);
+  }
+  if(tab==='invites'){
+    return ocCap('Round invites sent to you')+
+           ocInvite('men/41','Mark D.','Beckenham Place','Sat 5 Apr \u00b7 9:00am','4-Ball')+
+           ocInvite('women/65','Olivia R.','Wimbledon Park GC','Sun 6 Apr \u00b7 2:30pm','2-Ball')+
+           ocInvite('men/76','Tom B.','Foxhills','Wed 9 Apr \u00b7 11:00am','4-Ball');
+  }
+  if(tab==='requests'){
+    return ocCap('Players asking to join your rounds')+
+           ocReq('men/14','Daniel F.','Finchley GC','Fri 4 Apr \u00b7 8:00am','12')+
+           ocReq('women/28','Chloe W.','Brent Valley GC','Sat 5 Apr \u00b7 10:00am','18')+
+           ocReqSent('City of London GC','Sun 6 Apr \u00b7 1:00pm');
+  }
+  return ocCap('Group chats for your rounds')+
+         ocMatch('Foxhills','Jordan: I\u2019ll bring the rangefinder \ud83c\udfaf','2m',3,'4-Ball \u00b7 Sat')+
+         ocMatch('Wimbledon Park','Sarah K: running 5 mins late!','18m',2,'2-Ball \u00b7 Tomorrow')+
+         ocMatch('City of London GC','You: see you on the first tee','1h',1,'4-Ball \u00b7 Fri');
+}
+function ocInbox(tab){
+  ['messages','invites','requests','match'].forEach(t=>{
+    const el=document.getElementById('oc-tab-'+t); if(!el) return;
+    const on = t===tab;
+    el.style.background = on ? 'var(--green)' : 'transparent';
+    el.style.color = on ? '#0a0a0a' : '#8a8a8a';
+  });
+  const badge=document.getElementById('oc-tab-match-badge');
+  if(badge){ const on = tab==='match';
+    badge.style.background = on ? 'rgba(0,0,0,0.18)' : '#2a2f3a';
+    badge.style.color = on ? '#0a0a0a' : '#cdd2db';
+  }
+  const body=document.getElementById('oc-inbox-body');
+  if(body) body.innerHTML = ocInboxContent(tab);
+}
+
 function show(i) {
   current = i;
   document.getElementById('phone-screen').innerHTML = screens[i].html;
   if (document.getElementById('oc-balance')) ocSyncShop();
   if (i === 3) { try { ocInitDiscover(); } catch(e){} }
+  if (i === 17) { try { ocInbox('messages'); } catch(e){} }
   document.getElementById('screen-title').textContent = screens[i].title;
   document.getElementById('screen-desc').textContent = screens[i].desc;
   document.querySelectorAll('.screen-btn').forEach((b,j) => b.classList.toggle('active', j===i));
