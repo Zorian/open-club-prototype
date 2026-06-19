@@ -743,7 +743,7 @@ const screens = [
             </div>
             <div style="display:flex;align-items:center;gap:0;margin-bottom:11px;">
               <div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:8px;"><img src="https://randomuser.me/api/portraits/men/85.jpg" style="width:32px;height:32px;border-radius:50%;object-fit:cover;border:1.5px solid var(--green);" /><div style="font-size:8px;color:#fff;">You</div><div style="background:#b8f26a;color:#000;font-size:8.5px;font-weight:800;padding:2px 7px;border-radius:10px;text-shadow:none;letter-spacing:0.02em;line-height:1.2;">15</div></div>
-              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:8px;"><img src="https://randomuser.me/api/portraits/men/45.jpg" style="width:32px;height:32px;border-radius:50%;object-fit:cover;border:1.5px solid var(--green);" /><div style="font-size:8px;color:#fff;">Jaydon</div><div style="background:#b8f26a;color:#000;font-size:8.5px;font-weight:800;padding:2px 7px;border-radius:10px;text-shadow:none;letter-spacing:0.02em;line-height:1.2;">10</div></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:8px;"><img src="https://randomuser.me/api/portraits/men/45.jpg" style="width:32px;height:32px;border-radius:50%;object-fit:cover;border:1.5px solid var(--green);" /><div style="font-size:8px;color:#fff;">James</div><div style="background:#b8f26a;color:#000;font-size:8.5px;font-weight:800;padding:2px 7px;border-radius:10px;text-shadow:none;letter-spacing:0.02em;line-height:1.2;">10</div></div>
             </div>
             <!-- Awaiting review banner + CTA -->
             <div style="background:rgba(184,242,106,0.1);border:1px solid rgba(184,242,106,0.35);border-radius:10px;padding:9px 10px;text-shadow:none;">
@@ -870,7 +870,7 @@ const screens = [
       </div>
 
       <!-- Bottom nav -->
-      <div class="bnav"><div class="bnav-tab"><div class="bnav-icon active">⌂</div><div class="bnav-label active">Find Rounds</div></div><div class="bnav-tab"><div class="bnav-icon">◎</div><div class="bnav-label">Map</div></div><div class="bnav-tab"><div class="bnav-icon">✉</div><div class="bnav-label">Messages</div></div><div class="bnav-tab"><div class="bnav-icon">👤</div><div class="bnav-label">Profile</div></div></div>
+      <div class="bnav"><div class="bnav-tab" onclick="show(13)" style="cursor:pointer;"><div class="bnav-icon active">⌂</div><div class="bnav-label active">Home</div></div><div class="bnav-tab" onclick="show(3)" style="cursor:pointer;"><div class="bnav-icon">◎</div><div class="bnav-label">Map</div></div><div class="bnav-tab" onclick="show(17)" style="cursor:pointer;"><div class="bnav-icon">✉</div><div class="bnav-label">Inbox</div></div><div class="bnav-tab" onclick="show(16)" style="cursor:pointer;"><div class="bnav-icon">👤</div><div class="bnav-label">Profile</div></div></div>
     </div>`
   },
   // 2: START A ROUND (form opened from Find Rounds CTA)
@@ -1297,10 +1297,10 @@ const screens = [
 
       <!-- Bottom nav -->
       <div class="bnav" style="flex-shrink:0;">
-        <div class="bnav-tab"><div class="bnav-icon">⌂</div><div class="bnav-label">Home</div></div>
-        <div class="bnav-tab"><div class="bnav-icon active">◎</div><div class="bnav-label active">Map</div></div>
-        <div class="bnav-tab"><div class="bnav-icon">✉</div><div class="bnav-label">Inbox</div></div>
-        <div class="bnav-tab"><div class="bnav-icon">👤</div><div class="bnav-label">Profile</div></div>
+        <div class="bnav-tab" onclick="show(13)" style="cursor:pointer;"><div class="bnav-icon">⌂</div><div class="bnav-label">Home</div></div>
+        <div class="bnav-tab" onclick="show(3)" style="cursor:pointer;"><div class="bnav-icon active">◎</div><div class="bnav-label active">Map</div></div>
+        <div class="bnav-tab" onclick="show(17)" style="cursor:pointer;"><div class="bnav-icon">✉</div><div class="bnav-label">Inbox</div></div>
+        <div class="bnav-tab" onclick="show(16)" style="cursor:pointer;"><div class="bnav-icon">👤</div><div class="bnav-label">Profile</div></div>
       </div>
     </div>`
   },
@@ -1722,7 +1722,7 @@ const screens = [
             </div>
             <div style="display:flex;align-items:center;gap:0;margin-bottom:8px;">
               <div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:8px;"><img src="https://randomuser.me/api/portraits/men/85.jpg" style="width:30px;height:30px;border-radius:50%;object-fit:cover;border:1.5px solid var(--green);" /><div style="font-size:8px;color:#fff;">You</div><div style="background:#b8f26a;color:#000;font-size:8.5px;font-weight:800;padding:2px 7px;border-radius:10px;text-shadow:none;line-height:1.2;">15</div></div>
-              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:8px;"><img src="https://randomuser.me/api/portraits/men/45.jpg" style="width:30px;height:30px;border-radius:50%;object-fit:cover;border:1.5px solid var(--green);" /><div style="font-size:8px;color:#fff;">Jaydon</div><div style="background:#b8f26a;color:#000;font-size:8.5px;font-weight:800;padding:2px 7px;border-radius:10px;text-shadow:none;line-height:1.2;">10</div></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:8px;"><img src="https://randomuser.me/api/portraits/men/45.jpg" style="width:30px;height:30px;border-radius:50%;object-fit:cover;border:1.5px solid var(--green);" /><div style="font-size:8px;color:#fff;">James</div><div style="background:#b8f26a;color:#000;font-size:8.5px;font-weight:800;padding:2px 7px;border-radius:10px;text-shadow:none;line-height:1.2;">10</div></div>
             </div>
             <div style="background:rgba(184,242,106,0.12);border:1px solid rgba(184,242,106,0.4);border-radius:11px;padding:8px 10px;text-shadow:none;">
               <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;">
@@ -1877,7 +1877,7 @@ const screens = [
               <img src="https://randomuser.me/api/portraits/men/45.jpg" style="width:58px;height:58px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.15);" />
               <div style="position:absolute;bottom:-3px;right:-3px;width:21px;height:21px;border-radius:50%;background:#a8a8a0;color:#000;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;border:2.5px solid #0a0a0a;">2</div>
             </div>
-            <div style="font-size:12px;font-weight:600;color:var(--white);">Jaydon</div>
+            <div style="font-size:12px;font-weight:600;color:var(--white);">James</div>
           </div>
           <div style="display:flex;flex-direction:column;align-items:center;width:100px;">
             <div style="font-size:22px;line-height:1;margin-bottom:3px;">🏆</div>
@@ -1923,7 +1923,7 @@ const screens = [
         <div style="display:flex;align-items:center;gap:11px;padding:11px 12px;border-radius:13px;background:linear-gradient(90deg,rgba(255,255,255,0.05) 0%,transparent 60%);border-left:3px solid #a8a8a0;">
           <span style="font-size:14px;font-weight:800;color:#cfcfca;width:16px;">2</span>
           <img src="https://randomuser.me/api/portraits/men/45.jpg" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.12);" />
-          <div style="flex:1;"><div style="font-size:12px;font-weight:600;color:var(--white);">Jaydon</div><div style="font-size:9px;color:#888;">HI 10.0 · ★★★★☆</div></div>
+          <div style="flex:1;"><div style="font-size:12px;font-weight:600;color:var(--white);">James</div><div style="font-size:9px;color:#888;">HI 10.0 · ★★★★☆</div></div>
           <div style="font-size:13px;font-weight:700;color:#999;">90 pts</div>
         </div>
         <div style="display:flex;align-items:center;gap:11px;padding:11px 12px;border-radius:13px;background:linear-gradient(90deg,rgba(205,127,50,0.1) 0%,transparent 60%);border-left:3px solid #CD7F32;">
@@ -2054,7 +2054,7 @@ const screens = [
         </div>
       </div>
 
-      <div class="bnav"><div class="bnav-tab"><div class="bnav-icon active">⌂</div><div class="bnav-label active">Find Rounds</div></div><div class="bnav-tab"><div class="bnav-icon">◎</div><div class="bnav-label">Map</div></div><div class="bnav-tab"><div class="bnav-icon">✉</div><div class="bnav-label">Messages</div></div><div class="bnav-tab"><div class="bnav-icon">👤</div><div class="bnav-label">Profile</div></div></div>
+      <div class="bnav"><div class="bnav-tab" onclick="show(13)" style="cursor:pointer;"><div class="bnav-icon active">⌂</div><div class="bnav-label active">Home</div></div><div class="bnav-tab" onclick="show(3)" style="cursor:pointer;"><div class="bnav-icon">◎</div><div class="bnav-label">Map</div></div><div class="bnav-tab" onclick="show(17)" style="cursor:pointer;"><div class="bnav-icon">✉</div><div class="bnav-label">Inbox</div></div><div class="bnav-tab" onclick="show(16)" style="cursor:pointer;"><div class="bnav-icon">👤</div><div class="bnav-label">Profile</div></div></div>
     </div>`
   },
   // 6: SIGNUP GATE
@@ -2318,7 +2318,7 @@ const screens = [
             </div>
             <div style="display:flex;align-items:center;gap:0;margin-bottom:11px;">
               <div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:8px;"><img src="https://randomuser.me/api/portraits/men/85.jpg" style="width:32px;height:32px;border-radius:50%;object-fit:cover;border:1.5px solid var(--green);" /><div style="font-size:8px;color:#fff;">You</div><div style="background:#b8f26a;color:#000;font-size:8.5px;font-weight:800;padding:2px 7px;border-radius:10px;text-shadow:none;letter-spacing:0.02em;line-height:1.2;">15</div></div>
-              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:8px;"><img src="https://randomuser.me/api/portraits/men/45.jpg" style="width:32px;height:32px;border-radius:50%;object-fit:cover;border:1.5px solid var(--green);" /><div style="font-size:8px;color:#fff;">Jaydon</div><div style="background:#b8f26a;color:#000;font-size:8.5px;font-weight:800;padding:2px 7px;border-radius:10px;text-shadow:none;letter-spacing:0.02em;line-height:1.2;">10</div></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin-right:8px;"><img src="https://randomuser.me/api/portraits/men/45.jpg" style="width:32px;height:32px;border-radius:50%;object-fit:cover;border:1.5px solid var(--green);" /><div style="font-size:8px;color:#fff;">James</div><div style="background:#b8f26a;color:#000;font-size:8.5px;font-weight:800;padding:2px 7px;border-radius:10px;text-shadow:none;letter-spacing:0.02em;line-height:1.2;">10</div></div>
             </div>
             <!-- Awaiting review banner + CTA -->
             <div style="background:rgba(184,242,106,0.1);border:1px solid rgba(184,242,106,0.35);border-radius:10px;padding:9px 10px;text-shadow:none;">
@@ -2396,7 +2396,7 @@ const screens = [
         </div>
       </div>
 
-      <div class="bnav"><div class="bnav-tab"><div class="bnav-icon active">⌂</div><div class="bnav-label active">Find Rounds</div></div><div class="bnav-tab"><div class="bnav-icon">◎</div><div class="bnav-label">Map</div></div><div class="bnav-tab"><div class="bnav-icon">✉</div><div class="bnav-label">Messages</div></div><div class="bnav-tab"><div class="bnav-icon">👤</div><div class="bnav-label">Profile</div></div></div>
+      <div class="bnav"><div class="bnav-tab" onclick="show(13)" style="cursor:pointer;"><div class="bnav-icon active">⌂</div><div class="bnav-label active">Home</div></div><div class="bnav-tab" onclick="show(3)" style="cursor:pointer;"><div class="bnav-icon">◎</div><div class="bnav-label">Map</div></div><div class="bnav-tab" onclick="show(17)" style="cursor:pointer;"><div class="bnav-icon">✉</div><div class="bnav-label">Inbox</div></div><div class="bnav-tab" onclick="show(16)" style="cursor:pointer;"><div class="bnav-icon">👤</div><div class="bnav-label">Profile</div></div></div>
     </div>`
   },
   // 12: ROUND DETAIL
@@ -2742,10 +2742,10 @@ const screens = [
 
       <!-- Bottom nav -->
       <div class="bnav" style="position:sticky;bottom:0;background:#000;">
-        <div class="bnav-tab"><div class="bnav-icon">⌂</div><div class="bnav-label">Find Rounds</div></div>
-        <div class="bnav-tab"><div class="bnav-icon">◎</div><div class="bnav-label">Map</div></div>
-        <div class="bnav-tab"><div class="bnav-icon">✉</div><div class="bnav-label">Messages</div></div>
-        <div class="bnav-tab"><div class="bnav-icon active">👤</div><div class="bnav-label active">Profile</div></div>
+        <div class="bnav-tab" onclick="show(13)" style="cursor:pointer;"><div class="bnav-icon">⌂</div><div class="bnav-label">Home</div></div>
+        <div class="bnav-tab" onclick="show(3)" style="cursor:pointer;"><div class="bnav-icon">◎</div><div class="bnav-label">Map</div></div>
+        <div class="bnav-tab" onclick="show(17)" style="cursor:pointer;"><div class="bnav-icon">✉</div><div class="bnav-label">Inbox</div></div>
+        <div class="bnav-tab" onclick="show(16)" style="cursor:pointer;"><div class="bnav-icon active">👤</div><div class="bnav-label active">Profile</div></div>
       </div>
     </div>`
   },
@@ -2767,7 +2767,7 @@ const screens = [
         <div style="font-size:11px;color:#555;">Search...</div>
       </div>
       <div id="oc-inbox-body"></div>
-      <div class="bnav"><div class="bnav-tab"><div class="bnav-icon">⌂</div><div class="bnav-label">Find Rounds</div></div><div class="bnav-tab"><div class="bnav-icon">◎</div><div class="bnav-label">Map</div></div><div class="bnav-tab"><div class="bnav-icon active">✉</div><div class="bnav-label active">Inbox</div></div><div class="bnav-tab"><div class="bnav-icon">👤</div><div class="bnav-label">Profile</div></div></div>
+      <div class="bnav"><div class="bnav-tab" onclick="show(13)" style="cursor:pointer;"><div class="bnav-icon">⌂</div><div class="bnav-label">Home</div></div><div class="bnav-tab" onclick="show(3)" style="cursor:pointer;"><div class="bnav-icon">◎</div><div class="bnav-label">Map</div></div><div class="bnav-tab" onclick="show(17)" style="cursor:pointer;"><div class="bnav-icon active">✉</div><div class="bnav-label active">Inbox</div></div><div class="bnav-tab" onclick="show(16)" style="cursor:pointer;"><div class="bnav-icon">👤</div><div class="bnav-label">Profile</div></div></div>
     </div>`
   },
   // 15b: GAME NOTIFICATIONS
@@ -2855,7 +2855,7 @@ const screens = [
         <div style="font-size:9px;color:var(--green);font-weight:700;white-space:nowrap;">SHARE CODE ›</div>
       </div>
 
-      <div class="bnav"><div class="bnav-tab"><div class="bnav-icon">⌂</div><div class="bnav-label">Find Rounds</div></div><div class="bnav-tab"><div class="bnav-icon">◎</div><div class="bnav-label">Map</div></div><div class="bnav-tab"><div class="bnav-icon active">✉</div><div class="bnav-label active">Messages</div></div><div class="bnav-tab"><div class="bnav-icon">👤</div><div class="bnav-label">Profile</div></div></div>
+      <div class="bnav"><div class="bnav-tab" onclick="show(13)" style="cursor:pointer;"><div class="bnav-icon">⌂</div><div class="bnav-label">Home</div></div><div class="bnav-tab" onclick="show(3)" style="cursor:pointer;"><div class="bnav-icon">◎</div><div class="bnav-label">Map</div></div><div class="bnav-tab" onclick="show(17)" style="cursor:pointer;"><div class="bnav-icon active">✉</div><div class="bnav-label active">Inbox</div></div><div class="bnav-tab" onclick="show(16)" style="cursor:pointer;"><div class="bnav-icon">👤</div><div class="bnav-label">Profile</div></div></div>
     </div>`
   },
 
@@ -3142,7 +3142,7 @@ const screens = [
         </div>
       </div>
 
-      <div class="bnav"><div class="bnav-tab"><div class="bnav-icon active">⌂</div><div class="bnav-label active">Find Rounds</div></div><div class="bnav-tab"><div class="bnav-icon">◎</div><div class="bnav-label">Map</div></div><div class="bnav-tab"><div class="bnav-icon">✉</div><div class="bnav-label">Messages</div></div><div class="bnav-tab"><div class="bnav-icon">👤</div><div class="bnav-label">Profile</div></div></div>
+      <div class="bnav"><div class="bnav-tab" onclick="show(13)" style="cursor:pointer;"><div class="bnav-icon active">⌂</div><div class="bnav-label active">Home</div></div><div class="bnav-tab" onclick="show(3)" style="cursor:pointer;"><div class="bnav-icon">◎</div><div class="bnav-label">Map</div></div><div class="bnav-tab" onclick="show(17)" style="cursor:pointer;"><div class="bnav-icon">✉</div><div class="bnav-label">Inbox</div></div><div class="bnav-tab" onclick="show(16)" style="cursor:pointer;"><div class="bnav-icon">👤</div><div class="bnav-label">Profile</div></div></div>
     </div>`
   },
   // ═══════════════════════════════════════════════════════════
