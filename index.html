@@ -1840,43 +1840,13 @@ const screens = [
         <div style="font-size:10px;color:#9b9b93;">+340 this month · #6 at your club</div>
       </div>
 
-      <!-- shop rows -->
-      <div style="margin:6px 16px 4px;">
-
-        <!-- Bag -->
-        <div style="display:flex;align-items:center;gap:12px;padding:15px 2px;border-bottom:1px solid var(--border);">
-          <div style="width:44px;height:44px;border-radius:12px;background:#15170f;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">🏌️</div>
-          <div style="flex:1;min-width:0;">
-            <div style="font-size:13px;font-weight:700;color:var(--white);line-height:1.2;">Callaway Camo Golf Bag</div>
-            <div style="font-size:10.5px;color:#9b9b93;margin-top:2px;">3,000 pts · premium tour bag</div>
-            <div id="oc-need-bag" style="font-size:9px;color:#6e756e;margin-top:3px;">1,750 pts to go · 1 in stock</div>
-          </div>
-          <button id="oc-btn-bag" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:800;padding:9px 17px;border-radius:11px;flex-shrink:0;background:#161616;border:1px solid var(--border);color:#7a7a72;cursor:default;">Locked</button>
-        </div>
-
-        <!-- Tee time -->
-        <div style="display:flex;align-items:center;gap:12px;padding:15px 2px;border-bottom:1px solid var(--border);">
-          <div style="width:44px;height:44px;border-radius:12px;background:#15170f;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">⛳</div>
-          <div style="flex:1;min-width:0;">
-            <div style="font-size:13px;font-weight:700;color:var(--white);line-height:1.2;">Tee Time · 1 round</div>
-            <div style="font-size:10.5px;color:#9b9b93;margin-top:2px;">1,000 pts · any partner club · £40 cap</div>
-            <div id="oc-need-tee" style="font-size:9px;color:#6e756e;margin-top:3px;"></div>
-          </div>
-          <button id="oc-btn-tee" style="border:none;font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:800;padding:9px 17px;border-radius:11px;cursor:pointer;flex-shrink:0;background:var(--green);color:#0a1400;">Claim</button>
-        </div>
-
-        <!-- Srixon balls -->
-        <div style="display:flex;align-items:center;gap:12px;padding:15px 2px;">
-          <div style="width:44px;height:44px;border-radius:12px;background:#15170f;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">🏐</div>
-          <div style="flex:1;min-width:0;">
-            <div style="font-size:13px;font-weight:700;color:var(--white);line-height:1.2;">Srixon Golf Balls · x12</div>
-            <div style="font-size:10.5px;color:#9b9b93;margin-top:2px;">800 pts · dozen AD333 · free delivery</div>
-            <div id="oc-need-balls" style="font-size:9px;color:#6e756e;margin-top:3px;"></div>
-          </div>
-          <button id="oc-btn-balls" style="border:none;font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:800;padding:9px 17px;border-radius:11px;cursor:pointer;flex-shrink:0;background:var(--green);color:#0a1400;">Claim</button>
-        </div>
-
+      <!-- ═══ SHOP / MY REWARDS TOGGLE ═══ -->
+      <div style="display:flex;background:#121212;border:1px solid var(--border);border-radius:13px;padding:4px;margin:13px 16px 4px;">
+        <button id="ocsTabShop" onclick="ocsSwitch('shop')" style="flex:1;border:none;background:var(--green);color:#0a1400;font-family:'Plus Jakarta Sans',sans-serif;font-size:12.5px;font-weight:800;padding:9px 0;border-radius:9px;cursor:pointer;">Shop</button>
+        <button id="ocsTabRewards" onclick="ocsSwitch('rewards')" style="flex:1;border:none;background:transparent;color:#9b9b93;font-family:'Plus Jakarta Sans',sans-serif;font-size:12.5px;font-weight:800;padding:9px 0;border-radius:9px;cursor:pointer;">My Rewards <span id="ocsCount" style="display:inline-block;min-width:16px;font-size:9.5px;border-radius:8px;background:rgba(255,255,255,0.12);color:#cfcfc7;padding:1px 5px;margin-left:3px;vertical-align:middle;">0</span></button>
       </div>
+      <div id="ocsShopView">
+      <div id="ocsShopRows" style="margin:6px 16px 4px;"></div>
       <div id="oc-toast" style="text-align:center;font-size:10px;font-weight:700;color:var(--green);opacity:0;transition:opacity .25s;height:13px;margin-bottom:4px;"></div>
 
       <!-- Podium -->
@@ -1955,6 +1925,8 @@ const screens = [
           <div style="font-size:13px;font-weight:700;color:#999;">28 pts</div>
         </div>
       </div>
+      </div><!-- /ocsShopView -->
+      <div id="ocsRewardsView" style="display:none;"></div>
     </div>`
   },
   
@@ -3386,42 +3358,177 @@ const screenInfo = [
 
 let current = 0;
 
+/* ===== Open Club Shop — claim flow + My Rewards ===== */
 var ocBalance = 1250;
-var ocClaimed = {};
-var ocItems = { bag:{cost:3000,stock:1}, tee:{cost:1000}, balls:{cost:800} };
-var ocBtnClaim = "border:none;font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:800;padding:9px 17px;border-radius:11px;cursor:pointer;flex-shrink:0;background:var(--green);color:#0a1400;";
-var ocBtnLock  = "font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:800;padding:9px 17px;border-radius:11px;flex-shrink:0;background:#161616;border:1px solid var(--border);color:#7a7a72;cursor:default;";
-var ocBtnDone  = "font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:800;padding:9px 17px;border-radius:11px;flex-shrink:0;background:rgba(184,242,106,0.15);color:#9bbf6a;border:1px solid rgba(184,242,106,0.4);cursor:default;";
 function ocFmt(n){ return n.toLocaleString('en-GB'); }
-function ocClaim(key){
-  var it = ocItems[key];
-  if (ocClaimed[key] || ocBalance < it.cost) return;
-  ocBalance -= it.cost;
-  ocClaimed[key] = true;
-  ocSyncShop();
-  var t = document.getElementById('oc-toast');
-  if (t){ t.textContent = '✓ Claimed — saved to My Rewards with your code'; t.style.opacity='1'; clearTimeout(window._oct); window._oct = setTimeout(function(){ t.style.opacity='0'; }, 2000); }
-}
+var ocsCatalog = [
+  {id:'tee',  icon:'\u26f3', name:'Tee Time \u00b7 1 round',       cost:1000, prefix:'TEE',  desc:'Any partner club \u00b7 \u00a340 cap',    use:'Show this code when booking at any Open Club partner club.'},
+  {id:'rng',  icon:'\ud83e\udea3', name:'Range Session \u00b7 100 balls', cost:350,  prefix:'RNG',  desc:'Any partner range',            use:'Quote this code at the range dispenser.'},
+  {id:'shop', icon:'\ud83c\udf9f\ufe0f', name:'Pro Shop \u00b7 \u00a315 off',        cost:600,  prefix:'SHOP', desc:'In-store at partner pro shops', use:'Show this code at the till before you pay.'},
+  {id:'guest',icon:'\ud83d\udc65', name:'Guest Pass \u00b7 bring a mate',  cost:1200, prefix:'GST',  desc:'One free guest green fee',     use:'Your guest quotes this code at check-in.'},
+  {id:'coach',icon:'\ud83c\udfcc\ufe0f', name:'Coaching \u00b7 30-min lesson',   cost:1500, prefix:'COACH',desc:'With a PGA partner pro',      use:'Book and show this code to your coach.'}
+];
+var ocsRewards = [];
+var ocsPending = null;
+function ocsCode(p){ var c='ABCDEFGHJKLMNPQRSTUVWXYZ23456789',s=''; for(var i=0;i<4;i++) s+=c.charAt(Math.floor(Math.random()*c.length)); return 'OC-'+p+'-'+s; }
+function ocsToday(){ return new Date().toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}); }
+function ocsPlus(d){ var t=new Date(); t.setDate(t.getDate()+d); return t.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}); }
+
 function ocSyncShop(){
-  var bal = document.getElementById('oc-balance');
-  if (bal) bal.textContent = ocFmt(ocBalance);
-  for (var key in ocItems){
-    var it = ocItems[key];
-    var btn = document.getElementById('oc-btn-'+key);
-    var need = document.getElementById('oc-need-'+key);
-    if (!btn) continue;
-    if (ocClaimed[key]){
-      btn.textContent = '✓ Claimed'; btn.style.cssText = ocBtnDone; btn.onclick = null;
-      if (need) need.textContent = 'Added to My Rewards';
-    } else if (ocBalance >= it.cost){
-      btn.textContent = 'Claim'; btn.style.cssText = ocBtnClaim; btn.onclick = (function(k){ return function(){ ocClaim(k); }; })(key);
-      if (need) need.textContent = it.stock ? (it.stock + ' in stock') : '';
-    } else {
-      btn.textContent = 'Locked'; btn.style.cssText = ocBtnLock; btn.onclick = null;
-      if (need) need.textContent = ocFmt(it.cost - ocBalance) + ' pts to go' + (it.stock ? (' · ' + it.stock + ' in stock') : '');
-    }
-  }
+  var bal=document.getElementById('oc-balance'); if(bal) bal.textContent=ocFmt(ocBalance);
+  ocsEnsureOverlays(); ocsRenderShop(); ocsRenderRewards();
 }
+
+function ocsRenderShop(){
+  var host=document.getElementById('ocsShopRows'); if(!host) return;
+  host.innerHTML = ocsCatalog.map(function(it){
+    var can = ocBalance>=it.cost;
+    var togo = can ? '' : `<div style="font-size:9px;color:#6e756e;margin-top:3px;">${ocFmt(it.cost-ocBalance)} pts to go</div>`;
+    var btn = can
+      ? `<button onclick="ocsOpenConfirm('${it.id}')" style="border:none;font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:800;padding:9px 17px;border-radius:11px;cursor:pointer;flex-shrink:0;background:var(--green);color:#0a1400;">Claim</button>`
+      : `<button style="font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:800;padding:9px 17px;border-radius:11px;flex-shrink:0;background:#161616;border:1px solid var(--border);color:#7a7a72;cursor:default;">Locked</button>`;
+    return `<div style="display:flex;align-items:center;gap:12px;padding:15px 2px;border-bottom:1px solid var(--border);">`
+      + `<div style="width:44px;height:44px;border-radius:12px;background:#15170f;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">${it.icon}</div>`
+      + `<div style="flex:1;min-width:0;"><div style="font-size:13px;font-weight:700;color:var(--white);line-height:1.2;">${it.name}</div>`
+      + `<div style="font-size:10.5px;color:#9b9b93;margin-top:2px;">${ocFmt(it.cost)} pts \u00b7 ${it.desc}</div>${togo}</div>${btn}</div>`;
+  }).join('');
+}
+
+function ocsRenderRewards(){
+  var c=document.getElementById('ocsCount'); if(c) c.textContent=ocsRewards.length;
+  var host=document.getElementById('ocsRewardsView'); if(!host) return;
+  if(!ocsRewards.length){
+    host.innerHTML = `<div style="text-align:center;padding:46px 30px;color:#9b9b93;">`
+      + `<div style="font-size:34px;opacity:.6;">\ud83c\udf81</div>`
+      + `<div style="font-family:'Fraunces',serif;font-weight:600;font-size:18px;color:var(--white);margin:14px 0 6px;">No rewards yet</div>`
+      + `<div style="font-size:12px;line-height:1.5;margin:0 0 18px;">Claim something from the shop and your code shows up here \u2014 ready to use at the club.</div>`
+      + `<button onclick="ocsSwitch('shop')" style="border:none;background:var(--green);color:#0a1400;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:12px;padding:11px 22px;border-radius:11px;cursor:pointer;">Browse the shop</button></div>`;
+    return;
+  }
+  host.innerHTML = ocsRewards.map(function(r){
+    var ready = r.status==='ready';
+    var pill = ready
+      ? `<span style="font-size:9px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;padding:4px 9px;border-radius:9px;background:rgba(184,242,106,.14);color:var(--green);border:1px solid rgba(184,242,106,.4);white-space:nowrap;">Code ready</span>`
+      : `<span style="font-size:9px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;padding:4px 9px;border-radius:9px;background:rgba(255,255,255,.07);color:#8a8a82;border:1px solid var(--border);white-space:nowrap;">Used</span>`;
+    var codebox = ready
+      ? `<div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:12px;border:1px dashed rgba(184,242,106,.45);border-radius:11px;padding:11px 13px;background:rgba(184,242,106,.05);"><span style="font-size:16px;font-weight:800;letter-spacing:.06em;color:var(--white);">${r.code}</span><button onclick="ocsCopy('${r.code}',this)" style="border:none;background:var(--green);color:#0a1400;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:11px;padding:7px 13px;border-radius:9px;cursor:pointer;">Copy</button></div>`
+      : `<div style="display:flex;align-items:center;gap:10px;margin-top:12px;border:1px solid var(--border);border-radius:11px;padding:11px 13px;background:rgba(255,255,255,.02);"><span style="font-size:16px;font-weight:800;letter-spacing:.06em;color:#6e756e;text-decoration:line-through;">${r.code}</span></div>`;
+    var act = ready ? `<div style="margin-top:11px;"><button onclick="ocsMarkUsed(${r.uid})" style="width:100%;border:1px solid var(--border);background:transparent;color:#9b9b93;font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;padding:8px;border-radius:9px;cursor:pointer;">Mark as used</button></div>` : '';
+    return `<div style="margin:4px 16px;border:1px solid var(--border);border-radius:16px;padding:14px;background:#101010;">`
+      + `<div style="display:flex;align-items:center;gap:11px;"><div style="width:44px;height:44px;border-radius:12px;background:#15170f;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;">${r.icon}</div>`
+      + `<div style="flex:1;min-width:0;"><div style="font-size:13px;font-weight:700;color:var(--white);">${r.name}</div>`
+      + `<div style="font-size:10px;color:#9b9b93;margin-top:2px;">Claimed ${r.claimed} \u00b7 expires ${r.expiry}</div></div>${pill}</div>`
+      + `${codebox}<div style="font-size:10px;color:#9b9b93;margin-top:10px;line-height:1.4;">${r.use}</div>${act}</div>`;
+  }).join('');
+}
+
+function ocsSwitch(tab){
+  var shop = tab==='shop';
+  var sv=document.getElementById('ocsShopView'), rv=document.getElementById('ocsRewardsView');
+  if(sv) sv.style.display = shop?'':'none';
+  if(rv) rv.style.display = shop?'none':'';
+  var ts=document.getElementById('ocsTabShop'), tr=document.getElementById('ocsTabRewards');
+  if(ts){ ts.style.background=shop?'var(--green)':'transparent'; ts.style.color=shop?'#0a1400':'#9b9b93'; }
+  if(tr){ tr.style.background=shop?'transparent':'var(--green)'; tr.style.color=shop?'#9b9b93':'#0a1400'; }
+}
+
+function ocsOpenConfirm(id){
+  ocsPending = ocsCatalog.find(function(x){return x.id===id;});
+  if(!ocsPending) return;
+  ocsEnsureOverlays();
+  var short = ocsPending.name.split(' \u00b7 ')[0];
+  document.getElementById('ocsSheetH').textContent = 'Claim ' + short + '?';
+  document.getElementById('ocsSheetLead').textContent = ocsPending.desc + '. This spends ' + ocFmt(ocsPending.cost) + " points \u2014 you can't undo it.";
+  document.getElementById('ocsMBefore').textContent = ocFmt(ocBalance);
+  document.getElementById('ocsMAfter').textContent = ocFmt(ocBalance - ocsPending.cost);
+  var sc=document.getElementById('ocsScrim'); sc.style.opacity='1'; sc.style.pointerEvents='auto';
+  document.getElementById('ocsSheet').style.transform='translateY(0)';
+}
+
+function ocsDoClaim(){
+  if(!ocsPending) return;
+  var it=ocsPending, from=ocBalance, to=ocBalance-it.cost;
+  ocBalance=to;
+  var reward={uid:Date.now(),icon:it.icon,name:it.name,cost:it.cost,code:ocsCode(it.prefix),claimed:ocsToday(),expiry:ocsPlus(90),use:it.use,status:'ready'};
+  ocsRewards.unshift(reward);
+  ocsRenderShop(); ocsRenderRewards(); ocsTween(from,to);
+  document.getElementById('ocsSheet').style.transform='translateY(110%)';
+  document.getElementById('ocsSItem').textContent=it.name;
+  document.getElementById('ocsSCost').textContent='-'+ocFmt(it.cost)+' pts';
+  document.getElementById('ocsSBal').textContent=ocFmt(to)+' pts';
+  document.getElementById('ocsSCode').textContent=reward.code;
+  document.getElementById('ocsSUse').textContent=it.use;
+  var cp=document.getElementById('ocsSCopy'); cp.textContent='Copy'; cp.onclick=function(){ ocsCopy(reward.code,cp); };
+  setTimeout(function(){ var s=document.getElementById('ocsSuccess'); s.style.opacity='1'; s.style.pointerEvents='auto'; s.style.transform='translateY(-50%) scale(1)'; },170);
+  ocsPending=null;
+}
+
+function ocsTween(from,to){
+  var el=document.getElementById('oc-balance'); if(!el) return;
+  var dur=520,t0=performance.now();
+  function step(t){ var p=Math.min(1,(t-t0)/dur); el.textContent=ocFmt(Math.round(from+(to-from)*(1-Math.pow(1-p,3)))); if(p<1) requestAnimationFrame(step); }
+  requestAnimationFrame(step);
+}
+
+function ocsCopy(code,btn){
+  if(navigator.clipboard) navigator.clipboard.writeText(code).catch(function(){});
+  if(btn){ btn.textContent='Copied'; btn.style.background='rgba(184,242,106,.16)'; btn.style.color='var(--green)';
+    setTimeout(function(){ btn.textContent='Copy'; btn.style.background='var(--green)'; btn.style.color='#0a1400'; },1400); }
+  ocsToast('Code copied');
+}
+
+function ocsMarkUsed(uid){
+  var r=ocsRewards.find(function(x){return x.uid===uid;}); if(r){ r.status='used'; ocsRenderRewards(); }
+}
+
+function ocsGotoRewards(){ ocsCloseAll(); ocsSwitch('rewards'); }
+
+function ocsCloseAll(){
+  var sc=document.getElementById('ocsScrim'); if(sc){ sc.style.opacity='0'; sc.style.pointerEvents='none'; }
+  var sh=document.getElementById('ocsSheet'); if(sh) sh.style.transform='translateY(110%)';
+  var su=document.getElementById('ocsSuccess'); if(su){ su.style.opacity='0'; su.style.pointerEvents='none'; su.style.transform='translateY(-50%) scale(.92)'; }
+}
+
+var ocsToastT;
+function ocsToast(msg){ var el=document.getElementById('ocsToastEl'); if(!el) return; el.textContent=msg; el.style.opacity='1'; el.style.transform='translateX(-50%) translateY(0)'; clearTimeout(ocsToastT); ocsToastT=setTimeout(function(){ el.style.opacity='0'; el.style.transform='translateX(-50%) translateY(14px)'; },1500); }
+
+function ocsEnsureOverlays(){
+  var frame=document.querySelector('.phone-screen'); if(!frame) return;
+  if(document.getElementById('ocsScrim')) return;
+  var wrap=document.createElement('div');
+  wrap.innerHTML = `
+    <div id="ocsScrim" onclick="ocsCloseAll()" style="position:absolute;inset:0;background:rgba(0,0,0,.62);z-index:90;opacity:0;pointer-events:none;transition:opacity .22s;"></div>
+    <div id="ocsSheet" role="dialog" aria-modal="true" style="position:absolute;left:0;right:0;bottom:0;z-index:95;background:#121310;border:1px solid var(--border);border-bottom:none;border-radius:26px 26px 0 0;padding:8px 20px 26px;transform:translateY(110%);transition:transform .28s cubic-bezier(.22,1,.36,1);">
+      <div style="width:38px;height:4px;border-radius:3px;background:#3a3a36;margin:0 auto 14px;"></div>
+      <div id="ocsSheetH" style="font-family:'Fraunces',serif;font-weight:600;font-size:20px;margin:2px 0 3px;color:var(--white);">Claim this reward?</div>
+      <div id="ocsSheetLead" style="font-size:12px;color:#9b9b93;margin:0 0 16px;line-height:1.45;"></div>
+      <div style="display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 18px;padding:15px;border:1px solid var(--border);border-radius:14px;background:#0d0e0b;">
+        <div style="text-align:center;"><div style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#6e756e;font-weight:700;">Balance</div><div id="ocsMBefore" style="font-size:20px;font-weight:800;margin-top:4px;color:var(--white);">\u2014</div></div>
+        <div style="color:var(--green);font-size:20px;">\u2192</div>
+        <div style="text-align:center;"><div style="font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#6e756e;font-weight:700;">After</div><div id="ocsMAfter" style="font-size:20px;font-weight:800;margin-top:4px;color:var(--green);">\u2014</div></div>
+      </div>
+      <button onclick="ocsDoClaim()" style="width:100%;border:none;background:var(--green);color:#0a1400;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:14px;padding:14px;border-radius:13px;cursor:pointer;">Confirm claim</button>
+      <button onclick="ocsCloseAll()" style="width:100%;border:none;background:transparent;color:#9b9b93;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:13px;padding:10px 6px 0;cursor:pointer;">Cancel</button>
+    </div>
+    <div id="ocsSuccess" role="dialog" aria-modal="true" style="position:absolute;left:14px;right:14px;top:50%;transform:translateY(-50%) scale(.92);z-index:95;background:#121310;border:1px solid rgba(184,242,106,.25);border-radius:24px;padding:26px 22px 22px;text-align:center;opacity:0;pointer-events:none;transition:opacity .26s,transform .26s cubic-bezier(.22,1,.36,1);box-shadow:0 0 50px rgba(184,242,106,.1);">
+      <div style="width:60px;height:60px;border-radius:50%;background:var(--green);color:#0a1400;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:800;margin:0 auto 14px;box-shadow:0 0 0 8px rgba(184,242,106,.1);">\u2713</div>
+      <div style="font-family:'Fraunces',serif;font-weight:600;font-size:23px;margin:0 0 4px;color:var(--white);">Claimed</div>
+      <div id="ocsSItem" style="font-size:13px;color:var(--white);font-weight:700;margin:0 0 2px;">\u2014</div>
+      <div style="font-size:11px;color:#9b9b93;margin:0 0 16px;"><b id="ocsSCost" style="color:var(--green);">\u2014</b> spent \u00b7 balance now <b id="ocsSBal" style="color:var(--green);">\u2014</b></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px dashed rgba(184,242,106,.45);border-radius:11px;padding:11px 13px;background:rgba(184,242,106,.05);">
+        <span id="ocsSCode" style="font-size:16px;font-weight:800;letter-spacing:.06em;color:var(--white);">\u2014</span>
+        <button id="ocsSCopy" style="border:none;background:var(--green);color:#0a1400;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:11px;padding:7px 13px;border-radius:9px;cursor:pointer;">Copy</button>
+      </div>
+      <div id="ocsSUse" style="font-size:10px;color:#9b9b93;margin-top:10px;line-height:1.4;">\u2014</div>
+      <div style="display:flex;flex-direction:column;gap:9px;margin-top:16px;">
+        <button onclick="ocsGotoRewards()" style="border:none;background:var(--green);color:#0a1400;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:13px;padding:12px;border-radius:12px;cursor:pointer;">View in My Rewards</button>
+        <button onclick="ocsCloseAll()" style="border:1px solid var(--border);background:transparent;color:#9b9b93;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:12px;padding:11px;border-radius:12px;cursor:pointer;">Keep shopping</button>
+      </div>
+    </div>
+    <div id="ocsToastEl" style="position:absolute;left:50%;bottom:96px;transform:translateX(-50%) translateY(14px);z-index:97;background:#1c1f17;border:1px solid rgba(184,242,106,.35);color:var(--white);font-size:12px;font-weight:700;padding:10px 16px;border-radius:11px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;">Code copied</div>`;
+  while(wrap.firstChild) frame.appendChild(wrap.firstChild);
+}
+
 /* ===== Discover Map interactions (pins + draggable bottom sheet) ===== */
 const ocClubs = {
   finchley:{name:'Finchley Golf Club',premium:true,dist:'8 km',online:6,members:42,live:true},
@@ -3602,6 +3709,7 @@ function ocInbox(tab){
 
 function show(i) {
   current = i;
+  if (typeof ocsCloseAll==='function') ocsCloseAll();
   document.getElementById('phone-screen').innerHTML = screens[i].html;
   if (document.getElementById('oc-balance')) ocSyncShop();
   if (i === 3) { try { ocInitDiscover(); } catch(e){} }
