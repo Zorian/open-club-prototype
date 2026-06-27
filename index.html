@@ -2118,7 +2118,7 @@ const screens = [
   // 8b: ADD PHOTO (Step 2/4)
   {
     title: "Add Your Photo — Step 2/4",
-    desc: "Dedicated face-photo prompt \u00b7 builds trust \u00b7 skippable nudge",
+    desc: "Dedicated face-photo prompt \u00b7 builds trust \u00b7 required step",
     html: `<div class="app">
       <div class="status-bar"><span class="status-time">9:41</span><div class="status-icons">\u258c\u258c\u258c \u25be \u25ae</div></div>
       <div class="page-header"><span class="ph-back">\u2039</span><span class="ph-title">Add Your Photo</span><span></span></div>
@@ -3370,7 +3370,7 @@ const screenInfo = [
   { journey: [["Browse mode", "User taps MESSAGE, JOIN or INVITE"], ["Bottom sheet slides up", "Doesn't block the screen"]], shows: ["Blurred background stays visible", "CREATE FREE ACCOUNT and LOG IN buttons", "Continue browsing option at bottom"], tip: "This is NOT a full-screen block. User can dismiss it and keep browsing — reduces abandonment." },
   { journey: [["Sign Up Gate", "→ Tap Create Account"]], shows: ["Email + password fields", "Sign in with Apple / Google options", "Link to Log In for existing users"], tip: null },
   { journey: [["Sign Up complete", "→ Auto-advances"], ["Step 1 of 4", "Profile basics"]], shows: ["Full name field", "Location city/postcode", "Short bio", "Progress dots"], tip: null },
-  { journey: [["Create Profile", "→ Tap NEXT"], ["Step 2 of 4", "Profile photo"]], shows: ["Large avatar ring with camera prompt", "Trust-building headline + sub-copy", "Do / Avoid example chips (face vs logo/object)", "Social-proof nudge: photos get more invites", "UPLOAD PHOTO primary action", "Skip for now (soft-gate, not forced)"], tip: "DEDICATED photo step requested by Lawrence. Standalone screen = one focused ask = higher completion. Skippable by design (nudge, not block) to protect sign-up conversion — re-prompt later via profile-completeness." },
+  { journey: [["Create Profile", "→ Tap NEXT"], ["Step 2 of 4", "Profile photo"]], shows: ["Large avatar ring with camera prompt", "Trust-building headline + sub-copy", "Do / Avoid example chips (face vs logo/object)", "Social-proof nudge: photos get more invites", "UPLOAD PHOTO primary action (required to continue)"], tip: "DEDICATED photo step requested by Lawrence. Standalone screen = one focused ask = higher completion. Photo is now required to continue (no skip)." },
   { journey: [["Create Profile", "→ Tap NEXT"], ["Step 3 of 4", "Golf-specific data"]], shows: ["Official Handicap Index input", "Skill rating 1–4 stars self-select", "Club membership multi-select dropdown (all UK clubs)", "Not a member of any club option — still appears on map as free agent", "Home club selection"], tip: "CRITICAL SCREEN — club membership selection here is what powers the map. User is assigned to each club in the backend." },
   { journey: [["Golf Setup", "→ Tap NEXT"], ["Step 4 of 4", "Preferences"]], shows: ["Preferred days of the week", "Time slots: Morning / Afternoon / Evening", "Max travel distance slider", "Turn on notifications toggle"], tip: "This data is used to surface better-matched round recommendations." },
   { journey: [["Onboarding complete", "→ Lands here"]], shows: ["Find Rounds title + sport pills", "Golf active · Padel Soon · Tennis Soon · Pickleball Soon", "4-Ball and 2-Ball round cards", "Weekly Leaderboard strip", "+ Start a Round CTA"], tip: "Same layout as browse mode but personalised and fully unlocked." },
